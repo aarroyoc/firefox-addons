@@ -1,0 +1,5 @@
+# $Id: chrome.manifest 850 2011-06-21 13:55:23Z neil $
+
+content googleshare chrome/content/
+overlay chrome://navigator/content/navigator.xul chrome://googleshare/content/google-share.xul
+
