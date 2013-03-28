@@ -1,0 +1,63 @@
+{
+    "name": "google-share", 
+    "license": "GPL 2.0", 
+    "author": "Adrián Arroyo Calle", 
+    "version": "1.2.4", 
+    "fullName": "Google+ Share", 
+    "id": "google@divel", 
+    "description": "With Google+ Share you can share your actual webpage with a simple click",
+    "homepage": "http://sites.google.com/site/divelmedia",
+    "icon64" : "data/icon64.png",
+    "icon" : "data/icon64.png",
+    "preferences" : [{
+	"name" : "openwith",
+	"title" : "Open Google+ with",
+	"description" : "Select the type of page when Google+ Share share a URL",
+	"type" : "menulist",
+	"value" : "3",
+	"options" : [
+		{
+			"value" : "3",
+			"label" : "Open in a Panel (default)"
+		},
+		{
+			"value" : "2",
+			"label" : "Open in a new Tab"
+		},
+		{
+			"value" : "1",
+			"label" : "Open in a new Window"
+		}
+
+
+		]
+
+	},
+	{
+	"name" : "notify",
+	"title" : "Enable notifications",
+	"description" : "Turn on/off notifications",
+	"type" : "bool",
+	"value" : true
+
+	},
+	{
+	"name" : "width",
+	"title" : "Width pixels",
+	"type" : "integer",
+	"value" : 800
+	},
+	{
+	"name" : "height",
+	"title" : "Height pixels",
+	"type" : "integer",
+	"value" : 600
+	},
+	{
+	"name" : "review",
+	"type" : "control",
+	"title" : "Review the addon",
+	"label" : "Review me!"
+	}
+]
+}

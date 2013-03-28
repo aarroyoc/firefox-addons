@@ -1,0 +1,40 @@
+{
+    "name": "quick-bananabread", 
+    "license": "GPL 2.0", 
+    "author": "Adrián Arroyo Calle", 
+    "version": "1.0", 
+    "fullName": "Quick BananaBread", 
+    "id": "quick-bananabread@divel", 
+    "description": "Instant access to the WebGL reference game: BananaBread",
+    "homepage": "http://sites.google.com/site/divelmedia",
+    "icon64" : "data/QBB64.png",
+    "icon" : "data/QBB32.png",
+    "preferences" : [
+	{
+	"name" : "notify",
+	"title" : "Enable notifications",
+	"description" : "Turn on/off notifications",
+	"type" : "bool",
+	"value" : true
+
+	},
+	{
+	"name" : "width",
+	"title" : "Width pixels",
+	"type" : "integer",
+	"value" : 800
+	},
+	{
+	"name" : "height",
+	"title" : "Height pixels",
+	"type" : "integer",
+	"value" : 600
+	},
+	{
+	"name" : "review",
+	"type" : "control",
+	"title" : "Review the addon",
+	"label" : "Review me!"
+	}
+]
+}
