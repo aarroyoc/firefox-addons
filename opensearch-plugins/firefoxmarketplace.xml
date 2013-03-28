@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+	<ShortName>F. Marketplace</ShortName>
+	<LongName>Firefox Marketplace</LongName>
+	<Description>Search WebApps in Firefox Marketplace</Description>
+	<Tags>firefox webapp marketplace divel adrian</Tags>
+	<Image height="32" width="32" type="image/x-icon">https://marketplace.cdn.mozilla.net/media/img/mkt/logos/32.png</Image>
+	<Url type="text/html" template="https://marketplace.mozilla.org/search/?q={searchTerms}"/>
+</OpenSearchDescription>
