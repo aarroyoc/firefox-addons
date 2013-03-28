@@ -1,0 +1,5 @@
+
+
+content googleshare chrome/content/
+overlay chrome://messenger/content/mailWindowOverlay.xul chrome://googleshare/content/google-share.xul
+
