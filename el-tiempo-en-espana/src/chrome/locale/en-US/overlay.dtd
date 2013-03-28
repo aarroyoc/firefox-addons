@@ -1,0 +1,8 @@
+<!ENTITY el_tiempo_de_espa_a.label "El Tiempo de Espana">
+<!ENTITY el_tiempo_de_espa_aContext.label "El Tiempo de Espana">
+<!ENTITY el_tiempo_de_espa_aContext.accesskey "T">
+<!ENTITY el_tiempo_de_espa_aToolbarButton.label "El Tiempo de Espana">
+<!ENTITY el_tiempo_de_espa_aToolbarButton.tooltip "Ver las predicciones">
+<!ENTITY el_tiempo_de_espa_aSidebar.label "Your Sidebar">
+<!ENTITY el_tiempo_de_espa_aToolbar.name  "example">
+<!ENTITY el_tiempo_de_espa_aToolbar.label "This is an example toolbar. You can hide it under View &gt; toolbars &gt; &el_tiempo_de_espa_aToolbar.name;">

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://el_tiempo_de_espa_a/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://el_tiempo_de_espa_a/locale/overlay.dtd">
+<overlay id="el_tiempo_de_espa_a-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="ff-overlay.js"/>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="el_tiempo_de_espa_a-strings" src="chrome://el_tiempo_de_espa_a/locale/overlay.properties"/>
+  </stringbundleset>
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="el_tiempo_de_espa_a-toolbar-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+                   label="&el_tiempo_de_espa_aToolbarButton.label;" tooltiptext="&el_tiempo_de_espa_aToolbarButton.tooltip;"
+                   oncommand="el_tiempo_de_espa_a.onToolbarButtonCommand()"/>
+  </toolbarpalette>
+  <popup id="contentAreaContextMenu">
+    <menuitem id="context-el_tiempo_de_espa_a" label="El Tiempo de Espana"
+              accesskey="&el_tiempo_de_espa_aContext.accesskey;"
+              insertafter="context-stop"
+              oncommand="el_tiempo_de_espa_a.onMenuItemCommand(event)"/>
+  </popup>
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="el_tiempo_de_espa_a-hello" label="El Tiempo de Espana"
+              oncommand="el_tiempo_de_espa_a.onMenuItemCommand(event);"/>
+  </menupopup>
+</overlay>

@@ -1,0 +1,21 @@
+/* This is just an example.  You shouldn't do this. */
+#el_tiempo_de_espa_a-hello
+{
+}
+#el_tiempo_de_espa_a-toolbar-button
+{
+  list-style-image: url("chrome://el_tiempo_de_espa_a/skin/suntool.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+/*#el_tiempo_de_espa_a-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 24px 48px  0px);
+}
+[iconsize="small"] #el_tiempo_de_espa_a-toolbar-button
+{
+  -moz-image-region: rect( 0px 40px 16px 24px);
+}
+[iconsize="small"] #el_tiempo_de_espa_a-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 40px 40px 24px);
+}*/

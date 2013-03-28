@@ -1,0 +1,8 @@
+<!ENTITY prefwindow.title "El Tiempo de Espana -- Ajustes">
+<!ENTITY pane1.title "El Tiempo de Espana -- Ajustes">
+<!ENTITY checkboolpref.label "Actualizar cuando Firefox inicie">
+<!ENTITY checkboolpref.accesskey "A">
+<!ENTITY intpref.label "Codigo postal de la ciudad">
+<!ENTITY intpref.accesskey "C">
+<!ENTITY stringpref.label "Nombre de la ciudad (Solo capitales de CCAA)">
+<!ENTITY stringpref.accesskey "N">

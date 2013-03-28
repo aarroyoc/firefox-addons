@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="findfile-window"
+    title="El Tiempo de Espana -- Prediccion"
+    orient="vertical"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" onload="onLoad();">
+	<script><![CDATA[
+		var gmaxima, gminima;
+		var MiraPorDonde="Mira por donde";
+	function onLoad() {
+	var promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
+                                  .getService(Components.interfaces.nsIPromptService);
+	//var TheTime = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator); 
+		//var lamax=promptService.document.GetElement.ById("gmax");
+		//promptService.alert(window,"NEW MAXIMA","Entramos");		
+		if("arguments" in window && window.arguments.length > 0) { 
+		//promptService.alert(window, "INFO",window.arguments[0]);
+		gmaxima = window.arguments[0];
+		gminima = window.arguments[1];
+		//lamax.value = window.arguments[0];
+		
+		//promptService.alert(window, "DEBUG", document);
+		//promptService.alert(window,"NEW MAXIMA","Salimos");
+		//promptService.alert(window,"NEW MAXIMA",gmaxima);
+    }
+	//promptService.alert(window, "INFO", "Final");
+	//window.document.getElementById('fijate').textContent = "Hola a todos";
+	//yesto = window.document.getElementById('fijate').textContent;
+	//promptService.alert(window, "DEBUG", yesto );
+	window.document.getElementById("gmax").textContent = gmaxima;
+	window.document.getElementById("gmin").textContent = gminima;
+	//promptService.alert(window, "FINAL", "FINAL");
+  }
+]]></script>
+ 
+	<label id="fijate"/>
+	<vbox>
+		<label value="Maxima" id="estado"/>
+		<label id="gmax"/>
+	</vbox>
+	<vbox>
+		<label value="Minima"/>
+		<label id="gmin"/>
+	</vbox>
+</window>
