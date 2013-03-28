@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns:moz="http://www.mozilla.org/2006/browser/search/" 
+      xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>IES Zorrilla</ShortName>
+  <Description>Buscar en el IES Zorrilla</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Url method="get" type="text/html" 
+      template="http://www.google.com/search?q={searchTerms}+site:http://ieszorrilla.centros.educa.jcyl.es/sitio/"/>
+  <Image height="16" width="16" type="image/x-icon">http://ieszorrilla.centros.educa.jcyl.es/aula/skins/jcyl_azul/img/comunes/favicon.ico</Image>
+</OpenSearchDescription>
