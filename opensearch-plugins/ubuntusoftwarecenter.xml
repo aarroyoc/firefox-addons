@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Ubuntu Software</ShortName>
+	<LongName>Ubuntu Software Center</LongName>
+  <Description>Search apps on Ubuntu Software Center</Description>
+  <Tags>ubuntu software center linux packages divel</Tags>
+  <Image height="16" width="16" type="image/x-icon">https://apps.ubuntu.com/assets/images/favicon.ico</Image>
+  <Url type="text/html" template="https://apps.ubuntu.com/cat/search/?q={searchTerms}" />
+</OpenSearchDescription>
