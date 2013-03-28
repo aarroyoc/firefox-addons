@@ -1,0 +1,8 @@
+<!ENTITY tuenti_share.label "Your localized menuitem">
+<!ENTITY tuenti_shareContext.label "Your Menuitem">
+<!ENTITY tuenti_shareContext.accesskey "Y">
+<!ENTITY tuenti_shareToolbarButton.label "Your Toolbar Button">
+<!ENTITY tuenti_shareToolbarButton.tooltip "This is your toolbar button!">
+<!ENTITY tuenti_shareSidebar.label "Your Sidebar">
+<!ENTITY tuenti_shareToolbar.name  "example">
+<!ENTITY tuenti_shareToolbar.label "This is an example toolbar. You can hide it under View &gt; toolbars &gt; &tuenti_shareToolbar.name;">

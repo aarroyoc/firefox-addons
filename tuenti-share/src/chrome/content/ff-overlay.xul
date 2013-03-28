@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://tuenti_share/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://tuenti_share/locale/overlay.dtd">
+<overlay id="tuenti_share-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="ff-overlay.js"/>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="tuenti_share-strings" src="chrome://tuenti_share/locale/overlay.properties"/>
+  </stringbundleset>
+  <popup id="contentAreaContextMenu">
+    <menuitem id="context-tuenti_share" label="Compartir en Tuenti"
+              accesskey="&tuenti_shareContext.accesskey;"
+              insertafter="context-stop"
+              oncommand="tuenti_share.onMenuItemCommand(event)"/>
+  </popup>
+</overlay>

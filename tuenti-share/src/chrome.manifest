@@ -1,0 +1,4 @@
+content   tuenti_share                 chrome/content/
+skin      tuenti_share   classic/1.0   chrome/skin/
+locale    tuenti_share   en-US         chrome/locale/en-US/
+overlay	chrome://browser/content/browser.xul	chrome://tuenti_share/content/ff-overlay.xul
