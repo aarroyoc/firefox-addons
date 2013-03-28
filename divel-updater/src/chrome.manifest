@@ -1,0 +1,7 @@
+content dupdater chrome/content/
+overlay chrome://browser/content/browser.xul chrome://dupdater/content/overlay.xul
+
+locale dupdater en-US locale/en-US/
+
+skin dupdater classic/1.0 skin/
+style chrome://global/content/customizeToolbar.xul chrome://dupdater/skin/overlay.css

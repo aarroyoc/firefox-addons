@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://dupdater/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay>
+
+<overlay id="dupdater" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script type="application/x-javascript;version=1.8" src="overlay.js"/>
+<popup id="contentAreaContextMenu">
+ <menuseparator id="dupdater-context-separator"/>
+ <menuitem id="dupdater-opntions" label="Opciones D. Updater" oncommand="Dupdater.Options(event);"/>
+ <menu id="dupdater-context" label="Divel Updater">
+  <menupopup id="dupdater-context-popup">
+   <menuitem id="dupdater-context-divelupdater" label="Divel Updater" oncommand="Dupdater.UpdateDivelUpdater(event);"/>
+   <menuitem id="dupdater-context-divelmediasearch" label="Divel Media Search" oncommand="Dupdater.UpdateDiveMediaSearch(event);"/>
+   <menuitem id="dupdater-context-divelstoresearch" label="Divel Store Search" oncommand="Dupdater.UpdateDivelStoreSearch(event);"/>
+   <menuitem id="dupdater-context-ieszorrillasearch" label="IES Zorrilla" oncommand="Dupdater.UpdateIESZorrillaSearch(event);"/>
+   <menuitem id="dupdater-context-divelso" label="Divel SO" oncommand="Dupdater.UpdateDivelSO(event);"/>
+   <menuitem id="dupdater-context-agendacorreos" label="Agenda de Correos" oncommand="Dupdater.UpdateAgendaCorreos(event);"/>
+</menupopup>
+</menu>
+</popup>
+</overlay>
