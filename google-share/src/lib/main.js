@@ -30,7 +30,7 @@ function Notify(url){
         text: "Sharing "+url,
         iconURL: myIconURL,
         onClick: function (data) {
-            console.log("Click");
+            //console.log("Click");
         }
     });
 
@@ -55,13 +55,13 @@ function OpenPanel(url){
 }
 function ShareURL(url){
 	var PlusURL="http://plus.google.com/share?url="+encodeURIComponent(url);
-	console.log("Try to open"+PlusURL);
-	console.log(prefs.openwith)
+	//console.log("Try to open"+PlusURL);
+	//console.log(prefs.openwith)
 	switch(prefs.openwith){
 		case "1":OpenWindow(PlusURL);break;		
 		case "2":OpenTab(PlusURL);break;
 		case "3":OpenPanel(PlusURL);break; //Default
-		default: ConfigPage(PlusURL);console.log("Error, no preferences set");
+		default: ConfigPage(PlusURL);//console.log("Error, no preferences set");
 	}
 	if(prefs.notify){
 		Notify(url);

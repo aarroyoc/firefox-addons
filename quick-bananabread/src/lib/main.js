@@ -10,7 +10,14 @@ function QuickBananaBread(url)
         		iconURL: myIconURL
     		});
 	}
-	require("tabs").open("http://developer.mozilla.org/es/demos/detail/bananabread/launch");
+	//require("tabs").open("http://developer.mozilla.org/es/demos/detail/bananabread/launch");
+	var quickpanel=require("panel").Panel({
+	height: require("simple-prefs").prefs.height,
+	width: require("simple-prefs").prefs.width,
+	contentURL: "http://developer.mozilla.org/es/demos/detail/bananabread/launch"
+
+	});
+	quickpanel.show();
 }
 
 exports.main=function(options){

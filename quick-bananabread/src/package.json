@@ -2,7 +2,7 @@
     "name": "quick-bananabread", 
     "license": "GPL 2.0", 
     "author": "Adrián Arroyo Calle", 
-    "version": "1.0", 
+    "version": "1.5", 
     "fullName": "Quick BananaBread", 
     "id": "quick-bananabread@divel", 
     "description": "Instant access to the WebGL reference game: BananaBread",
