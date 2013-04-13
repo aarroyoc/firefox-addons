@@ -61,7 +61,7 @@ var el_tiempo_de_espa_a = {
 	//New IFRAME View
 	var numbercode=prefManager.getIntPref("extensions.el_tiempo_de_espa_a.numbercode");
 	var citytext=prefManager.getCharPref("extensions.el_tiempo_de_espa_a.city");
-	window.openDialog("chrome://el_tiempo_de_espa_a/content/iframeview.xul","El Tiempo de España -- AEMET","chrome",numbercode,citytext);
+	window.openDialog("chrome://el_tiempo_de_espa_a/content/iframeview.xul","El Tiempo de España -- AEMET","chrome",numbercode,citynext);
 
 
 

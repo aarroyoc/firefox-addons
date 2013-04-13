@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="findfile-window"
+    title="El Tiempo de Espana -- Prediccion -- IFRAME View"
+    orient="vertical"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" onload="onLoad();"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+	<script><![CDATA[
+		var numbercode, citytext;
+	function onLoad() {
+	var promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
+                                  .getService(Components.interfaces.nsIPromptService);
+		numbercode = window.arguments[0];
+		citytext=window.arguments[1];
+	if(numbercode==null || citytext==null || citytext=="VOID")
+	{
+		promptService.alert(window,"Ajusta las preferencias correctamente, por favor","ERROR");
+		window.openDialog("chrome://el_tiempo_de_espa_a/content/options.xul","El Tiempo de España -- Preferencias","chrome");
+	}
+
+	var src1="http://www.aemet.es/es/eltiempo/prediccion/municipios/mostrarwidget/";
+	//valladolid-id47186
+	var src4="?w=g4p11110001ohmffffffw600z199x4f86d9t95b6e9";
+
+	var src=src1+citytext+"-id"+numbercode+src4;	
+
+	var iframe=document.getElementById("navigframe");
+	iframe.setAttribute("width","600");
+	iframe.setAttribute("height","199");
+	iframe.setAttribute("scrolling","no");
+	iframe.setAttribute("frameborder","0");
+	iframe.setAttribute("src",src);
+  }
+]]></script>
+
+<groupbox flex="1" id="box">
+  <caption label="El Tiempo en España"/>
+  <html:iframe id="navigframe"></html:iframe>
+</groupbox>
+
+</window>

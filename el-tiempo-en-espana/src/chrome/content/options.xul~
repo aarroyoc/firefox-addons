@@ -6,7 +6,7 @@
     <preferences>
       <preference id="iframeview" name="extensions.el_tiempo_de_espa_a.iframeview" type="bool"/>
       <preference id="postalcode" name="extensions.el_tiempo_de_espa_a.numbercode" type="int"/>
-      <preference id="cityname" name="extensions.el_tiempo_de_espa_a.city" type="string"/>
+      <prefernce id="cityname" name="extensions.el_tiempo_de_espa_a.city" type="string"/>
     </preferences>
     <checkbox id="iframeview" preference="iframeview" label="Vista iFrame" accesskey="&checkboolpref.accesskey;"/>
     <label accesskey="&intpref.accesskey;" control="postalcode2">Identificador de municipio</label><textbox id="postalcode2" preference="postalcode"/>
