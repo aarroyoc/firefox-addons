@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- Manage your notes -->
+<html>
+<head>
+<title>View notes</title>
+<meta charset="utf8"/>
+<!-- <link rel="stylesheet" title="Default" href="highlight.js/styles/default.css">
+<link rel="alternate stylesheet" title="GitHub" href="highlight.js/styles/github.css">
+<link rel="alternate " title="Google Code" href="highlight.js/styles/googlecode.css">
+<script src="highlight.js/highlight.pack.js"></script> -->
+</head>
+<body>
+<h1>View notes</h1>
+<!-- Creating loop -->
+<div id="main">
+
+</div>
+<button id="delete">Delete</button>
+</pre>
+</body>
+</html>

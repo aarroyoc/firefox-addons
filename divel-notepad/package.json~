@@ -1,0 +1,9 @@
+{
+  "name": "Divel Notepad",
+  "fullName": "Divel Notepad",
+  "id": "jid1-eTLousAxHRzVFg",
+  "description": "Save your notes quickly and view source code with the Syntax Highlight",
+  "author": "Adrián Arroyo Calle",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
