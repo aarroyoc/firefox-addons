@@ -394,9 +394,11 @@ exports.main=function(options)
  		 }
 		});
 	}
+	/*
+	When the preferences bug dissapear, this part will be functional. Also use oldpackage.json in doc folder	
 	require("simple-prefs").on("review",function (){
 		require("tabs").open("http://addons.mozilla.org/en/firefox/addon/divel-notepad");
-	});
+	});*/
 	if(firefox==true)
 	{
 

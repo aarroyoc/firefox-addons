@@ -7,5 +7,14 @@
   "license": "GPL 2.0",
   "icon" : "data/open32.png",
   "version": "1.1",
-  "homepage" : "http://github.com/AdrianArroyoCalle/firefox-addons"
+  "homepage" : "http://github.com/AdrianArroyoCalle/firefox-addons",
+
+  "preferences" : [
+	{
+	"name" : "review",
+	"type" : "control",
+	"title" : "Review the addon",
+	"label" : "Review me!"
+	}
+]
 }
