@@ -38,6 +38,7 @@ exports.main=function(options){
 	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("Google+ Share",selector,function (target){
 		require("tabs").open("http://plus.google.com/share?url="+encodeURIComponent(recent.BrowserApp.selectedTab.window.location.href));
+		recent.NativeWindow.toast.show("Sharing:" + "http://plus.google.com/share?url="+encodeURIComponent(recent.BrowserApp.selectedTab.window.location.href),"long");
 	});
 
 
