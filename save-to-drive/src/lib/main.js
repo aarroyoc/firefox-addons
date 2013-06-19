@@ -10,12 +10,13 @@ function SaveToDrive(urlfile)
 {
 	var urlbase=require("tabs").activeTab.url;
 	var data = require("sdk/self").data;
+	var plusonejs=data.url("plusone.js");
 	var pageDrive=require("sdk/page-mod");
 	var page=pageDrive.PageMod({
 		include: urlbase,
   		contentScriptFile: data.url("savetodrive.js"),
 		onAttach: function(worker){
-			worker.port.emit("addButton",urlfile);
+			worker.port.emit("addButton",urlfile,plusonejs);
 			worker.port.on("stop",function(){
 				
 				page.destroy();

@@ -5,7 +5,7 @@ var seamonkey=false;
 var thunderbird=false;
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
-Cu.import("resource:///modules/iteratorUtils.jsm");
+//Cu.import("resource:///modules/iteratorUtils.jsm");
 function SaveToDrive(urlfile)
 {
 	var urlbase=require("tabs").activeTab.url;
@@ -15,7 +15,7 @@ function SaveToDrive(urlfile)
 		include: urlbase,
   		contentScriptFile: data.url("savetodrive.js"),
 		onAttach: function(worker){
-			worker.port.emit("addButton",urlfile);
+			worker.port.emit("addButton",urlfile,plusonejs);
 			worker.port.on("stop",function(){
 				
 				page.destroy();
