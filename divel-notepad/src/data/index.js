@@ -25,6 +25,8 @@ self.port.on("initScript",function()
 self.port.on("sendData",function(uuid,title,body)
 {
 	var main=document.getElementById("main");
+	//var html=document.createElement("html");
+	//var body=document.createElement("body");
 	var paragraph=document.createElement("p");
 	var data=document.createElement("input");
 	data.type="checkbox";
@@ -37,6 +39,8 @@ self.port.on("sendData",function(uuid,title,body)
 	labelbody.textContent=body;
 	//labelbody.style="margin-right: 10px;margin-left: 10px;";
 	main.appendChild(paragraph);
+	//html.appendChild(body);
+	//body.appendChild(paragraph);
 	paragraph.appendChild(data);
 	paragraph.appendChild(negrita);
 	negrita.appendChild(labeltitle);

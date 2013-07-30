@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Changelog</title>
+</head>
+<body style="background-color:#9AFE2E">
+<h1>Divel Notepad Changelog</h1>
+<p>
+See the full source code and report bugs in <a href="http://github.com/AdrianArroyoCalle/firefox-addons">GitHub</a>
+</p>
+
+<h3>Divel Notepad 1.1</h3>
+<p>
+* Bug fixes<br>
+</p>
+<h3>Divel Notepad 1.0</h3>
+<p>
+* First release<br>
+* Storage in IndexedDB<br>
+* Icons from Haiku project<br>
+* Implemented in Mozilla Firefox<br>
+</p>
+
+
+</body>
+
+</html>

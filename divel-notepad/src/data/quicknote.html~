@@ -4,7 +4,7 @@
 <title>Quick Note with Divel Notepad</title>
 <meta charset="utf8"/>
 </head>
-<body>
+<body style="background-color:#9AFE2E">
 <label for="title">Title: </label><input type="text" id="title"/><br>
 <label for="note">Note: </label>
 <textarea id="note">

@@ -4,6 +4,7 @@ var thunderbird=false;
 var seamonkey=false;
 var fennec=false;
 const data = require("sdk/self").data;
+const notifications=require("notifications");
 
 function s4() {
   return Math.floor((1 + Math.random()) * 0x10000)
@@ -45,7 +46,12 @@ putData = function () {
     "title": title,
     "body": body
     });
-    
+    put.onsuccess=function(){
+	notifications.notify({
+	  text: "Note added successfully",
+	  iconURL: data.url("save32.png")
+	});
+    }
     //transaction.objectStore("NOTE").delete(1);
  
 // Retrieve the file that was just stored
@@ -125,7 +131,13 @@ putData = function () {
     "body": body
     });*/
     //console.log("Deleting");
-    transaction.objectStore("NOTE").delete(id);
+    var del=transaction.objectStore("NOTE").delete(id);
+    del.onsuccess=function(){
+	notifications.notify({
+		text: "Note deleted successfully",
+		iconURL: data.url("open32.png")
+	});
+    }
     //console.log("Deleted");
  
 // Retrieve the file that was just stored

@@ -2,19 +2,10 @@
   "name": "divel-notepad",
   "fullName": "Divel Notepad",
   "id": "notepad@divel",
-  "description": "Save your notes quickly and view source code with the Syntax Highlight",
+  "description": "Save your notes quickly and read it later",
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
   "icon" : "data/open32.png",
-  "version": "1.0",
-  "homepage" : "http://github.com/AdrianArroyoCalle/firefox-addons",
-
-  "preferences" : [
-	{
-	"name" : "review",
-	"type" : "control",
-	"title" : "Review the addon",
-	"label" : "Review me!"
-	}
-]
+  "version": "1.1",
+  "homepage" : "http://github.com/AdrianArroyoCalle/firefox-addons"
 }

@@ -4,6 +4,7 @@ var thunderbird=false;
 var seamonkey=false;
 var fennec=false;
 const data = require("sdk/self").data;
+const notifications=require("notifications");
 
 function s4() {
   return Math.floor((1 + Math.random()) * 0x10000)
@@ -45,7 +46,12 @@ putData = function () {
     "title": title,
     "body": body
     });
-    
+    put.onsuccess=function(){
+	notifications.notify({
+	  text: "Note added successfully",
+	  iconURL: data.url("save32.png")
+	});
+    }
     //transaction.objectStore("NOTE").delete(1);
  
 // Retrieve the file that was just stored
@@ -185,8 +191,8 @@ function QuickNote()
 	var panel = require("sdk/panel");
  
 	var panelquick=panel.Panel({
-	  width: 800,
-	  height: 800,
+	  width: 500,
+	  height: 500,
 	  contentURL: data.url("quicknote.html"),          
 	  contentScriptFile: data.url("quicknote.js")
 	  /*onMessage: function(message) {
@@ -394,9 +400,11 @@ exports.main=function(options)
  		 }
 		});
 	}
+	/*
+	When the preferences bug dissapear, this part will be functional. Also use oldpackage.json in doc folder	
 	require("simple-prefs").on("review",function (){
 		require("tabs").open("http://addons.mozilla.org/en/firefox/addon/divel-notepad");
-	});
+	});*/
 	if(firefox==true)
 	{
 

@@ -25,18 +25,22 @@ self.port.on("initScript",function()
 self.port.on("sendData",function(uuid,title,body)
 {
 	var main=document.getElementById("main");
+	var html=document.createElement("html");
+	var body=document.createElement("body");
 	var paragraph=document.createElement("p");
 	var data=document.createElement("input");
 	data.type="checkbox";
 	data.id=uuid;
 	var labeltitle=document.createElement("label");
 	labeltitle.textContent=title;
-	var pre=document.createElement("pre");
+	var pre=document.createElement("code");
 	var negrita=document.createElement("b");
 	var labelbody=document.createElement("label");
 	labelbody.textContent=body;
 	//labelbody.style="margin-right: 10px;margin-left: 10px;";
-	main.appendChild(paragraph);
+	main.appendChild(html);
+	html.appendChild(body);
+	body.appendChild(paragraph);
 	paragraph.appendChild(data);
 	paragraph.appendChild(negrita);
 	negrita.appendChild(labeltitle);
