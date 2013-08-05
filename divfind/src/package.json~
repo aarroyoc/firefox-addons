@@ -1,0 +1,27 @@
+{
+  "name": "divfind",
+  "fullName": "DivFind",
+  "id": "divfind@divel",
+  "description": "Search in all your search engines at the same time",
+  "author": "Adrián Arroyo Calle",
+  "license": "GPL 2.0",
+  "version": "1.0",
+  "homepage" : "http://github.com/AdrianArroyoCalle/firefox-addons",
+  "icon" : "data/divfind32.png",
+  "icon64" : "data/divfind64.png",
+  "preferences" : [
+   {
+    "name" : "hotkey",
+    "title" : "Hotkey",
+    "description" : "Set the key combination for open DivFind",
+    "type" : "string",
+    "value" : "accel-shift-f"
+   },
+   {
+    "name" : "review",
+    "type" : "control",
+    "title" : "Review the addon",
+    "label" : "Review me!"
+   }
+   ]
+}

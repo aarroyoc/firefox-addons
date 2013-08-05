@@ -1,0 +1,38 @@
+@font-face{
+	font-family: "RobotoThin";
+	src: url("Roboto-Thin.ttf") format("truetype");
+
+}
+#searchbox{
+	margin-left: 0%;
+	width: 100%;
+	padding-right: 30%;
+}
+iframe{
+	width: 100%;
+	min-height: 800px;
+	height: 50%;
+
+}
+#search{
+	width: 50%;
+	float: left;
+}
+#manage{
+	width: 50%;
+}
+section{
+	width: 50%;
+	float: left;
+
+}
+body{
+	font-family: "RobotoThin";
+}
+@media screen and (max-width: 600px)
+{
+	section{
+		width: 100%;
+
+	}
+}

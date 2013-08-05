@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Search Engine</title>
+<script>
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+window.addEventListener("DOMContentLoaded",function(){
+	var close=document.getElementById("close");
+	close.addEventListener("click",function(){
+		window.location="manage.html?JSON="+getUrlVars()["JSON"];
+	
+	});
+	var done=document.getElementById("done");
+	done.addEventListener("click",function(){
+		var name=document.getElementById("name").value;
+		var description=document.getElementById("description").value;
+		var favicon=document.getElementById("favicon").value;
+		var url=document.getElementById("url").value;
+		/* Add to IndexedDB */
+		/*var request=indexedDB.open("SearchEngines",2);
+		request.onerror=function(){
+			console.log("Error opening the database");
+		}
+		request.onupgradeneeded=function(evt){
+			var db=evt.target.result;
+		        if(!db.objectStoreNames.contains("search-engine"))
+			{
+		                var object=db.createObjectStore("search-engine",{keyPath: "id",autoIncrement: true});
+			}
+
+		}
+		request.onsuccess=function(evt)
+		{
+		        var db=evt.target.result;
+		        var objectStore = db.transaction("search-engine","readwrite").objectStore("search-engine");
+			objectStore.add({name: name,description: description,favicon: favicon,url:url}).onsuccess=function(event)
+			{
+				console.log("Search engine correctly added");
+				var notification = new Notification("DivFind", {
+				  dir: "auto",
+				  lang: "",
+				  body: "Search engine correctly added",
+				  tag: "divfind",
+			      });
+			}
+		}*/
+		var request=indexedDB.open("SearchEngines",2);
+		request.onupgradeneeded=function(evt){
+			var db=evt.target.result;
+		        if(!db.objectStoreNames.contains("search-engine"))
+			{
+		                var object=db.createObjectStore("search-engine",{keyPath: "id",autoIncrement: true});
+			}
+
+		}
+		request.onsuccess=function(evt){var db=evt.target.result;db.transaction("search-engine","readwrite").objectStore("search-engine").add({name: name, description: description, favicon: favicon,url:url}).onsuccess=function(){
+			/* Close */
+			window.location="manage.html?JSON="+getUrlVars()["JSON"];}}
+
+		
+		});
+});
+</script>
+<link rel="stylesheet" href="style/buttons.css"/>
+<link rel="stylesheet" href="style/input_areas.css"/>
+<link rel="stylesheet" href="style_unstable/lists.css"/>
+<link href="style/headers.css" rel="stylesheet" type="text/css">
+<link href="style_unstable/toolbars.css" rel="stylesheet" type="text/css">
+<link href="icons/styles/action_icons.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<section role="region">
+	  <header>
+	    <button id="close"><span class="icon icon-close">close</span></button>
+	    <menu type="toolbar"><button id="done">done</button></menu>
+	    <h1>Add search engine</h1>
+	  </header>
+	  <header>
+	    <h2>Complete the form with the required information</h2>
+	  </header>
+	</section>
+	<section id="form">
+		<input type="text" id="name" placeholder="Name" required/>
+		<input type="text" id="description" placeholder="Description" required/>
+		<input type="text" id="favicon" placeholder="Favicon URL" required/>
+		<input type="text" id="url" placeholder="DivFind URL" required/>
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="468"
+   height="60"
+   id="svg3076">
+  <defs
+     id="defs3078" />
+  <metadata
+     id="metadata3081">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <flowRoot
+       id="flowRoot3084"
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:128.99999619%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Bold"><flowRegion
+         id="flowRegion3086"><rect
+           width="125"
+           height="59.999996"
+           x="21.666666"
+           y="-0.83333349"
+           id="rect3088"
+           style="font-size:48px;font-weight:bold;line-height:128.99999619%;-inkscape-font-specification:Ubuntu Bold" /></flowRegion><flowPara
+         id="flowPara3090">DIV</flowPara></flowRoot>    <flowRoot
+       id="flowRoot3092"
+       xml:space="preserve"
+       style="font-size:48px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Italic"><flowRegion
+         id="flowRegion3094"><rect
+           width="134.16667"
+           height="60"
+           x="105.83334"
+           y="0.83333272"
+           id="rect3096"
+           style="font-size:48px;font-style:italic;-inkscape-font-specification:Ubuntu Italic" /></flowRegion><flowPara
+         id="flowPara3098">FIND</flowPara></flowRoot>    <path
+       d="M 439.16668,32.499999 418.27752,45.39369 397.38836,58.287386 396.66668,33.749998 395.94499,9.2126113 417.55583,20.856308 z"
+       id="path3104"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 400,43.333333 -143.33333,0"
+       id="path3106"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 400,14.166667 -140,0"
+       id="path3108"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 400.033,28.9 -142.5,0"
+       id="path3110"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+</svg>

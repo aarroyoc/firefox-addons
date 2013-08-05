@@ -1,0 +1,17 @@
+{
+  "name" : "DivFind",
+  "version" : "1.2",
+  "description" : "Search in all your search engines at the same time",
+  "launch_path" : "/divfind.html?SEARCH=NULL&JSON=NULL",
+  "icons" : {
+    "128" : "/divfind128.png"
+  },
+  "developer" : {
+    "name" : "Adrián Arroyo Calle",
+    "url" : "https://plus.google.com/114847881804298896907"
+  },
+  "installs_allowed_from": ["*"],
+  "default_locale" : "en"
+
+
+}

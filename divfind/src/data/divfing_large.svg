@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="468px"
+   height="60px"
+   id="svg3076"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="divfing_large.svg"
+   inkscape:export-filename="/home/julian/Imágenes/divfing_large_468_60.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs3078" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.2"
+     inkscape:cx="234"
+     inkscape:cy="30"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1360"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3081">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3084"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:129%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Bold"><flowRegion
+         id="flowRegion3086"><rect
+           id="rect3088"
+           width="125"
+           height="59.999996"
+           x="21.666666"
+           y="-0.83333349"
+           style="font-size:48px;line-height:129%;font-weight:bold;-inkscape-font-specification:Ubuntu Bold" /></flowRegion><flowPara
+         id="flowPara3090">DIV</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3092"
+       style="font-size:48px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Italic"><flowRegion
+         id="flowRegion3094"><rect
+           id="rect3096"
+           width="134.16667"
+           height="60"
+           x="105.83334"
+           y="0.83333272"
+           style="font-size:48px;font-style:italic;-inkscape-font-specification:Ubuntu Italic" /></flowRegion><flowPara
+         id="flowPara3098">FIND</flowPara></flowRoot>    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path3104"
+       sodipodi:sides="3"
+       sodipodi:cx="410.83333"
+       sodipodi:cy="33.333333"
+       sodipodi:r1="28.345586"
+       sodipodi:r2="14.172791"
+       sodipodi:arg1="-0.029403288"
+       sodipodi:arg2="1.0177943"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 439.16668,32.499999 418.27752,45.39369 397.38836,58.287386 396.66668,33.749998 395.94499,9.2126113 417.55583,20.856308 z"
+       inkscape:transform-center-x="-6.7224894"
+       inkscape:transform-center-y="0.41666667" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 400,43.333333 -143.33333,0"
+       id="path3106"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 400,14.166667 -140,0"
+       id="path3108"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 400.033,28.9 -142.5,0"
+       id="path3110"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

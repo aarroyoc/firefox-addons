@@ -99,8 +99,8 @@ if(options.loadReason=="upgrade"){
   }
 });
 var shareHotKey = Hotkey({
-  //combo: prefs.hotkey,
-  combo: "accel-shift-s",
+  combo: prefs.hotkey,
+  //combo: "accel-shift-s",
   onPress: function() {
     ShareURL(tab.activeTab.url);
   }
