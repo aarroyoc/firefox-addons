@@ -2,7 +2,7 @@
   "name" : "DivFind",
   "version" : "1.2",
   "description" : "Search in all your search engines at the same time",
-  "launch_path" : "/divfind.html",
+  "launch_path" : "/divfind.html?SEARCH=NULL&JSON=NULL",
   "icons" : {
     "128" : "/divfind128.png"
   },

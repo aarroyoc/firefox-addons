@@ -135,7 +135,7 @@ function createUI(divfind)
 				}
 				if(0==divfind.length)
 				{
-					var section=document.createElement("p");
+					var section=document.createElement("h2");
 					var a=document.createElement("a");
 					a.textContent="You don't have any search engine. Go here and configure one.";
 					a.href="javascript:window.location='add.html?SEARCH=NULL&JSON=NULL'";

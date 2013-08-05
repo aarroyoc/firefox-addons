@@ -150,18 +150,23 @@ function doManage(JSON)
 }
 function getSearchEngines(callback)
 {
-	var jsonstr=atob(getUrlVars()["JSON"]);
-	if(jsonstr=="" || jsonstr=="NULL" || jsonstr==undefined)
+	try{
+		var jsonstr=atob(getUrlVars()["JSON"]);
+		if(jsonstr=="" || jsonstr=="NULL" || jsonstr==undefined)
+		{
+			callback("NULL");
+		}else{
+			try{
+				var search_engines=JSON.parse(jsonstr);
+				//return search_engines;
+				callback(search_engines);
+			}catch(e){
+				callback("NULL");		
+			}
+		}
+	}catch(e)
 	{
 		callback("NULL");
-	}else{
-		try{
-			var search_engines=JSON.parse(jsonstr);
-			//return search_engines;
-			callback(search_engines);
-		}catch(e){
-			callback("NULL");		
-		}
 	}
 	
 }
