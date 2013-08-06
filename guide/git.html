@@ -9,8 +9,73 @@ body{
 }
 </style>
 <body>
-
-
-
+  <header>
+    <h1>GIT guide for firefox-addons</h1>
+    <p>These are quick git commands to use with Firefox-addons</p>
+  </header>
+  <article>
+    <section>
+      <h3>Get a working copy</h3>
+      <code>git clone git://www.github.com/AdrianArroyoCalle/firefox-addons.git</code>
+    </section>
+    <section>
+      <h3>Update the code</h3>
+      <code>git pull</code>
+    </section>
+    <section>
+      <h3>Do a commit (always do this)</h3>
+      <code>git commit -a -m "Message"</code>
+    </section>
+    <section>
+      <h3>Adding files/Removing files/Moving files</h3>
+      <code>git add file.ext</code>
+      <code>git rm file.ext</code>
+      <code>git mv file.ext</code>
+    </section>
+    <section>
+      <h3>See a list of commits</h3>
+      <code>git log</code>
+    </section>
+    <section>
+      <h3>Delete a change</h3>
+      <code>git reset --hard COMMIT_NAME</code>
+    </section>
+    <section>
+      <h3>Get a patch</h3>
+      <code>git diff > mychanges.patch</code>
+    </section>
+    <section>
+      <h3>Apply a patch</h3>
+      <code>git apply mychanges.patch</code>
+    </section>
+    <section>
+      <h3>Merge changes</h3>
+      <code>git push</code>
+    </section>
+    <section>
+      <h3>Do a branch</h3>
+      <code>git checkout -b BRANCH_NAME</code>
+    </section>
+    <section>
+      <h3>Change to a branch</h3>
+      <code>git checkout BRANCH_NAME</code>
+    </section>
+    <section>
+      <h3>Merge a branch</h3>
+      <code>git merge BRANCH_NAME</code>
+    </section>
+    <section>
+      <h3>Delete an old branch</h3>
+      <code>git branch -d BRANCH_NAME</code>
+    </section>
+    <section>
+      <h3>Get branch list</h3>
+      <code>git branch</code>
+    </section>
+    
+  </article>
+  <footer>
+    
+  </footer>
 </body>
 </html>
