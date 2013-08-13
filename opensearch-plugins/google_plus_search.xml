@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <!-- Created on Mon, 12 Aug 2013 11:58:10 GMT -->
+  <ShortName>Search Google+</ShortName>
+  <Description>Google+ OpenSearch Engine</Description>
+  <Url type="text/html" method="get" template="http://plus.google.com/s/{searchTerms}"/>
+  <Image width="16" height="16">http://mycroftproject.com/updateos.php/id0/google_plus_search.png</Image>
+  <Developer>Adrián Arroyo Calle</Developer>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>http://plus.google.com/s/{searchTerms}</moz:SearchForm>
+  <Url type="application/opensearchdescription+xml" rel="self" template="http://mycroftproject.com/updateos.php/id0/google_plus_search.xml"/>
+</OpenSearchDescription>
