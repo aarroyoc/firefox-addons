@@ -32,142 +32,278 @@
 		if(cacheTrash.isDirectory())
 			alert("Cache trash dir");
 		Minidumps*/
-		var minidumps=FileUtils.getDir("ProfD",["minidumps"],false);
-		if(minidumps.exists())
-		{
-			addItem(true,"Minidumps","Mozilla Crash Reports",function(){
-				/*remove minidumps*/
-				var minidumpsdel=FileUtils.getDir("ProfD",["minidumps"],false);
-				if(minidumpsdel.isDirectory() && minidumpsdel.isWritable())
-				{
-					minidumpsdel.remove(true);
-					addLogger("[OK] Minidumps removed");
-				}else{
-					addLogger("[ERROR] Minidumps doesn't exist");
-				}
-			});
-		}
+		try{
+			var minidumps=FileUtils.getDir("ProfD",["minidumps"],false);
+			if(minidumps.exists())
+			{
+				addItem(true,"Minidumps","Mozilla Crash Reports",function(){
+					/*remove minidumps*/
+					var minidumpsdel=FileUtils.getDir("ProfD",["minidumps"],false);
+					if(minidumpsdel.isDirectory() && minidumpsdel.isWritable())
+					{
+						minidumpsdel.remove(true);
+						addLogger("[OK] Minidumps removed");
+					}else{
+						addLogger("[ERROR] Minidumps doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 		/* Thumbnails-old*/
-		var thumbnailsOld=FileUtils.getDir("ProfD",["thumbnails-old"],false);
-		if(thumbnailsOld.exists())
-		{
-			addItem(true,"Thumbnails-Old","Old thumbnails of websites",function(){
-				var deldir=FileUtils.getDir("ProfD",["thumbnails-old"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Thumbnails-Old removed");
-				}else{
-					addLogger("[ERROR] Thumbnails-Old doesn't exist");
-				}
-			});
-		}
+		try{
+			var thumbnailsOld=FileUtils.getDir("ProfD",["thumbnails-old"],false);
+			if(thumbnailsOld.exists())
+			{
+				addItem(true,"Thumbnails-Old","Old thumbnails of websites",function(){
+					var deldir=FileUtils.getDir("ProfD",["thumbnails-old"],false);
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Thumbnails-Old removed");
+					}else{
+						addLogger("[ERROR] Thumbnails-Old doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 		/* safebrowsing-to_delete */
-		var safeToDel=FileUtils.getDir("ProfD",["safebrowsing-to_delete"],false);
-		if(safeToDel.exists())
-		{
-			addItem(true,"Safe browsing to delete","Old safe browsing config files",function(){
-				var deldir=FileUtils.getDir("ProfD",["safebrowsing-to_delete"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Safe browsing to delete removed");
-				}else{
-					addLogger("[ERROR] Safe browsing doesn't exist");
-				}
-			});
-		}
+		try{
+			var safeToDel=FileUtils.getDir("ProfD",["safebrowsing-to_delete"],false);
+			if(safeToDel.exists())
+			{
+				addItem(true,"Safe browsing to delete","Old safe browsing config files",function(){
+					var deldir=FileUtils.getDir("ProfD",["safebrowsing-to_delete"],false);
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Safe browsing to delete removed");
+					}else{
+						addLogger("[ERROR] Safe browsing doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 		/* safebrowsing-backup */
-		var safeToDel1=FileUtils.getDir("ProfD",["safebrowsing-backup"],false);
-		if(safeToDel1.exists())
-		{
-			addItem(true,"Safe browsing backup","Backup files of Safe Browsing",function(){
-				var deldir=FileUtils.getDir("ProfD",["safebrowsing-backup"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Safe browsing backup removed");
-				}else{
-					addLogger("[ERROR] Safe browsing doesn't exist");
-				}
-			});
-		}
+		try{
+			var safeToDel1=FileUtils.getDir("ProfD",["safebrowsing-backup"],false);
+			if(safeToDel1.exists())
+			{
+				addItem(true,"Safe browsing backup","Backup files of Safe Browsing",function(){
+					var deldir=FileUtils.getDir("ProfD",["safebrowsing-backup"],false);
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Safe browsing backup removed");
+					}else{
+						addLogger("[ERROR] Safe browsing doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 		/*bookmarkbackups*/
-		var bookmarkbackups=FileUtils.getDir("ProfD",["bookmarksbackups"],false);
-		if(bookmarkbackups.exists())
-		{
-			addItem(true,"Bookmarks backups","Backups of the bookmarks",function(){
-				var deldir=FileUtils.getDir("ProfD",["bookmarksbackups"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Bookmarks backups removed");
-				}else{
-					addLogger("[ERROR] Bookmarks backups doesn't exist");
-				}
-			});
-		}
+		try{
+			var bookmarkbackups=FileUtils.getDir("ProfD",["bookmarksbackups"],false);
+			if(bookmarkbackups.exists())
+			{
+				addItem(true,"Bookmarks backups","Backups of the bookmarks",function(){
+					var deldir=FileUtils.getDir("ProfD",["bookmarksbackups"],false);
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Bookmarks backups removed");
+					}else{
+						addLogger("[ERROR] Bookmarks backups doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 		/* weave/logs */
-		var weavelogs=FileUtils.getDir("ProfD",["weave/logs"],false);
-		if(weavelogs.exists())
-		{
-			addItem(true,"Weave logs","Logs of weave function",function(){
-				var deldir=FileUtils.getDir("ProfD",["weave/logs"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Weave logs removed");
-				}else{
-					addLogger("[ERROR] Weave logs doesn't exist");
-				}
-			});
-		}
+		try{
+			var weavelogs=FileUtils.getDir("ProfD",["weave"],false);
+			weavelogs.append("logs");
+			if(weavelogs.exists())
+			{
+				addItem(true,"Weave logs","Logs of weave function",function(){
+					var deldir=FileUtils.getDir("ProfD",["weave"],false);
+					deldir.append("logs");
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Weave logs removed");
+					}else{
+						addLogger("[ERROR] Weave logs doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 		/* healthreport */
-		var health=FileUtils.getDir("ProfD",["healthreport"],false);
-		if(health.exists())
-		{
-			addItem(true,"Health report","Data send to Mozilla for improvements",function(){
-				var deldir=FileUtils.getDir("ProfD",["healthreport"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Health report removed");
-				}else{
-					addLogger("[ERROR] Health report doesn't exist");
-				}
-			});
-		}
+		try{
+			var health=FileUtils.getDir("ProfD",["healthreport"],false);
+			if(health.exists())
+			{
+				addItem(true,"Health report","Data send to Mozilla for improvements",function(){
+					var deldir=FileUtils.getDir("ProfD",["healthreport"],false);
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Health report removed");
+					}else{
+						addLogger("[ERROR] Health report doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 		/* chatzilla/logs */
-		var chatzillalogs=FileUtils.getDir("ProfD",["chatzilla/logs"],false);
-		if(chatzillalogs.exists())
-		{
-			addItem(true,"Chatzilla logs","Logs of the IRC Client Chatzilla",function(){
-				var deldir=FileUtils.getDir("ProfD",["chatzilla/logs"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Chatzilla logs removed");
-				}else{
-					addLogger("[ERROR] Chatzilla logs doesn't exist");
-				}
-			});
-		}
+		try{
+			var chatzillalogs=FileUtils.getDir("ProfD",["chatzilla"],false);
+			chatzillalogs.append("logs");
+			if(chatzillalogs.exists())
+			{
+				addItem(true,"Chatzilla logs","Logs of the IRC Client Chatzilla",function(){
+					var deldir=FileUtils.getDir("ProfD",["chatzilla"],false);
+					deldir.append("logs");
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Chatzilla logs removed");
+					}else{
+						addLogger("[ERROR] Chatzilla logs doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
 
 		/* chatzilla/downloads */
-		var chatzilladown=FileUtils.getDir("ProfD",["chatzilla/downloads"],false);
-		if(chatzilladown.exists())
-		{
-			addItem(true,"Chatzilla downloads","Downloads of the IRC Client Chatzilla",function(){
-				var deldir=FileUtils.getDir("ProfD",["chatzilla/downloads"],false);
-				if(deldir.isDirectory() && deldir.isWritable())
-				{
-					deldir.remove(true);
-					addLogger("[OK] Chatzilla downloads removed");
-				}else{
-					addLogger("[ERROR] Chatzilla downloads doesn't exist");
+		try{
+			var chatzilladown=FileUtils.getDir("ProfD",["chatzilla"],false);
+			chatzilladown.append("downloads");
+			if(chatzilladown.exists())
+			{
+				addItem(true,"Chatzilla downloads","Downloads of the IRC Client Chatzilla",function(){
+					var deldir=FileUtils.getDir("ProfD",["chatzilla"],false);
+					deldir.append("downloads");
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Chatzilla downloads removed");
+					}else{
+						addLogger("[ERROR] Chatzilla downloads doesn't exist");
+					}
+				});
+			}
+		}catch(e){}
+		/* Cache */
+		try{
+			var cache=FileUtils.getDir("ProfD",["Cache"],false);
+			if(cache.exists())
+			{
+				addItem(true,"Cache","Cache of the browser",function(){
+					var deldir=FileUtils.getDir("ProfD",["Cache"],false);
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] Cache removed");
+					}else{
+						addLogger("[ERROR] Cache doesn't exist");
+					}
+				});
+
+			}
+		}catch(e){}
+		/* extensions */
+		try{
+			var ext=FileUtils.getDir("ProfD",["extensions"],false);
+			if(ext.exists())
+			{
+				var dirs=ext.directoryEntries;
+				while(dirs.hasMoreElements())
+				{	
+				
+					var extension=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);	
+					addItem(false,extension.leafName,"Extension",function(){
+						var deldir=FileUtils.File(extension.path);
+						if(deldir.exists() && deldir.isWritable() && deldir.isFile())
+						{
+							deldir.remove(true);
+							addLogger("[OK] Extension removed");
+						}else{
+							addLogger("[ERROR] Extension doesn't exist");
+						}
+					});
+
 				}
-			});
-		}
+			}
+		}catch(e){}
+		/* indexedDB */
+		try{
+			var indexedDB=FileUtils.getDir("ProfD",["indexedDB"],false);
+			if(indexedDB.exists())
+			{
+				var dirs=indexedDB.directoryEntries;
+				while(dirs.hasMoreElements())
+				{
+					var database=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);
+					addItem(false,database.leafName,"IndexedDB database",function(){
+						var deldir=FileUtils.File(database.path);
+						if(deldir.exists() && deldir.isWritable() && deldir.isFile())
+						{
+							deldir.remove(true);
+							addLogger("[OK] IndexedDB database removed");
+						}else{
+							addLogger("[ERROR] IndexedDB database doesn't exist");
+						}
+					});
+
+				}
+			}
+		}catch(e){}
+		/* searchplugins */
+		try{
+			var searchp=FileUtils.getDir("ProfD",["searchplugins"],false);
+			if(searchp.exists())
+			{
+				var dirs=searchp.directoryEntries;
+				while(dirs.hasMoreElements())
+				{
+					var database=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);
+					addItem(false,database.leafName,"Search engine",function(){
+						var deldir=FileUtils.File(database.path);
+						if(deldir.exists() && deldir.isWritable() && deldir.isFile())
+						{
+							deldir.remove(true);
+							addLogger("[OK] Search engine removed");
+						}else{
+							addLogger("[ERROR] Search engine doesn't exist");
+						}
+					});
+
+				}
+			}
+		}catch(e){}
+		/* Mail */
+		try{
+			var mail=FileUtils.getDir("ProfD",["Mail"],false);
+			if(mail.exists())
+			{
+				var dirs=searchp.directoryEntries;
+				while(dirs.hasMoreElements())
+				{
+					var database=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);
+					addItem(false,database.leafName,"Mail dir",function(){
+						var deldir=FileUtils.getDir("ProfD",["Mail"]);
+						deldir.append(extension.leafName);
+						if(deldir.exists() && deldir.isWritable() && deldir.isDirectory())
+						{
+							deldir.remove(true);
+							addLogger("[OK] Mail folder removed");
+						}else{
+							addLogger("[ERROR] Mail folder doesn't exist");
+						}
+					});
+
+				}
+			}
+		}catch(e){}
 		/* End analize*/
 		var doAnalize=document.getElementById("doAnalize");
 		var doClean=document.getElementById("doClean");
@@ -184,7 +320,7 @@
 		input.type="checkbox";
 		input.name=name;
 		input.id=idCallbacks.length;
-		input.value=enabled_by_default;
+		input.checked=enabled_by_default;
 		div.appendChild(input);
 		div2.textContent=name+"|"+description;
 		div.appendChild(div2);
