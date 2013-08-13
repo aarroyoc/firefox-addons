@@ -45,6 +45,18 @@
 				}
 			});
 		}
+		var thumbnailsOld=FileUtils.getDir("ProfD",["thumbnails-old"],false);
+		if(thumbnailsOld.isDirectory())
+		{
+			addItem(true,"Thumbnails-Old","Old thumbnails of websites",function(){
+				var deldir=FileUtils.getDir("ProfD",["thumbnails-old"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Thumbnails-Old removed");
+				}
+			});
+		}
 		var doAnalize=document.getElementById("doAnalize");
 		var doClean=document.getElementById("doClean");
 		doAnalize.disabled=true;
