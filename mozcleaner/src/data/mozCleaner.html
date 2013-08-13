@@ -33,7 +33,7 @@
 			alert("Cache trash dir");
 		Minidumps*/
 		var minidumps=FileUtils.getDir("ProfD",["minidumps"],false);
-		if(minidumps.isDirectory())
+		if(minidumps.exists())
 		{
 			addItem(true,"Minidumps","Mozilla Crash Reports",function(){
 				/*remove minidumps*/
@@ -42,11 +42,14 @@
 				{
 					minidumpsdel.remove(true);
 					addLogger("[OK] Minidumps removed");
+				}else{
+					addLogger("[ERROR] Minidumps doesn't exist");
 				}
 			});
 		}
+		/* Thumbnails-old*/
 		var thumbnailsOld=FileUtils.getDir("ProfD",["thumbnails-old"],false);
-		if(thumbnailsOld.isDirectory())
+		if(thumbnailsOld.exists())
 		{
 			addItem(true,"Thumbnails-Old","Old thumbnails of websites",function(){
 				var deldir=FileUtils.getDir("ProfD",["thumbnails-old"],false);
@@ -54,9 +57,118 @@
 				{
 					deldir.remove(true);
 					addLogger("[OK] Thumbnails-Old removed");
+				}else{
+					addLogger("[ERROR] Thumbnails-Old doesn't exist");
 				}
 			});
 		}
+		/* safebrowsing-to_delete */
+		var safeToDel=FileUtils.getDir("ProfD",["safebrowsing-to_delete"],false);
+		if(safeToDel.exists())
+		{
+			addItem(true,"Safe browsing to delete","Old safe browsing config files",function(){
+				var deldir=FileUtils.getDir("ProfD",["safebrowsing-to_delete"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Safe browsing to delete removed");
+				}else{
+					addLogger("[ERROR] Safe browsing doesn't exist");
+				}
+			});
+		}
+		/* safebrowsing-backup */
+		var safeToDel1=FileUtils.getDir("ProfD",["safebrowsing-backup"],false);
+		if(safeToDel1.exists())
+		{
+			addItem(true,"Safe browsing backup","Backup files of Safe Browsing",function(){
+				var deldir=FileUtils.getDir("ProfD",["safebrowsing-backup"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Safe browsing backup removed");
+				}else{
+					addLogger("[ERROR] Safe browsing doesn't exist");
+				}
+			});
+		}
+		/*bookmarkbackups*/
+		var bookmarkbackups=FileUtils.getDir("ProfD",["bookmarksbackups"],false);
+		if(bookmarkbackups.exists())
+		{
+			addItem(true,"Bookmarks backups","Backups of the bookmarks",function(){
+				var deldir=FileUtils.getDir("ProfD",["bookmarksbackups"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Bookmarks backups removed");
+				}else{
+					addLogger("[ERROR] Bookmarks backups doesn't exist");
+				}
+			});
+		}
+		/* weave/logs */
+		var weavelogs=FileUtils.getDir("ProfD",["weave/logs"],false);
+		if(weavelogs.exists())
+		{
+			addItem(true,"Weave logs","Logs of weave function",function(){
+				var deldir=FileUtils.getDir("ProfD",["weave/logs"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Weave logs removed");
+				}else{
+					addLogger("[ERROR] Weave logs doesn't exist");
+				}
+			});
+		}
+		/* healthreport */
+		var health=FileUtils.getDir("ProfD",["healthreport"],false);
+		if(health.exists())
+		{
+			addItem(true,"Health report","Data send to Mozilla for improvements",function(){
+				var deldir=FileUtils.getDir("ProfD",["healthreport"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Health report removed");
+				}else{
+					addLogger("[ERROR] Health report doesn't exist");
+				}
+			});
+		}
+		/* chatzilla/logs */
+		var chatzillalogs=FileUtils.getDir("ProfD",["chatzilla/logs"],false);
+		if(chatzillalogs.exists())
+		{
+			addItem(true,"Chatzilla logs","Logs of the IRC Client Chatzilla",function(){
+				var deldir=FileUtils.getDir("ProfD",["chatzilla/logs"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Chatzilla logs removed");
+				}else{
+					addLogger("[ERROR] Chatzilla logs doesn't exist");
+				}
+			});
+		}
+
+		/* chatzilla/downloads */
+		var chatzilladown=FileUtils.getDir("ProfD",["chatzilla/downloads"],false);
+		if(chatzilladown.exists())
+		{
+			addItem(true,"Chatzilla downloads","Downloads of the IRC Client Chatzilla",function(){
+				var deldir=FileUtils.getDir("ProfD",["chatzilla/downloads"],false);
+				if(deldir.isDirectory() && deldir.isWritable())
+				{
+					deldir.remove(true);
+					addLogger("[OK] Chatzilla downloads removed");
+				}else{
+					addLogger("[ERROR] Chatzilla downloads doesn't exist");
+				}
+			});
+		}
+		/* End analize*/
 		var doAnalize=document.getElementById("doAnalize");
 		var doClean=document.getElementById("doClean");
 		doAnalize.disabled=true;
