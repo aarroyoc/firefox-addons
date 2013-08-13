@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mozCleaner</title>
+	<meta charset="utf-8"/>
+	<script>
+	/*
+	* mozCleaner.js
+	*/
+	var idCallbacks=new Array;
+	Components.utils.import("resource://gre/modules/FileUtils.jsm");
+	function cleanIt()
+	{
+		var inputs=document.getElementsByTagName("input");
+		for(var i=0;i<inputs.length;i++)
+		{
+			if(inputs[i].checked)
+			{
+				/*
+				if(idCallbacks[i].id==inputs[i].id)
+				{*/
+					idCallbacks[inputs[i].id].callback();
+				/*}*/
+			}
+		}
+
+	}
+	function analizeIt()
+	{
+		/*Cache.Trash
+		var cacheTrash=FileUtils.getDir("ProfD",["Cache.Trash*"],true);
+		if(cacheTrash.isDirectory())
+			alert("Cache trash dir");
+		Minidumps*/
+		var minidumps=FileUtils.getDir("ProfD",["minidumps"],false);
+		if(minidumps.isDirectory())
+		{
+			addItem(true,"Minidumps","Mozilla Crash Reports",function(){
+				/*remove minidumps*/
+				var minidumpsdel=FileUtils.getDir("ProfD",["minidumps"],false);
+				if(minidumpsdel.isDirectory() && minidumpsdel.isWritable())
+				{
+					minidumpsdel.remove(true);
+					addLogger("[OK] Minidumps removed");
+				}
+			});
+		}
+		var doAnalize=document.getElementById("doAnalize");
+		var doClean=document.getElementById("doClean");
+		doAnalize.disabled=true;
+		doClean.disabled=false;
+		
+	}
+	function addItem(enabled_by_default, name, description,function_callback)
+	{
+		var results=document.getElementById("analize");
+		var div=document.createElement("div");
+		var div2=document.createElement("div");
+		var input=document.createElement("input");
+		input.type="checkbox";
+		input.name=name;
+		input.id=idCallbacks.length;
+		input.value=enabled_by_default;
+		div.appendChild(input);
+		div2.textContent=name+"|"+description;
+		div.appendChild(div2);
+		results.appendChild(div);
+		idCallbacks.push({id: input.id, callback: function(){function_callback();}});
+	
+	}
+	function addLogger(text)
+	{
+		var logger=document.getElementById("logger");
+		var li=document.createElement("li");
+		li.textContent=text;
+		logger.appendChild(li);
+	}
+	window.addEventListener("DOMContentLoaded",function(){
+		var results=document.getElementById("analize");
+		var doAnalize=document.getElementById("doAnalize");
+		var doClean=document.getElementById("doClean");
+	
+		doAnalize.addEventListener("click",function(){
+			analizeIt();
+
+		});
+		doClean.addEventListener("click",function(){
+			cleanIt();
+		});
+
+	});
+
+
+	</script>
+</head>
+<body>
+	<h1>Welcome to mozCleaner</h1>
+	<div style="overflow: auto;" id="analize">
+
+	</div>
+	<button id="doAnalize">Analize</button>
+	<button id="doClean" disabled>Clean</button>
+	<ul id="logger">
+		<li>Starting mozCleaner</li>
+	</ul>
+</body>
+</html>

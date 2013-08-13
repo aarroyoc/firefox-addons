@@ -1,0 +1,12 @@
+{
+  "name": "mozcleaner",
+  "fullName": "mozCleaner",
+  "id": "mozcleaner@divel",
+  "description": "Cleans your Firefox, Thunderbird and SeaMonkey",
+  "author": "Adrián Arroyo Calle",
+  "license": "GPL 2.0",
+  "version": "1.0",
+  "homepage" : "http://github.com/AdrianArroyoCalle/firefox-addons",
+  "icon" : "data/mozCleaner-32.png",
+  "icon64" : "data/mozCleaner-64.png"
+}
