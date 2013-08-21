@@ -17,11 +17,49 @@
   <article>
     <section>
       <h3>Get a working copy</h3>
-      <code>svn checkout https://github.com/AdrianArroyoCalle/firefox-addons</code>
+      <code>svn checkout https://github.com/AdrianArroyoCalle/firefox-addons --username=USERNAME</code>
     </section>
     <section>
       <h3>Update the code</h3>
       <code>svn update</code>
+    </section>
+    <section>
+      <h3>Do a commit</h3>
+      <code>svn commit -m "MESSAGE"</code>
+    </section>
+    <section>
+      <h3>Adding files/Removing files/Moving files</h3>
+      <code>svn add FILE</code>
+      <code>svn delete FILE</code>
+      <code>svn move SRC DEST</code>
+    </section>
+    <section>
+      <h3>See a list of changes/commits</h3>
+      <code>svn log</code>
+    </section>
+    <section>
+      <h3>Delete a change</h3>
+      <code>svn revert</code><small>Before a commit</small>
+    </section>
+    <section>
+      <h3>Get a patch</h3>
+      <code>svn diff > mypatch.patch</code>
+    </section>
+    <section>
+      <h3>Apply a patch</h3>
+      <code>patch -p0 mypatch.patch</code>
+    </section>
+    <section>
+      <h3>Do a branch</h3>
+      <code>svn copy . BRANCH_PATH -m "MESSAGE"</code>
+    </section>
+    <section>
+      <h3>Change to a branch</h3>
+      <code>svn switch BRANCH-PATH</code>
+    </section>
+    <section>
+      <h3>Merge a branch</h3>
+      <code>svn merge -r REV:HEAD BRANCH_PATH</code>
     </section>
   </article>
 </body>
