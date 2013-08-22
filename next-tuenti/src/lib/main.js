@@ -29,9 +29,9 @@ function SaveImage(imageurl)
 			var desktop=require("system").pathFor("Desk");
 			desktop=file.join(desktop,"NextTuenti.jpeg");
 			var imgfile=file.open(desktop,"wb");
-			//var byteArray = new Uint8Array(img);
 			imgfile.write(img);
 			imgfile.close();
+			Notify("Imagen guardada en el escritorio");
 		}
 
 	}
@@ -47,19 +47,21 @@ function GenerateCSS()
 	CSSArray.push(".counter{background: "+storage.notificationsColor+";}");
 	return CSSArray;
 }
+function Notify(text)
+{
+	var notifications=require("notifications");
+	notifications.notify({
+		title: "Next Tuenti",
+		text: text,
+		iconURL: data.url("tuenti64.png")
+	});
+
+}
 function ShareURL(url)
 {
 	var TuentiURL="http://tuenti.com/share?url="+encodeURIComponent(url);
 	require("tabs").open(TuentiURL);
-	var notifications = require("notifications");
-	notifications.notify({
-		title: "Next Tuenti",
-		text: "Compartiendo "+url+" en Tuenti",
-		iconURL: data.url("tuenti64.png"),
-		onClick: function (data) {
-		    //console.log("Click");
-		}
-	});
+	Notify("Compartiendo "+url+" en Tuenti");
 
 }
 exports.main=function(options)
@@ -110,6 +112,16 @@ exports.main=function(options)
 	//PageMod for styles
 	var nextMod=require("page-mod").PageMod({
 		include: "*.tuenti.com",
-		contentStyle: GenerateCSS()
+		contentStyle: GenerateCSS(),
+		contentScript: 'var counter=document.getElementById("notificationsBubbleCount");'+
+			'if(counter)'+
+			'self.port.emit("notifications",counter.textContent);',
+		onAttach: function(worker)
+		{
+			worker.port.on("notifications",function(number){
+				Notify("Tienes "+number+" notificaciones");
+			});
+		}
 	});
+
 }
