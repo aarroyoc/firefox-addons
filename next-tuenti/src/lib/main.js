@@ -17,6 +17,20 @@ function OpenStyleWindow()
 		storage.notificationsColor=notificationsColor;
 	});
 }
+function OpenGadgetWindow()
+{
+	var panel=require("panel").Panel({
+		width: 800,
+		height: 600,
+		contentURL: data.url("gadget.html"),
+		contentScriptFile: data.url("gadget.js")
+	});
+	panel.show();
+	panel.port.emit("default",storage.gadget);
+	panel.port.on("apply",function(gadget){
+		storage.gadget=gadget;
+	});
+}
 function SaveImage(imageurl)
 {
 	var img;
@@ -69,10 +83,11 @@ exports.main=function(options)
 	if(options.loadReason=="install")
 	{
 		//Create pre-generated CSS
-		//storage.colorHeader="#0e87c8";
 		storage.colorHeader="#0e87c8";
-		storage.backgroundImage=""; //WORKS
-		storage.notificationsColor="#0e87c8"; //WORKS
+		storage.backgroundImage=""; 
+		storage.notificationsColor="#0e87c8";
+		//Create pre-generated Gadgets
+		storage.gadget="<h1>Bienvenido a Next Tuenti</h1>";
 	}
 	var cm = require("context-menu");
 	var shareItem = cm.Item({
@@ -94,7 +109,6 @@ exports.main=function(options)
 	});
 	var downloadItem = cm.Item({
 		label: "Descargar imagen",
-		context: cm.URLContext("*.tuenti.com"),
 		contentScript: 'self.on("click",function(){'+
 			'self.postMessage(document.getElementById("photo_image").src);'+
 			'});',
@@ -103,24 +117,31 @@ exports.main=function(options)
 			SaveImage(imageurl);
 		}
 	});
+	var gadgetItem = cm.Item({
+		label: "Mis gadgets",
+		contentScript: 'self.on("click", function(){self.postMessage();});',
+		onMessage: function()
+		{
+			OpenGadgetWindow();
+		}
+	});
 	var menu=cm.Menu({
 		label: "Next Tuenti",
 		image: data.url("tuenti64.png"),
-		items: [shareItem,stylesItem,downloadItem]
+		items: [shareItem,stylesItem,downloadItem,gadgetItem]
 
 	});
 	//PageMod for styles
 	var nextMod=require("page-mod").PageMod({
 		include: "*.tuenti.com",
 		contentStyle: GenerateCSS(),
-		contentScript: 'var counter=document.getElementById("notificationsBubbleCount");'+
-			'if(counter)'+
-			'self.port.emit("notifications",counter.textContent);',
+		contentScriptFile: data.url("nextmod.js"),
 		onAttach: function(worker)
 		{
 			worker.port.on("notifications",function(number){
 				Notify("Tienes "+number+" notificaciones");
 			});
+			worker.port.emit("gadget",storage.gadget);
 		}
 	});
 
