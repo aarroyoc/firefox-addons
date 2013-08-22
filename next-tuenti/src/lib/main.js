@@ -1,5 +1,6 @@
 const data=require("self").data;
 const storage=require("simple-storage").storage;
+const file=require("file");
 function OpenStyleWindow()
 {
 	var panel=require("panel").Panel({
@@ -16,12 +17,34 @@ function OpenStyleWindow()
 		storage.notificationsColor=notificationsColor;
 	});
 }
+function SaveImage(imageurl)
+{
+	var img;
+	var {Cc, Ci} = require("chrome");
+	var imageXHR = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIJSXMLHttpRequest);
+	imageXHR.onload=function(){
+		if(imageXHR.readyState==4)
+		{
+			img=imageXHR.response;
+			var desktop=require("system").pathFor("Desk");
+			desktop=file.join(desktop,"NextTuenti.jpeg");
+			var imgfile=file.open(desktop,"wb");
+			//var byteArray = new Uint8Array(img);
+			imgfile.write(img);
+			imgfile.close();
+		}
+
+	}
+	imageXHR.overrideMimeType("text/plain; charset=x-user-defined");
+	imageXHR.open("GET",imageurl,true);
+	imageXHR.send();
+}
 function GenerateCSS()
 {
 	var CSSArray=new Array;
 	CSSArray.push(".header{background: "+storage.colorHeader+";}");
 	CSSArray.push(".canvas{background-image: url('"+storage.backgroundImage+"');}");
-	CSSArray.push(".notifs{background: "+storage.notificationsColor+";}");
+	CSSArray.push(".counter{background: "+storage.notificationsColor+";}");
 	return CSSArray;
 }
 function ShareURL(url)
@@ -67,10 +90,21 @@ exports.main=function(options)
 			OpenStyleWindow();
 		}
 	});
+	var downloadItem = cm.Item({
+		label: "Descargar imagen",
+		context: cm.URLContext("*.tuenti.com"),
+		contentScript: 'self.on("click",function(){'+
+			'self.postMessage(document.getElementById("photo_image").src);'+
+			'});',
+		onMessage: function(imageurl)
+		{
+			SaveImage(imageurl);
+		}
+	});
 	var menu=cm.Menu({
 		label: "Next Tuenti",
 		image: data.url("tuenti64.png"),
-		items: [shareItem,stylesItem]
+		items: [shareItem,stylesItem,downloadItem]
 
 	});
 	//PageMod for styles
