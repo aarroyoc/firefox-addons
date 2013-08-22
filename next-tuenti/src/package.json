@@ -5,5 +5,8 @@
   "description": "Next Tuenti es un complemento que añade funcionalidades extra y más interación de la red social Tuenti con Firefox",
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
-  "version": "1.0"
+  "version": "1.0",
+  "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
+  "icon" : "data/tuenti32.png",
+  "icon64" : "data/tuenti64.png"
 }
