@@ -1,0 +1,9 @@
+{
+  "name": "next-tuenti",
+  "fullName": "Next Tuenti",
+  "id": "next-tuenti@divel",
+  "description": "Next Tuenti es un complemento que añade funcionalidades extra y más interación de la red social Tuenti con Firefox",
+  "author": "Adrián Arroyo Calle",
+  "license": "GPL 2.0",
+  "version": "1.0"
+}

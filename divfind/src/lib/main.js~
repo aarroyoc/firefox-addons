@@ -216,6 +216,7 @@ exports.main=function(options){
 		}
 		if(options.loadReason=="upgrade"){
 		require("tabs").open(data.url("changelog.html")); //Changelog HTML file
+		require("tabs").open("http://sites.google.com/site/divelonline");	
 		}
 
 	}

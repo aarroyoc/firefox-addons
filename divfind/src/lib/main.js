@@ -211,7 +211,6 @@ exports.main=function(options){
 	if(fennec || firefox)
 	{
 		if(options.loadReason=="install"){
-		require("tabs").open(data.url("welcome.html")); //Welcome HTML file
 		require("tabs").open("http://sites.google.com/site/divelonline");	
 		}
 		if(options.loadReason=="upgrade"){
