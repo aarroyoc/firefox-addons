@@ -1,0 +1,54 @@
+{
+  "name": "divtranslate",
+  "fullName": "DivTranslate",
+  "id": "divtranslate@divel",
+  "description": "Translate the selected keywords and statements with the Apertium translate engine",
+  "author": "Adrián Arroyo Calle",
+  "license": "GPL 2.0",
+  "version": "1.0",
+  "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
+  "preferences" : [
+   {
+    "name" : "userlang",
+    "type" : "menulist",
+    "title" : "User language",
+    "description" : "Your user language. Used in QuickTrans",
+    "options" : [
+     {
+      "value" : "en",
+      "label" : "English"
+     },
+     {
+      "value" : "es",
+      "label" : "Spanish"
+     }
+    ],
+    "title" : "Default user lang",
+    "value" : "en"
+   },
+   {
+    "name" : "pagelang",
+    "type" : "menulist",
+    "title" : "Default language to translate",
+    "description" : "Default page language. Used in QuickTrans",
+    "options" : [
+     {
+      "value" : "en",
+      "label" : "English"
+     },
+     {
+      "value" : "es",
+      "label" : "Spanish"
+     }
+    ]
+   },
+   {
+    "name" : "review",
+    "type" : "control",
+    "title" : "Review the addon",
+    "label" : "Review me!"
+   }
+  ],
+  "icon" : "data/divtranslate32.png",
+  "icon64" : "data/divtranslate64.png"
+}

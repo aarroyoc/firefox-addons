@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="divtranslate.svg"
+   inkscape:export-filename="/home/julian/firefox-addons/firefox-addons/divtranslate/src/data/divtranslate64.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs2987" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.5"
+     inkscape:cx="32"
+     inkscape:cy="21.908367"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1360"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       sodipodi:type="star"
+       style="fill:#ffcc00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path2997"
+       sodipodi:sides="8"
+       sodipodi:cx="17.454545"
+       sodipodi:cy="20.545455"
+       sodipodi:r1="19.314706"
+       sodipodi:r2="17.844461"
+       sodipodi:arg1="-0.39623934"
+       sodipodi:arg2="-0.0035402629"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 35.272727,13.09091 35.325062,27.873654 24.90909,38.363639 10.126346,38.415974 -0.36363892,28.000002 -0.41597387,13.217258 9.9999982,2.7272729 24.782742,2.674938 z" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000080;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path3001"
+       sodipodi:sides="8"
+       sodipodi:cx="27.636364"
+       sodipodi:cy="21.090909"
+       sodipodi:r1="8.0699422"
+       sodipodi:r2="7.4556544"
+       sodipodi:arg1="-1.1777383"
+       sodipodi:arg2="-0.78503923"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 30.727273,13.636362 4.365854,4.368989 -0.0022,6.176466 -4.368989,4.365854 -6.176466,-0.0022 -4.365854,-4.368989 0.0022,-6.176466 4.368989,-4.365854 z" />
+    <text
+       xml:space="preserve"
+       x="11.454544"
+       y="46.363636"
+       id="text3003"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"><tspan
+         sodipodi:role="line"
+         id="tspan3005"
+         x="11.454544"
+         y="46.363636" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       x="61.681541"
+       y="48.181816"
+       id="text3007"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3009"
+         x="39.568043"
+         y="48.181816">DivTranslate</tspan></text>
+  </g>
+</svg>
