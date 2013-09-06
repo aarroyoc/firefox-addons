@@ -21,6 +21,18 @@
      {
       "value" : "es",
       "label" : "Spanish"
+     },
+     {
+      "value" : "fr",
+      "label" : "French"
+     },
+     {
+      "value" : "pt",
+      "label" : "Portuguese"
+     },
+     {
+      "value" : "ca",
+      "label" : "Catalan"
      }
     ],
     "title" : "Default user lang",
@@ -39,6 +51,18 @@
      {
       "value" : "es",
       "label" : "Spanish"
+     },
+     {
+      "value" : "fr",
+      "label" : "French"
+     },
+     {
+      "value" : "pt",
+      "label" : "Portuguese"
+     },
+     {
+      "value" : "ca",
+      "label" : "Catalan"
      }
     ]
    },
