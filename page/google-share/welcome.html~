@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>Welcome to Google+ Share</title>
+<style>
+body{
+	background-color: #ff0000;
+	color: #ffffff;
+
+
+}
+</style>
+</head>
+<body>
+<div id="top" style="text-align: center;">
+<h1>Welcome to Google+ Share</h1>
+<img src="icon64.png" alt="Google+ logo">
+<br>
+<p>Google+ Share is the best addon for Google+. If you see an interesting URL and you want to share it, you only need to open the right-click menu and select "Share on Google+". Also you can use the addon-bar widget.</p>
+</div>
+<a href="changelog.html">See changelog</a>
+</body>
+<html>
