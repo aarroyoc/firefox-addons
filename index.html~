@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
   <script type="text/javascript" src="http://widgets.tuenti.com/widgets.js"></script>
   <link rel="stylesheet" href="css/main.css"/>
+  <link rel="canonical" href="http://adrianarroyocalle.github.io/firefox-addons"/>
 
   <title>Firefox-addons</title>
   <meta name="description" content="Mozilla Firefox, SeaMonkey, Thunderbird and Fennec addons created by Adrián Arroyo Calle">
@@ -15,7 +15,7 @@
 
 <body>
   <div class="warning">
-   This page is under construction and some links and data can be broked
+   <h2><em>DivTranslate is now published at AMO (preliminary reviewed)</em></h2>
   </div>
   <div class="wrapper">
     <header>
@@ -41,6 +41,7 @@
 <iframe style="border: 0; width: 728px; height: 90px;" src="http://coinurl.com/get.php?id=15799"></iframe>
 <p>Mozilla Firefox, SeaMonkey, Thunderbird and Fennec addons created by Adrián Arroyo Calle</p>
 <p>See the reference manual for every addon</p>
+<small>The installation links are under CoinURL for support the addons. Also you need to use Firefox to auto-install the addon</small>
           <table class="center">
             <tr><th>Addon name</th><th>Lastest version</th><th>Firefox</th><th>Thunderbird</th><th>SeaMonkey</th><th>Fennec</th><th>Search engine</th><th>Install now</th></tr>
             <tr>
@@ -79,8 +80,26 @@
             <tr><td><a href="page/divfind.html">DivFind</a></td></tr>
             <tr><td><a href="page/next-tuenti.html">Next Tuenti</a></td></tr>
             <tr><td><a href="page/mozcleaner.html">mozCleaner</a></td></tr>
-            <tr><td><a href="page/divhttp.html">DivHTTP</a></td></tr>
-            <tr><td><a href="page/divtranslate">DivTranslate</a></td></tr>
+            <tr>
+		<td><a href="page/divhttp/divhttp.html">DivHTTP</a></td>
+		<td>1.0</td>
+		<td class="yes" ></td>
+		<td class="no"></td>
+		<td class="no"></td>
+		<td class="no"></td>
+		<td class="no"></td>
+		<td><a href="http://cur.lv/3l7jz">INSTALL</a></td>
+	    </tr>
+            <tr>
+		<td><a href="page/divtranslate/welcome.html">DivTranslate</a></td>
+		<td>1.0</td>
+		<td class="yes" ></td>
+		<td class="no"></td>
+		<td class="no"></td>
+		<td class="yes"></td>
+		<td class="no"></td>
+		<td><a href="http://cur.lv/3l6x6">INSTALL</a></td>
+	    </tr>
           </table>
           <div>
             <p>Some addons are made in XUL + chrome.manifest + install.rdf. Other addons are made with the Addon SDK and Bootstrapped APIs. Finally the search engines are OpenSearch Plugins</p>
