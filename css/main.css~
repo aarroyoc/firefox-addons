@@ -21,9 +21,15 @@ iframe{
 .no{
  background-color: rgb(255,0,0);
 }
+.experimental{
+ background-color: yellow;
+}
 .center{
  text-align: center;
  margin-left: auto;
  margin-right: auto; 
+}
+.warning{
+ background-color: yellow;
 }
 
