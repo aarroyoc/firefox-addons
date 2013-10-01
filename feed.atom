@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"/>
+<feed xmlns:atom="http://www.w3.org/2005/Atom">
+  <id>http://adrianarroyocalle.github.io/firefox-addons</id>
+  <title>Firefox-addons</title>
+
+  <link href="http://adrianarroyocalle.github.io/firefox-addons/feed.atom" rel="self"/>
+
+
+  <author>
+
+    <name>Adrián Arroyo Calle<name>
+
+    <email>adrian.arroyocalle@gmail.com<email>
+
+  </author>
+  <!-- Insert new updates here -->
+  <entry>
+
+  <title>mozCleaner preliminary reviewed</title>
+
+  <id>4b13ab56-3b8f-49ea-b647-75458d4f403b</id>
+
+  <summary>mozCleaner is now at AMO<summary>
+
+  <content type="html">
+
+    <![CDATA[ 
+      <h1>mozCleaner preliminary reviewed at AMO</h1>
+      <p>Today, 1st of October of 2013, mozCleaner has been preliminary reviewed at AMO at version 1.0. The URL is: <a href="https://addons.mozilla.org/es/developers/addon/mozcleaner">here</a> and it's avalible for Firefox, Fennec (unstable), SeaMonkey and Thunderbird.
+    ]]>
+
+  </content>
+
+</entry>
+
+
+</feed>
