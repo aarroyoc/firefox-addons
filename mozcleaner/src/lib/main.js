@@ -5,6 +5,7 @@ var firefox=false;
 var thunderbird=false;
 var seamonkey=false;
 var fennec=false;
+var instantbird=false;
 function readContent()
 {
 	return data.load("mozCleaner.html");
@@ -38,7 +39,7 @@ function fennecSetup()
 	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("mozCleaner",selector,function (target){
 		//Open UI for do a cleaning
-		open("data:text/html,"+readContent(),{
+		openDialog("data:text/html,"+readContent(),{
 			name: "mozCleaner",
 			features: {
 				width: 800,
@@ -48,6 +49,56 @@ function fennecSetup()
 			}
 		});
 	});
+}
+function instantbirdUI(domWindow)
+{
+	var document=domWindow.document;
+	var context=document.getElementById("contentAreaContextMenu");
+	var menuitem=document.createElement("menuitem");
+	menuitem.setAttribute("id","mozcleaner-instantbird");
+	menuitem.setAttribute("label","mozCleaner");
+	menuitem.addEventListener("command", function()
+	{
+		//Open UI for do cleaning
+		//domWindow.open(URL,"DivFind","_blank");
+		open("data:text/html,"+readContent(),{
+			name: "mozCleaner",
+			features: {
+				width: 800,
+				height: 600,
+				chrome: true,
+				popup: false
+			}
+		});
+	
+	},true);
+	context.appendChild(menuitem);
+}
+function instantbirdSetup()
+{
+		let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
+		var interfaz = {
+		  onOpenWindow: function(aWindow) {
+		    // Wait for the window to finish loading
+		    let domWindow = aWindow.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindow);
+		    domWindow.addEventListener("load", function() {
+		      domWindow.removeEventListener("load", arguments.callee, false);
+		      instantbirdUI(domWindow);
+		    }, false);
+		  },
+		 
+		  onCloseWindow: function(aWindow) {},
+		  onWindowTitleChange: function(aWindow, aTitle) {}
+		};
+		  // Load into any existing windows
+		  let windows = wm.getEnumerator("Messenger:convs"); //Messenger:convs for conversations on Instantbird, void for all
+		  while (windows.hasMoreElements()) {
+		    let domWindow = windows.getNext().QueryInterface(Ci.nsIDOMWindow);
+		    instantbirdUI(domWindow);
+		  }
+
+		  // Load into any new windows
+		  wm.addListener(interfaz);
 }
 function seaUI(domWindow){
 	var document=domWindow.document;
@@ -164,6 +215,9 @@ exports.main=function()
 	}else if(system.name=="Thunderbird")
 	{
 		thunderbird=true;
+	}else
+	{
+		instantbird=true;
 	}
 	if(firefox)
 	{
@@ -185,6 +239,10 @@ exports.main=function()
 	{
 		//ContextMenu
 		seamonkeySetup();
+	}
+	if(instantbird)
+	{
+		instantbirdSetup();
 	}
 
 
