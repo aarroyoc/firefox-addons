@@ -13,7 +13,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>19.0</em:minVersion>
-        <em:maxVersion>22.*</em:maxVersion>
+        <em:maxVersion>27.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!-- Thunderbird -->
@@ -21,7 +21,7 @@
       <Description>
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
         <em:minVersion>17.0</em:minVersion>
-        <em:maxVersion>22.*</em:maxVersion>
+        <em:maxVersion>27.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!-- Fennec -->
@@ -29,7 +29,7 @@
       <Description>
         <em:id>{aa3c5121-dab2-40e2-81ca-7ea25febc110}</em:id>
         <em:minVersion>19.0</em:minVersion>
-        <em:maxVersion>22.*</em:maxVersion>
+        <em:maxVersion>27.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!-- SeaMonkey -->
@@ -37,7 +37,7 @@
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
         <em:minVersion>2.17</em:minVersion>
-        <em:maxVersion>2.22</em:maxVersion>
+        <em:maxVersion>2.24</em:maxVersion>
       </Description>
     </em:targetApplication>
 	<!-- Instantbird //-->
@@ -46,6 +46,23 @@
 			<em:id>{33cb9019-c295-46dd-be21-8c4936574bee}</em:id>
 			<em:minVersion>1.2</em:minVersion>
 			<em:maxVersion>1.4</em:maxVersion>
+		</Description>
+	</em:targetApplication>
+	<!-- Nightingale -->
+	<em:targetApplication>
+		<Description>
+			<em:id>nightingale@getnightingale.com</em:id>
+			<em:minVersion>1.11.0a</em:minVersion>
+			<em:maxVersion>2.0a</em:maxVersion>
+		</Description>
+	</em:targetApplication>
+	<!-- BlueGriffon -->
+	<em:targetApplication>
+		<Description>
+			<!-- Old? <em:id>{8fa6f1b4-7ed3-4895-bac6-01f1cc206ab3}</em:id> -->
+			<em:id>bluegriffon@disruptive-innovations.com</em:id>
+			<em:minVersion>1.0</em:minVersion>
+			<em:maxVersion>1.7.2</em:maxVersion>
 		</Description>
 	</em:targetApplication>
 

@@ -9,6 +9,8 @@
 	*/
 	var idCallbacks=new Array;
 	Components.utils.import("resource://gre/modules/FileUtils.jsm");
+	Components.utils.import("resource://gre/modules/AddonManager.jsm");	
+
 	function cleanIt()
 	{
 		var inputs=document.getElementsByTagName("input");
@@ -19,7 +21,14 @@
 				/*
 				if(idCallbacks[i].id==inputs[i].id)
 				{*/
-					idCallbacks[inputs[i].id].callback();
+					if(idCallbacks[inputs[i].id].parameter==undefined)
+					{
+						idCallbacks[inputs[i].id].callback();
+					}else
+					{
+						var parameter=idCallbacks[inputs[i].id].parameter;
+						idCallbacks[inputs[i].id].callback(parameter);
+					}
 				/*}*/
 			}
 		}
@@ -212,27 +221,21 @@
 		}catch(e){}
 		/* extensions */
 		try{
-			var ext=FileUtils.getDir("ProfD",["extensions"],false);
-			if(ext.exists())
-			{
-				var dirs=ext.directoryEntries;
-				while(dirs.hasMoreElements())
-				{	
-				
-					var extension=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);	
-					addItem(false,extension.leafName,"Extension",function(){
-						var deldir=FileUtils.File(extension.path);
-						if(deldir.exists() && deldir.isWritable() && deldir.isFile())
-						{
-							deldir.remove(true);
-							addLogger("[OK] Extension removed");
-						}else{
-							addLogger("[ERROR] Extension doesn't exist");
-						}
-					});
-
-				}
-			}
+				var count=0;
+				var extensions=AddonManager.getAllAddons(function(addons){
+					for(count=0;count<addons.length;count++)
+					{
+						addItem(false,addons[count].name,"Extension",function(number){
+							if(addons[number].permissions & AddonManager.PERM_CAN_UNINSTALL)
+							{
+								addons[number].uninstall();
+								addLogger("[OK] Extension removed");
+							}else{
+								addLogger("[ERROR] You don't have the permissions required for uninstall an addon");
+							}
+						},count);
+					}
+				});
 		}catch(e){}
 		/* indexedDB */
 		try{
@@ -240,11 +243,13 @@
 			if(indexedDB.exists())
 			{
 				var dirs=indexedDB.directoryEntries;
+				var count=0;
+				var database=new Array;
 				while(dirs.hasMoreElements())
 				{
-					var database=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);
-					addItem(false,database.leafName,"IndexedDB database",function(){
-						var deldir=FileUtils.File(database.path);
+					database[count]=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);
+					addItem(false,database[count].leafName,"IndexedDB database",function(number){
+						var deldir=FileUtils.File(database[number].path);
 						if(deldir.exists() && deldir.isWritable() && deldir.isFile())
 						{
 							deldir.remove(true);
@@ -252,33 +257,23 @@
 						}else{
 							addLogger("[ERROR] IndexedDB database doesn't exist");
 						}
-					});
+					},count);
+					count++;
 
 				}
 			}
 		}catch(e){}
 		/* searchplugins */
 		try{
-			var searchp=FileUtils.getDir("ProfD",["searchplugins"],false);
-			if(searchp.exists())
-			{
-				var dirs=searchp.directoryEntries;
-				while(dirs.hasMoreElements())
+			var searchService=Components.classes["@mozilla.org/browser/search-service;1"].getService(Components.interfaces.nsIBrowserSearchService);
+			var engines=searchService.getEngines();
+				for(var count=0;count<engines.length;count++)
 				{
-					var database=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);
-					addItem(false,database.leafName,"Search engine",function(){
-						var deldir=FileUtils.File(database.path);
-						if(deldir.exists() && deldir.isWritable() && deldir.isFile())
-						{
-							deldir.remove(true);
-							addLogger("[OK] Search engine removed");
-						}else{
-							addLogger("[ERROR] Search engine doesn't exist");
-						}
-					});
-
+					addItem(false,engines[count].name,"Search engine",function(number){
+						searchService.removeEngine(engines[number]);
+						addLogger("[OK] Search engine removed");
+					},count);
 				}
-			}
 		}catch(e){}
 		/* Mail */
 		try{
@@ -311,7 +306,7 @@
 		doClean.disabled=false;
 		
 	}
-	function addItem(enabled_by_default, name, description,function_callback)
+	function addItem(enabled_by_default, name, description,function_callback,parameter)
 	{
 		var results=document.getElementById("analize");
 		var div=document.createElement("div");
@@ -325,7 +320,7 @@
 		div2.textContent=name+"|"+description;
 		div.appendChild(div2);
 		results.appendChild(div);
-		idCallbacks.push({id: input.id, callback: function(){function_callback();}});
+		idCallbacks.push({id: input.id, callback: function_callback, parameter: parameter});
 	
 	}
 	function addLogger(text)

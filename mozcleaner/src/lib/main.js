@@ -6,6 +6,8 @@ var thunderbird=false;
 var seamonkey=false;
 var fennec=false;
 var instantbird=false;
+var nightingale=false;
+var bluegriffon=false;
 function readContent()
 {
 	return data.load("mozCleaner.html");
@@ -50,156 +52,6 @@ function fennecSetup()
 		});
 	});
 }
-function instantbirdUI(domWindow)
-{
-	var document=domWindow.document;
-	var context=document.getElementById("contentAreaContextMenu");
-	var menuitem=document.createElement("menuitem");
-	menuitem.setAttribute("id","mozcleaner-instantbird");
-	menuitem.setAttribute("label","mozCleaner");
-	menuitem.addEventListener("command", function()
-	{
-		//Open UI for do cleaning
-		//domWindow.open(URL,"DivFind","_blank");
-		open("data:text/html,"+readContent(),{
-			name: "mozCleaner",
-			features: {
-				width: 800,
-				height: 600,
-				chrome: true,
-				popup: false
-			}
-		});
-	
-	},true);
-	context.appendChild(menuitem);
-}
-function instantbirdSetup()
-{
-		let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
-		var interfaz = {
-		  onOpenWindow: function(aWindow) {
-		    // Wait for the window to finish loading
-		    let domWindow = aWindow.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindow);
-		    domWindow.addEventListener("load", function() {
-		      domWindow.removeEventListener("load", arguments.callee, false);
-		      instantbirdUI(domWindow);
-		    }, false);
-		  },
-		 
-		  onCloseWindow: function(aWindow) {},
-		  onWindowTitleChange: function(aWindow, aTitle) {}
-		};
-		  // Load into any existing windows
-		  let windows = wm.getEnumerator("Messenger:convs"); //Messenger:convs for conversations on Instantbird, void for all
-		  while (windows.hasMoreElements()) {
-		    let domWindow = windows.getNext().QueryInterface(Ci.nsIDOMWindow);
-		    instantbirdUI(domWindow);
-		  }
-
-		  // Load into any new windows
-		  wm.addListener(interfaz);
-}
-function seaUI(domWindow){
-	var document=domWindow.document;
-	var context=document.getElementById("contentAreaContextMenu");
-	var menuitem=document.createElement("menuitem");
-	menuitem.setAttribute("id","mozcleaner-seamonkey");
-	menuitem.setAttribute("label","mozCleaner");
-	menuitem.addEventListener("command", function()
-	{
-		//Open UI for do cleaning
-		//domWindow.open(URL,"DivFind","_blank");
-		open("data:text/html,"+readContent(),{
-			name: "mozCleaner",
-			features: {
-				width: 800,
-				height: 600,
-				chrome: true,
-				popup: false
-			}
-		});
-	
-	},true);
-	context.appendChild(menuitem);
-
-}
-function seamonkeySetup(){
-		let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
-		var interfaz = {
-		  onOpenWindow: function(aWindow) {
-		    // Wait for the window to finish loading
-		    let domWindow = aWindow.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindow);
-		    domWindow.addEventListener("load", function() {
-		      domWindow.removeEventListener("load", arguments.callee, false);
-		      seaUI(domWindow);
-		    }, false);
-		  },
-		 
-		  onCloseWindow: function(aWindow) {},
-		  onWindowTitleChange: function(aWindow, aTitle) {}
-		};
-		  // Load into any existing windows
-		  let windows = wm.getEnumerator("navigator:browser"); //keep it void for all windows
-		  while (windows.hasMoreElements()) {
-		    let domWindow = windows.getNext().QueryInterface(Ci.nsIDOMWindow);
-		    seaUI(domWindow);
-		  }
-
-		  // Load into any new windows
-		  wm.addListener(interfaz);
-
-}
-function thunderUI(domWindow)
-{
-	document=domWindow.document;
-	var context=document.getElementById("mailContext");
-	var menuitem=document.createElement("menuitem");
-	var tabmail=document.getElementById("tabmail");
-	menuitem.setAttribute("id", "mozcleaner-thunderbird");
-	menuitem.setAttribute("label", "mozCleaner");
-	menuitem.addEventListener("command", function(){
-		//Open UI for do cleaning
-		//tabmail.openTab("contentTab",{contentPage: data.url("divfind.html?SEARCH=NULL&JSON=NULL")});
-		open("data:text/html,"+readContent(),{
-			name: "mozCleaner",
-			features: {
-				width: 800,
-				height: 600,
-				chrome: true,
-				popup: false
-			}
-		});
-
-	}, true);
-	context.appendChild(menuitem);
-}
-function thunderbirdSetup(){
-		let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
-		var interfaz = {
-		  onOpenWindow: function(aWindow) {
-		    // Wait for the window to finish loading
-		    let domWindow = aWindow.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindow);
-		    domWindow.addEventListener("load", function() {
-		      domWindow.removeEventListener("load", arguments.callee, false);
-		      thunderUI(domWindow);
-		    }, false);
-		  },
-		 
-		  onCloseWindow: function(aWindow) {},
-		  onWindowTitleChange: function(aWindow, aTitle) {}
-		};
-		  // Load into any existing windows
-		  let windows = wm.getEnumerator("mail:3pane"); //navigator:browser in Firefox and Fennec
-		  while (windows.hasMoreElements()) {
-		    let domWindow = windows.getNext().QueryInterface(Ci.nsIDOMWindow);
-		    thunderUI(domWindow);
-		  }
-
-		  // Load into any new windows
-		  wm.addListener(interfaz);
-
-}
 exports.main=function()
 {
 	var system=require("sdk/system/xul-app");
@@ -215,9 +67,15 @@ exports.main=function()
 	}else if(system.name=="Thunderbird")
 	{
 		thunderbird=true;
-	}else
+	}else if(system.name=="Instantbird")
 	{
 		instantbird=true;
+	}else if(system.name=="Nightingale")
+	{
+		nightingale=true;
+	}else if(system.name="BlueGriffon")
+	{
+		bluegriffon=true;
 	}
 	if(firefox)
 	{
@@ -233,16 +91,29 @@ exports.main=function()
 	if(thunderbird)
 	{
 		//ContextMenu
-		thunderbirdSetup();
+		//thunderbirdSetup();
+		require("./XUL_UI").XUL_UI("mail:3pane","mailContext");
 	}
 	if(seamonkey)
 	{
 		//ContextMenu
-		seamonkeySetup();
+		//seamonkeySetup();
+		require("./XUL_UI").XUL_UI("navigator:browser","contentAreaContextMenu");
 	}
 	if(instantbird)
 	{
-		instantbirdSetup();
+		//instantbirdSetup();
+		require("./XUL_UI").XUL_UI("Messenger:convs","contentAreaContextMenu");
+	}
+	if(nightingale)
+	{
+		//Songbird:MediaPage
+		require("./XUL_UI").XUL_UI("Songbird:MediaPage","contentAreaContextMenu");
+	}
+	if(bluegriffon)
+	{
+		//BLUEGRIFFON
+		require("./XUL_UI").XUL_UI("bluegriffon","editorContextMenu");
 	}
 
 

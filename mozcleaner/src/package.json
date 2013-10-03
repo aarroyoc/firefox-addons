@@ -2,7 +2,7 @@
   "name": "mozcleaner",
   "fullName": "mozCleaner",
   "id": "mozcleaner@divel",
-  "description": "Cleans your Firefox, Fennec, Instantbird, Thunderbird and SeaMonkey",
+  "description": "Cleans your Firefox, Fennec, Instantbird, Thunderbird, SeaMonkey, Nightingale and BlueGriffon",
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
   "version": "1.1",
