@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bazaar guide for firefox-addons</title>
+</head>
+<style>
+body{
+  background-color: yellow;
+}
+</style>
+<body>
+  <header>
+    <h1>Bazaar guide for firefox-addons</h1>
+    <p>These are quick git commands to use with Firefox-addons</p>
+  </header>
+  <article>
+    <section>
+      <h3>Get a working copy</h3>
+      <code>bzr branch <i>url</i></code>
+    </section>
+    <section>
+      <h3>Update the code</h3>
+      <code>bzr merge</code>
+    </section>
+    <section>
+      <h3>Do a commit (always do this)</h3>
+      <code>bzr commit -a -m "Message"</code>
+    </section>
+    <section>
+      <h3>Adding files/Removing files/Moving files</h3>
+      <code>bzr add file.ext</code>
+      <code>bzr rm file.ext</code>
+      <code>bzr mv file.ext</code>
+    </section>
+    <section>
+      <h3>See a list of commits</h3>
+      <code>bzr log</code>
+    </section>
+    <section>
+      <h3>Delete a change</h3>
+      <code>bzr reset --hard COMMIT_NAME</code>
+    </section>
+    <section>
+      <h3>Get a patch</h3>
+      <code>bzr diff > mychanges.patch</code>
+    </section>
+    <section>
+      <h3>Apply a patch</h3>
+      <code>bzr apply mychanges.patch</code>
+    </section>
+    <section>
+      <h3>Merge changes</h3>
+      <code>bzr push <i>url</i> </i>branch</i></code>
+    </section>
+    <section>
+      <h3>Do a branch</h3>
+      <code>bzr branch PATH</code>
+    </section>
+    <section>
+      <h3>Merge a branch</h3>
+      <code>bzr merge PATH</code>
+    </section>
+	<section>
+		<h3>Send changes by email</section>
+		<code>bzr send</code>
+	</section>
+    
+  </article>
+  <footer>
+    
+  </footer>
+</body>
+</html>
