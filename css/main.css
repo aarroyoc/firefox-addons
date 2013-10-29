@@ -32,4 +32,26 @@ iframe{
 .warning{
  background-color: yellow;
 }
+.info{
+background-color: green;
+}
+.box{
+	border-style: ridge;
+	border-width: thick;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.box p{
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.valid{
+	border-color: green;
+}
+.preliminary{
+	border-color: yellow;
+}
+.failed{
+	border-color: red;
+}
 
