@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DivFind's Documentation</title>
+<style>
+@font-face{
+	font-family: "RobotoThin";
+	src: url("Roboto-Thin.ttf") format("truetype");
+}
+body{
+	text-align: center;
+	background-color: rgb(123,123,123);
+	font-family: "RobotoThin";
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Documentation</h1>
+<img alt="DivFind logo" src="divfing_large_468_60.png">
+</header>
+<article>
+	<section>
+		<h3>Preamble</h3>
+		<p>Welcome to DivFind documentation. In this page I describe how DivFind works.</p>
+	</section>
+	<section>
+		<h3>Doing a search</h3>
+		<p>You can do a search in Firefox by clicking on the widget. Also you can select the search terms and do a right click. On Fennec you need to do a long click. On Thunderbird and SeaMonkey do a right click. There's also an option to search from a protocol bu for activate this you need first to open DivFind and allow this. This URL shows a search when this is enabled: <code>web+divfind:{searchTerms}</code>
+		</p>
+	</section>
+	<section>
+		<h3>Installing new search engines</h3>
+		<p>There are two types of search engines. First, Firefox native search engines (search engines avalibles in the second top bar). Second, DivFind search engines. For install and delete the first search engines you need to go to the search manager in Firefox. For DivFind search engines go to "Manage" and go to "ADD" or "DELETE". For adding a search engine you have to complete these parameters
+			<code>Name: The name of the search engine
+			<br>Description: A little description about the search engine
+			<br>Favicon URL: A URL to the search engine icon
+			<br>URL: A URL with a GET parameter where DivFind puts the search terms. Example: http://developer.mozilla.org/es/search?q={searchTerms}</code>
+
+		</p>
+	</section>
+	<section>
+		<h3>Some problems</h3>
+		<p>Some servers blocks the iframe with a Server parameter. These search engines are displayed in white. Some examples of this servers are: Google, Twitter, MDN, etc</p>
+	</section>
+</article>
+</body>
+</html>
