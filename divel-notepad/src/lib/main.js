@@ -98,61 +98,54 @@ createObjectStore = function (dataBase) {
 },
  
 putData = function () {
-    var transaction = db.transaction(["NOTE"], "readwrite");
- 
-    var del=transaction.objectStore("NOTE").delete(id);
-    del.onsuccess=function(){
-	notifications.notify({
-		text: "Note deleted successfully",
-		iconURL: data.url("open32.png")
-	});
-    }
+		var transaction = db.transaction(["NOTE"], "readwrite");
+	 
+		var del=transaction.objectStore("NOTE").delete(id);
+		del.onsuccess=function(){
+		notifications.notify({
+			text: "Note deleted successfully",
+			iconURL: data.url("open32.png")
+		});
+		}
 
-                       var transaction2 = db.transaction(["NOTE"], "readwrite");
-                    var objectStore2 = transaction2.objectStore("NOTE");
-                    var nothing="";
- 
-                    var request2 = objectStore2.openCursor();
-                    request2.onsuccess = function(evt) {  
-                        var cursor = evt.target.result;  
-                        if (cursor) {  
-                            nothing += "id: " + cursor.key + 
-                                        " with title " + cursor.value.title + " and body "+ cursor.value.body;
-                            //console.log(nothing);
-                            cursor.continue();  
-                        }  
-                        else {  
-                            //console.log("No more entries!");  
-                        }  
-                    };  
+		                   var transaction2 = db.transaction(["NOTE"], "readwrite");
+		                var objectStore2 = transaction2.objectStore("NOTE");
+		                var nothing="";
+	 
+		                var request2 = objectStore2.openCursor();
+		                request2.onsuccess = function(evt) {  
+		                    var cursor = evt.target.result;  
+		                    if (cursor) {  
+		                        nothing += "id: " + cursor.key + 
+		                                    " with title " + cursor.value.title + " and body "+ cursor.value.body;
+		                        //console.log(nothing);
+		                        cursor.continue();  
+		                    }  
+		                    else {  
+		                        //console.log("No more entries!");  
+		                    }  
+		                };  
 
-};
+	};
  
-request.onerror = function (event) {
-//console.log("Error creating/accessing IndexedDB database");
-};
- 
-request.onsuccess = function (event) {
-    //console.log("Success creating/accessing IndexedDB database");
-    db = request.result;
-   
-    db.onerror = function (event) {
-        //console.log("Error creating/accessing IndexedDB database");
-    };
-     putData();
-    };
+	request.onerror = function (event) {
 
-// For future use. Currently only in latest Firefox versions
-    request.onupgradeneeded = function (event) {
-        createObjectStore(event.target.result);
-        //putData();
-        
-    };
+	};
+ 
+	request.onsuccess = function (event) {
+		db = request.result;
+		db.onerror = function (event) {
+
+		};
+		 putData();
+		};
+	request.onupgradeneeded = function (event) {
+		createObjectStore(event.target.result);      
+	};
 }
 function QuickNote()
 {
 	var panel = require("sdk/panel");
- 
 	var panelquick=panel.Panel({
 	  width: 500,
 	  height: 500,
@@ -190,7 +183,7 @@ function SendData(panelquick)
 				}else{}  
 		};
 	};
-	 
+
 	request.onerror = function (event) {
 	};
 
@@ -210,7 +203,6 @@ function ViewNote()
 	if(firefox==true)
 	{
 		var panel = require("sdk/panel");
-	 
 		var panelquick=panel.Panel({
 		  width: 800,
 		  height: 600,
@@ -223,13 +215,10 @@ function ViewNote()
 			DeleteData(id);	
 		});
 		panelquick.show();
-
 	}else{
 		require("sdk/tabs").open(data.url("index.html"));
 	}
-
 }
-
 
 exports.main=function(options)
 {
@@ -282,7 +271,6 @@ exports.main=function(options)
 	}
 	if(firefox==true)
 	{
-
 		var widget=require("widget");
 		var pluswidget=widget.Widget({
 			id: "divel-notepad-view",
@@ -300,7 +288,5 @@ exports.main=function(options)
 				ViewNote();
 			}
 		});
-
 	}
-
 }
