@@ -1,0 +1,14 @@
+{
+  "name": "firefox-addons",
+  "description": "Open source project about addons developed by Adrián Arroyo Calle",
+  "launch_path": "/firefox-addons/index.html",
+  "icons": {
+    "128": "/firefox-addons/128.png"
+  },
+  "developer": {
+    "name": "Adrián Arroyo Calle",
+    "url": "http://plus.google.com/+AdriánArroyoCalle"
+  },
+  "default_locale": "en",
+  "chrome" : { "navigation": true }
+}
