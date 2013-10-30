@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <script type="text/javascript" src="http://widgets.tuenti.com/widgets.js"></script>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="canonical" href="http://adrianarroyocalle.github.io/firefox-addons"/>
   <title>Firefox-addons</title>
   <meta name="description" content="Mozilla Firefox, SeaMonkey, Thunderbird and Fennec addons created by Adrián Arroyo Calle">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="apple-touch-startup-image" href="/startup.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="og:image" content="/tiny.jpg">
 </head>
 
 <body>
@@ -319,5 +321,21 @@ Note that SeaMonkey and Thunderbird are under EXPERIMENTAL. This means that may 
   </script>
 	<!-- Twitter APIs -->
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<!-- Tuenti APIs -->
+  <script>
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'http://widgets.tuenti.com/widgets.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	  })();
+  </script>
+	<!-- Ubuntu Unity APIs -->
+	<script>
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'js/unity.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	  })();
+	</script>
 </body>
 </html>
