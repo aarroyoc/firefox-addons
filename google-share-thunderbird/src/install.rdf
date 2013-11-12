@@ -7,11 +7,11 @@
 
         <em:id>google-thunderbird@divel</em:id>
         <em:name>Google+ Share for Thunderbird</em:name>
-        <em:version>1.2</em:version>
+        <em:version>1.3</em:version>
         <em:type>2</em:type>
         <em:description>Share a URL in Google+ directly from Thunderbird</em:description>
         <em:creator>Adrián Arroyo Calle</em:creator>
-        <em:homepageURL>http://sites.google.com/site/divelmedia</em:homepageURL>
+        <em:homepageURL>http://github.com/AdrianArroyoCalle/firefox-addons</em:homepageURL>
         <em:iconURL>chrome://googleshare/content/icon64.png</em:iconURL>
 
         <!-- Thunderbird -->
@@ -19,7 +19,7 @@
             <Description>
                 <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
                 <em:minVersion>3.0</em:minVersion>
-                <em:maxVersion>20.*</em:maxVersion>
+                <em:maxVersion>28.0</em:maxVersion>
             </Description>
         </em:targetApplication>
 

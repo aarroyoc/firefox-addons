@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!-- $Id: urllinkMailOverlay.xul 838 2011-05-06 11:52:14Z neil $ -->
 <!-- ***** BEGIN LICENSE BLOCK *****
    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
    -
@@ -31,7 +30,6 @@
    -
    - ***** END LICENSE BLOCK ***** -->
 
-<!--DOCTYPE overlay SYSTEM "chrome://urllink/locale/urllink.dtd"-->
 
 <overlay id="urllinkMailOverlay"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -46,10 +44,8 @@
 
 	}
 	function ShareGoogle(){
-		console.log("Hi, from Thunderbird");
 		url=prompt("Insert the URL to share","");
-		console.log("Try to share "+url);
-		document.getElementById("tabmail").openTab("contentTab",getGoogleShareOptions(url));
+		document.getElementById("tabmail").openTab("contentTab",getGoogleShareOptions(encodeURIComponent(url)));
 
 	}
 
