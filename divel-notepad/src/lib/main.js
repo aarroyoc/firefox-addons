@@ -20,10 +20,10 @@ function guid() {
 
 
 
-function SaveData(title, body)
+function SaveData(title, body, code)
 {
 	var { indexedDB }=require("sdk/indexed-db");
-	var dbVersion=1.0;
+	var dbVersion=1.1;
 
 	var request = indexedDB.open("QuickNotes", dbVersion),
 	db,
@@ -40,12 +40,14 @@ function SaveData(title, body)
 		var put = transaction.objectStore("NOTE").put({
 		"id": guid(),
 		"title": title,
-		"body": body
+		"body": body,
+		"code" : code
 		});
 		put.onsuccess=function(){
 		notifications.notify({
+          title: "Divel Notepad",
 		  text: "Note added successfully",
-		  iconURL: data.url("save32.png")
+		  iconURL: data.url("save64.png")
 		});
 		}
 	var transaction2 = db.transaction(["NOTE"], "readwrite");
@@ -103,8 +105,9 @@ putData = function () {
 		var del=transaction.objectStore("NOTE").delete(id);
 		del.onsuccess=function(){
 		notifications.notify({
+			title: "Divel Notepad",
 			text: "Note deleted successfully",
-			iconURL: data.url("open32.png")
+			iconURL: data.url("open64.png")
 		});
 		}
 
@@ -153,8 +156,8 @@ function QuickNote()
 	  contentScriptFile: data.url("quicknote.js")
 	});
 	panelquick.port.emit("initQuickNote");
-	panelquick.port.on("saveNote",function(title,body){
-		SaveData(title,body);
+	panelquick.port.on("saveNote",function(title,body,code){
+		SaveData(title,body,code);
 	});
 	panelquick.show();
 	
@@ -162,7 +165,7 @@ function QuickNote()
 function SendData(panelquick)
 {
 	var { indexedDB }=require("sdk/indexed-db");
-	var dbVersion=1.0;
+	var dbVersion=1.1;
 	var request = indexedDB.open("QuickNotes", dbVersion),
 	db,
 	createObjectStore = function (dataBase) {
@@ -178,7 +181,7 @@ function SendData(panelquick)
 		request2.onsuccess = function(evt) {  
 			var cursor = evt.target.result;  
 				if (cursor) {
-					panelquick.port.emit("sendData",cursor.key,cursor.value.title,cursor.value.body);
+					panelquick.port.emit("sendData",cursor.key,cursor.value.title,cursor.value.body, cursor.value.code);
 					cursor.continue();  
 				}else{}  
 		};
@@ -207,7 +210,7 @@ function ViewNote()
 		  width: 800,
 		  height: 600,
 		  contentURL: data.url("index.html"),          
-		  contentScriptFile: data.url("index.js")
+		  contentScriptFile: data.url(["index.js"])
 		});
 		panelquick.port.emit("initScript");
 		SendData(panelquick);
@@ -227,9 +230,17 @@ exports.main=function(options)
 		require("tabs").open("http://sites.google.com/site/divelmedia");	
 	}
 	if(options.loadReason=="upgrade"){
+		notifications.notify({
+			title: "Divel Notepad",
+			text: "Succesfully upgraded to Divel Notepad 1.3",
+			iconURL: data.url("open64.png")
+		});
 		require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/divel-notepad/changelog.html");
 		require("tabs").open("http://sites.google.com/site/divelmedia");
 	}
+	require("simple-prefs").on("review",function (){
+		require("tabs").open("http://addons.mozilla.org/en/firefox/addon/divel-notepad");
+	});
 	var xulapp=require("sdk/system/xul-app");
 	if(xulapp.name=="Firefox")
 	{

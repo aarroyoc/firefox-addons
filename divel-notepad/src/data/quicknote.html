@@ -3,13 +3,26 @@
 <head>
 <title>Quick Note with Divel Notepad</title>
 <meta charset="utf8"/>
+<style>
+body{
+background-color:#9AFE2E;
+}
+textarea{
+	width: 80%;
+	height: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 10%;
+}
+</style>
 </head>
-<body style="background-color:#9AFE2E">
+<body>
 <label for="title">Title: </label><input type="text" id="title"/><br>
 <label for="note">Note: </label>
 <textarea id="note">
 
 </textarea>
+<label for="code">Syntax Highlight</label><input type="checkbox" id="code">
 <button id="savenote">Save</button>
 
 </body>

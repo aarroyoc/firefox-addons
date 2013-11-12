@@ -6,6 +6,15 @@
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
   "icon" : "data/open32.png",
-  "version": "1.3",
-  "homepage" : "http://github.com/AdrianArroyoCalle/firefox-addons"
+  "iocn64" : "data/open64.png",
+  "version": "1.4",
+  "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
+  "preferences" : [
+   {
+    "name" : "review",
+    "type" : "control",
+    "title" : "Review the addon",
+    "label" : "Review me!"
+   }
+   ]
 }

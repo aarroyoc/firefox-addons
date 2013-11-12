@@ -6,13 +6,14 @@ self.port.on("initQuickNote", function() {
 	var titleelement=document.getElementById("title");
 	var bodyelement=document.getElementById("note");
 	var button=document.getElementById("savenote");
+	var syntax=document.getElementById("code");
 	button.addEventListener("click",function()
 	{
 		//console.log("Click it");
 		if(titleelement.value!="")
 		{
 			//console.log("Sending");
-			self.port.emit("saveNote", titleelement.value,bodyelement.value);
+			self.port.emit("saveNote", titleelement.value,bodyelement.value, syntax.checked);
 		}
 	}
 	);
