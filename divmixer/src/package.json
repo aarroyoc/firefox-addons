@@ -1,0 +1,9 @@
+{
+  "name": "divmixer",
+  "fullName": "DivMixer",
+  "id": "divmixer@divel",
+  "description": "Experiment with the art of the music. Maybe you can use it as DJ. Based on https://github.com/cwilso/WebAudio",
+  "author": "Adrián Arroyo Calle",
+  "license": "GPL 2.0",
+  "version": "1.0"
+}
