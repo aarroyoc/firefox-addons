@@ -1,0 +1,19 @@
+{
+  "name": "send-to-mail",
+  "fullName": "Send to Mail",
+  "id": "send-to-mail@divel",
+  "description": "Share the current webpage via email",
+  "author": "Adrián Arroyo Calle",
+  "license": "GPL 2.0",
+  "version": "1.0",
+  "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
+  "icon64" : "data/haiku/mail.png",
+  "preferences" : [
+   {
+    "name" : "review",
+    "type" : "control",
+    "title" : "Review the addon",
+    "label" : "Review me!"
+   }
+  ]
+}
