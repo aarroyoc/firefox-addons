@@ -1,8 +1,9 @@
 /*
-TODO: Icons
-Review preference button
-install.rdf.merge
-Changelog page
+TODO: 
+Icons DONE
+Review preference button LATER
+install.rdf.merge DONE
+Changelog page 
 Change index.html img/logo.png
 */
 
@@ -96,12 +97,9 @@ exports.main=function()
 	}
 	if(fennec || firefox)
 	{
-		if(options.loadReason=="install"){
-		require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons");	
-		}
-		if(options.loadReason=="upgrade"){
-		 //require("tabs").open(data.url("changelog.html")); //Changelog HTML file
-		 //require("tabs").open("http://sites.google.com/site/divelonline");	
+		if(options.loadReason=="install" || options.loadReason=="upgrade"){
+			require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/divmixer/welcome.html");	
 		}
 
 	}
