@@ -74,12 +74,20 @@ body{
     </section>
     <section>
       <h3>Force a pull</h3>
-      <code>git fetch REPO BRANCH</code>
+      <code>git fetch REPO BRANCH</code><br/>
       <code>git reset --hard FETCH_HEAD</code>
     </section>
     <section>
       <h3>Remove untracked files</h3>
       <code>git clean -df</code>
+    </section>
+    <section>
+      <h3>Optimize repo</h3>
+      <code>git gc</code>
+    </section>
+    <section>
+      <h3>Extra optimize repo</h3>
+      <code>git repack -a -d --depth=250 --window=250</code>
     </section>
     
   </article>
