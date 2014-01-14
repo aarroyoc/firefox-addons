@@ -1,6 +1,6 @@
 const {Cc, Ci, Cu, Cr} = require("chrome");
 const { open } = require('sdk/window/utils');
-const data=require("self").data;
+const data=require("sdk/self").data;
 var firefox=false;
 var thunderbird=false;
 var seamonkey=false;
@@ -12,15 +12,20 @@ function SendToMailURL(url)
 {
 	if(fennec || firefox)
 	{
-		require("tabs").activeTab.url="mailto:?to=&subject="+encodeURIComponent("Send to Mail")+"&body="+encodeURIComponent(url);
+		require("sdk/tabs").activeTab.url="mailto:?to=&subject="+encodeURIComponent("Send to Mail")+"&body="+encodeURIComponent(url);
+		require("sdk/notifications").notify({
+			title: "Send to Mail",
+			text: "Opened handler for mail",
+			iconURL: data.url("haiku/servermaildaemon.png")
+		});
 	}
 
 }
 function firefoxSetup()
 {
-	var cm = require("context-menu");
+	var cm = require("sdk/context-menu");
 	var shareItem = cm.Item({
-		label: "Compartir en Tuenti",
+		label: "Send to Mail",
 		contentScript: 'self.on("click", function () {' +
 				'  self.postMessage(document.URL);' +
 				'});',
@@ -32,14 +37,14 @@ function firefoxSetup()
 }
 function fennecSetup()
 {
-	const utils = require('api-utils/window/utils');
+	const utils = require('sdk/window/utils');
 	const recent = utils.getMostRecentBrowserWindow();
 	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("Send to Mail",selector,function (target){
 		SendToMailURL(target.location.href);
 	});
 }
-exports.main=function()
+exports.main=function(options)
 {
 	var system=require("sdk/system/xul-app");
 	if(system.name=="Fennec")
@@ -101,5 +106,16 @@ exports.main=function()
 	{
 		//BLUEGRIFFON
 		require("./XUL_UI").XUL_UI("bluegriffon","editorContextMenu");
+	}
+	if(firefox || fennec)
+	{
+		if(options.loadReason=="install")
+		{
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/send-to-mail/welcome.html");
+		}
+		require("sdk/simple-prefs").on("review",function (){
+			require("sdk/tabs").open("http://addons.mozilla.org/en/firefox/addon/send-to-mail");
+		});
 	}
 }

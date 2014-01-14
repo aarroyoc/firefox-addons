@@ -1,6 +1,6 @@
 const { open } = require('sdk/window/utils');
 const {Cc, Ci, Cu, Cr} = require("chrome");
-const data=require("self").data;
+const data=require("sdk/self").data;
 
 
 function XUL_Setup(windowType, contentAreaContextMenu)
@@ -41,6 +41,7 @@ function XUL_CreateUI(domWindow, contentAreaContextMenu)
 	{
 		//URL is window.content.location.href on SeaMonkey
 		//URL on Thunderbird?
+		console.log(window.content.location.href);
 	
 	},true);
 	context.appendChild(menuitem);
