@@ -1,4 +1,4 @@
-const data=require("self").data;
+const data=require("sdk/self").data;
 const { open } = require('sdk/window/utils');
 const {Cc, Ci, Cu, Cr} = require("chrome");
 var firefox=false;
@@ -14,7 +14,7 @@ function readContent()
 }
 function firefoxSetup()
 {
-	var foxwidget=require("widget").Widget({
+	var foxwidget=require("sdk/widget").Widget({
 		id: "mozcleaner-widget",
 		label: "mozCleaner",
 		contentURL: data.url("mozCleaner-64.png"), 	
@@ -36,12 +36,12 @@ function firefoxSetup()
 }
 function fennecSetup()
 {
-	const utils = require('api-utils/window/utils');
+	const utils = require('sdk/window/utils');
 	const recent = utils.getMostRecentBrowserWindow();
 	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("mozCleaner",selector,function (target){
 		//Open UI for do a cleaning
-		openDialog("data:text/html,"+readContent(),{
+		open("data:text/html,"+readContent(),{
 			name: "mozCleaner",
 			features: {
 				width: 800,
@@ -51,8 +51,24 @@ function fennecSetup()
 			}
 		});
 	});
+	Cu.import("resource://gre/modules/Home.jsm");
+	Home.banner.add({
+		text: "mozCleaner",
+		icon: data.url("mozCleaner-64.png"),
+		onclick: function(){
+			open("data:text/html,"+readContent(),{
+				name: "mozCleaner",
+				features: {
+						width: 400,
+						height: 200,
+						chrome: true,
+						popup: false
+				}
+			});
+		}
+	});
 }
-exports.main=function()
+exports.main=function(options)
 {
 	var system=require("sdk/system/xul-app");
 	if(system.name=="Fennec")
@@ -115,8 +131,24 @@ exports.main=function()
 		//BLUEGRIFFON
 		require("./XUL_UI").XUL_UI("bluegriffon","editorContextMenu");
 	}
-
-
+	if(firefox || fennec)
+	{
+		if(options.loadReason=="install")
+		{
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
+		}
+		if(options.loadReason=="upgrade")
+		{
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
+			require("sdk/notifications").notify({
+					title: "mozCleaner",
+					text: "Successfully updated to 2.0",
+					iconURL: data.url("mozCleaner-64.png")
+			});
+		}
+	}
 
 
 

@@ -10,6 +10,7 @@
 	var idCallbacks=new Array;
 	Components.utils.import("resource://gre/modules/FileUtils.jsm");
 	Components.utils.import("resource://gre/modules/AddonManager.jsm");	
+	Components.utils.import("resource://gre/modules/Services.jsm");
 
 	function cleanIt()
 	{
@@ -239,7 +240,8 @@
 		}catch(e){}
 		/* indexedDB */
 		try{
-			var indexedDB=FileUtils.getDir("ProfD",["indexedDB"],false);
+			var indexedDB=FileUtils.getDir("ProfD",["storage"],false);
+			indexedDB.append("persistent");
 			if(indexedDB.exists())
 			{
 				var dirs=indexedDB.directoryEntries;
@@ -250,7 +252,7 @@
 					database[count]=dirs.getNext().QueryInterface(Components.interfaces.nsIFile);
 					addItem(false,database[count].leafName,"IndexedDB database",function(number){
 						var deldir=FileUtils.File(database[number].path);
-						if(deldir.exists() && deldir.isWritable() && deldir.isFile())
+						if(deldir.exists() && deldir.isWritable())
 						{
 							deldir.remove(true);
 							addLogger("[OK] IndexedDB database removed");
@@ -299,6 +301,59 @@
 				}
 			}
 		}catch(e){}
+		/* Cookies */
+		try{
+			var cookie=Components.classes["@mozilla.org/cookiemanager;1"].getService(Components.interfaces.nsICookieManager);
+			addItem(true,"Cookies","All cookies",function(){
+				cookie.removeAll();
+				addLogger("[OK] Cookies removed");
+			});
+			
+		}catch(e){}
+		/* History */
+		try{
+			var history=Components.classes["@mozilla.org/browser/nav-history-service;1"].getService(Components.interfaces.nsIBrowserHistory);
+			addItem(true, "History","Browser history",function(){
+					history.removeAllPages();
+					addLogger("[OK] History removed");
+			});
+		}catch(e){}
+		/* AdBlock */
+		try{
+			var adblockplus=FileUtils.getDir("ProfD",["adblockplus"],false);
+			if(adblockplus.exists())
+			{
+				addItem(false,"AdBlockPlus","AdBlockPlus Preferences",function(){
+					var deldir=FileUtils.getDir("ProfD",["adblockplus"],false);
+					if(deldir.isDirectory() && deldir.isWritable())
+					{
+						deldir.remove(true);
+						addLogger("[OK] AdBlock Plus preferences removed");
+					}else{
+						addLogger("[ERROR] Error while trying to remove the AdBlockPlus preferences");
+					}
+				});
+			}
+		}catch(e){}
+		/* Firebug */
+		
+		/* SQL VACUUM */
+		/* SQL->Downloads */
+		try{
+			var downloads=FileUtils.getFile("ProfD",["downloads.sqlite"]);
+			if(downloads.exists())
+			{
+				addItem(true, "VACUUM Downloads","Optimize the downloads database",function(){
+					var db=Services.storage.openDatabase(downloads);
+					db.executeSimpleSQL("VACUUM");
+					db.close();
+					addLogger("[OK] Downloads database optimized");
+				});
+			}
+		}catch(e){}
+		
+		/* OfflineCache */
+		
 		/* End analize*/
 		var doAnalize=document.getElementById("doAnalize");
 		var doClean=document.getElementById("doClean");
@@ -310,15 +365,20 @@
 	{
 		var results=document.getElementById("analize");
 		var div=document.createElement("div");
-		var div2=document.createElement("div");
+		var div_title=document.createElement("div");
+		var div_description=document.createElement("div");
 		var input=document.createElement("input");
 		input.type="checkbox";
 		input.name=name;
 		input.id=idCallbacks.length;
 		input.checked=enabled_by_default;
-		div.appendChild(input);
-		div2.textContent=name+"|"+description;
-		div.appendChild(div2);
+		div_title.textContent=name;
+		div_title.appendChild(input);
+		div_title.className="title";
+		div_description.textContent=description;
+		div_description.className="description";
+		div.appendChild(div_title);
+		div.appendChild(div_description);
 		results.appendChild(div);
 		idCallbacks.push({id: input.id, callback: function_callback, parameter: parameter});
 	
@@ -347,6 +407,17 @@
 
 
 	</script>
+	<style>
+	body{
+		background-color: rgb(194,194,255);
+	}
+	.title{
+		font-weight: bold;
+	}
+	.description{
+		margin-left: 25%;
+	}
+	</style>
 </head>
 <body>
 	<h1>Welcome to mozCleaner</h1>

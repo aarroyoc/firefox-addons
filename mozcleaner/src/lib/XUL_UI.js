@@ -1,6 +1,6 @@
 const { open } = require('sdk/window/utils');
 const {Cc, Ci, Cu, Cr} = require("chrome");
-const data=require("self").data;
+const data=require("sdk/self").data;
 
 function readContent()
 {
