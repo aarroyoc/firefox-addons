@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Super Clock</title>
+		<style>
+		@font-face{
+			font-family: 'Cantarell';
+			font-style: normal;
+			font-weight: 400;
+			src: url("CantarellRegular.woff") format("woff");
+		}
+		@font-face{
+			font-family: 'Cantarell';
+			font-style: normal;
+			font-weight: 700;
+			src: url("CantarellBold.woff") format("woff");
+		}
+		body{
+			text-align: center;
+			background-image: url(wall.jpg);
+			/*background-repeat: no-repeat;*/
+			/* background-size: 100% 100%; */
+			background-size: 100% auto;
+			background-repeat: repeat;
+			background-position: center;
+		}
+		#digital-time{
+			margin-top: 25%;
+			font-family: 'Cantarell', sans-serif;
+			color: white;
+			font-size: 32px;
+			font-weight: bold;
+		}
+		#day{
+			margin-top: 10%;
+			font-family: 'Cantarell', sans-serif;
+			color: white;
+			font-size: 16px;
+			padding-bottom: 10%;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="digital-time">
+		
+		</div>
+		<div id="day">
+		
+		</div>
+		<div id="cc">
+			<small>ESO/F. Comeron</small>
+		</div>
+	</body>
+	<script>
+		function setDate(){
+			var date=new Date();
+			var day=document.getElementById("day");
+			var digitalTime=document.getElementById("digital-time");
+			day.textContent=date.getDate() + "/" + (date.getMonth()+1) + "/"+ date.getFullYear();
+			digitalTime.textContent=date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+			requestAnimationFrame(setDate);
+		}
+		requestAnimationFrame(setDate);
+	</script>
+</html>

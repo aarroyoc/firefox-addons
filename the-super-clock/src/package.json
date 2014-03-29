@@ -1,0 +1,12 @@
+{
+  "name": "the-super-clock",
+  "title": "The Super Clock",
+  "id": "the-super-clock@divel",
+  "description": "The Super Clock is a beautiful clock",
+  "author": "Adrián Arroyo Calle",
+  "license": "GPL 2.0",
+  "version": "1.0",
+  "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
+  "icon" : "data/clock.png",
+  "icon64" : "data/clock.png"
+}
