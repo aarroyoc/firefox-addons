@@ -232,7 +232,7 @@ exports.main=function(options)
 	if(options.loadReason=="upgrade"){
 		notifications.notify({
 			title: "Divel Notepad",
-			text: "Succesfully upgraded to Divel Notepad 1.5",
+			text: "Succesfully upgraded to Divel Notepad 1.5.1",
 			iconURL: self.data.url("open64.png")
 		});
 		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/divel-notepad/changelog.html");
@@ -289,8 +289,8 @@ exports.main=function(options)
 				id: "divel-notepad-write",
 				label: "Quick Note",
 				icon: {
-					"32" : self.data.url("open32.png"),
-					"64" : self.data.url("open64.png")
+					"32" : self.data.url("save32.png"),
+					"64" : self.data.url("save64.png")
 				},
 				onClick: function(){
 					QuickNote();
@@ -300,8 +300,8 @@ exports.main=function(options)
 				id: "divel-notepad-view",
 				label: "View notes",
 				icon: {
-					"32" : self.data.url("save32.png"),
-					"64" : self.data.url("save64.png")
+					"32" : self.data.url("open32.png"),
+					"64" : self.data.url("open64.png")
 				},
 				onClick: function(){
 					ViewNote();
