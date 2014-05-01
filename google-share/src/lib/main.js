@@ -1,14 +1,12 @@
-const contextMenu=require("context-menu");
-const data=require("self").data;
-const widget=require("widget");
-const panel=require("panel");
-const pref=require("simple-storage");
-const tab=require("tabs");
-const win=require("windows").browserWindows;
-const addontab=require("addon-page");
-const prefs=require("simple-prefs").prefs;
-const _ = require("l10n").get;
-const { Hotkey } = require("hotkeys");
+const contextMenu=require("sdk/context-menu");
+const data=require("sdk/self").data;
+const panel=require("sdk/panel");
+const pref=require("sdk/simple-storage");
+const tab=require("sdk/tabs");
+const win=require("sdk/windows").browserWindows;
+const prefs=require("sdk/simple-prefs").prefs;
+const _ = require("sdk/l10n").get;
+const { Hotkey } = require("sdk/hotkeys");
 var height=600;
 var width=800;
 function ConfigPage(url){
@@ -25,7 +23,7 @@ function Configuration(){
 }
 function Notify(url){
     var myIconURL = data.url("icon64.png");
-    var notifications = require("notifications");
+    var notifications = require("sdk/notifications");
     notifications.notify({
         title: "Google+ Share",
         text: "Sharing "+url,
@@ -66,29 +64,20 @@ function ShareURL(url){
 	}
 	if(prefs.notify){
 		Notify(url);
-	
-
 	}
-
-
-
-
-
-
 }
 
 exports.main=function(options){
 
 if(options.loadReason=="install"){
-	require("tabs").open(data.url("welcome.html")); //Welcome HTML file
-	//Configurar con pagina XUL o HTML o Javascript
+	require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/google-share/welcome.html");
 	
 }
 if(options.loadReason=="upgrade"){
-	require("tabs").open(data.url("changelog.html")); //Changelog HTML file
+	require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/google-share/changelog.html");
 }
 
- var mm = require("context-menu");
+ var mm = require("sdk/context-menu");
  var menuItem = mm.Item({
   label: "Share on Google+",
   contentScript: 'self.on("click", function () {' +
@@ -106,8 +95,8 @@ var shareHotKey = Hotkey({
   }
 });
 
-require("simple-prefs").on("review",function (){
-	require("tabs").open("http://addons.mozilla.org/en/firefox/addon/google-share");
+require("sdk/simple-prefs").on("review",function (){
+	require("sdk/tabs").open("http://addons.mozilla.org/en/firefox/addon/google-share");
 });
 
 
@@ -117,16 +106,35 @@ var pluspanel=panel.Panel({
 	contentURL: "about:blank"
 
 });
-
-var pluswidget=widget.Widget({
-	id: "google-share-widget",
-	label: "Google+ Share",
-	contentURL: data.url("icon64.png"), 	
-	panel: pluspanel,
-	onClick: function() {
-		pluspanel.contentURL="http://plus.google.com/share?url="+tab.activeTab.url;		
-	}
-});
-
+var xulapp=require("sdk/system/xul-app");
+if(xulapp.version >= 29.0)
+{
+	var { ActionButton }=require("sdk/ui/button/action");
+	var pluswidget=ActionButton({
+		id: "google-share-widget",
+		label: "Google+ Share",
+		icon: {
+			"32" : data.url("icon32.png"),
+			"64" : data.url("icon64.png")
+		},
+		onClick: function(){
+			pluspanel.contentURL="http://plus.google.com/share?url="+encodeURIComponent(tab.activeTab.url);
+			pluspanel.show({
+					position: pluswidget
+			});
+		}
+	});
+}else{
+	var widget=require("sdk/widget");
+	var pluswidget=widget.Widget({
+		id: "google-share-widget",
+		label: "Google+ Share",
+		contentURL: data.url("icon64.png"), 	
+		panel: pluspanel,
+		onClick: function() {
+			pluspanel.contentURL="http://plus.google.com/share?url="+tab.activeTab.url;		
+		}
+	});
+}
 
 }
