@@ -232,7 +232,7 @@ exports.main=function(options)
 	if(options.loadReason=="upgrade"){
 		notifications.notify({
 			title: "Divel Notepad",
-			text: "Succesfully upgraded to Divel Notepad 1.5.1",
+			text: "Succesfully upgraded to Divel Notepad 1.6",
 			iconURL: self.data.url("open64.png")
 		});
 		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/divel-notepad/changelog.html");
