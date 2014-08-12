@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+ - "0.10"
+script: ./test-suite
+install: ./setup
+addons:
+ firefox: "31.0"

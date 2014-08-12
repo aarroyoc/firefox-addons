@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+
+console.log("firefox-addons test-suite");
+
+var exec = require('child_process').exec;
+var fs=require("fs");
+
+
+var cfx=fs.realpathSync("addon-sdk/bin/cfx");
+var CFX_TOOL=cfx +" test"
+
+var success=0;
+
+var tests=[
+"mozcleaner",
+"divel-notepad",
+"next-tuenti",
+"divfind",
+"divhttp",
+"divmixer",
+"divtranslate",
+"google-share",
+"google-share-android",
+"quick-bananabread",
+"send-to-mail",
+"the-super-clock"
+];
+
+function SingleTest(dir)
+{
+	process.chdir(__dirname + "/" + dir + "/src");
+	console.log("Testing "+process.cwd());
+	exec(CFX_TOOL, function(err,stdout,stderr){
+		if(err) {
+			throw err;
+		}
+		else{
+			success++;
+			console.log("Tests OK "+success+"/"+tests.length);
+		}
+	});
+}
+
+try{
+	console.log("Starting Test-Suite");
+	console.log("cfx tool is: "+CFX_TOOL);
+	for(var test=0;test<tests.length;test++)
+	{
+		SingleTest(tests[test]);
+	}		
+}catch(err){
+	console.log("ERROR: "+err);
+	process.exit(1);
+}
