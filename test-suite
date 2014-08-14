@@ -7,7 +7,7 @@ var fs=require("fs");
 
 
 var cfx=fs.realpathSync("addon-sdk/bin/cfx");
-var CFX_TOOL=cfx +" test"
+var CFX_TOOL=cfx +" xpi"
 
 var success=0;
 
