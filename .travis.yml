@@ -2,6 +2,15 @@ language: node_js
 node_js:
  - "0.10"
 script: ./test-suite
-install: ./setup
+install: 
+ - ./setup
+ - sudo npm install -g jpm
 addons:
  firefox: "31.0"
+env:
+ - USE_CFX=TRUE
+ - USE_JPM=TRUE
+matrix:
+ allow_failures:
+  - env: USE_JPM=TRUE
+

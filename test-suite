@@ -9,6 +9,17 @@ var fs=require("fs");
 var cfx=fs.realpathSync("addon-sdk/bin/cfx");
 var CFX_TOOL=cfx +" xpi"
 
+var TEST_TOOL='echo "Tool not set, please define USE_CFX or USE_JPM"';
+
+if(process.env.USE_CFX != undefined)
+{
+	TEST_TOOL=CFX_TOOL;
+}
+
+if(process.env.USE_JPM != undefined)
+{
+	TEST_TOOL="jpm xpi";
+}
 var success=0;
 
 var tests=[
@@ -30,7 +41,7 @@ function SingleTest(dir)
 {
 	process.chdir(__dirname + "/" + dir + "/src");
 	console.log("Testing "+process.cwd());
-	exec(CFX_TOOL, function(err,stdout,stderr){
+	exec(TEST_TOOL, function(err,stdout,stderr){
 		if(err) {
 			throw err;
 		}
@@ -43,7 +54,7 @@ function SingleTest(dir)
 
 try{
 	console.log("Starting Test-Suite");
-	console.log("cfx tool is: "+CFX_TOOL);
+	console.log("Test tool is: "+TEST_TOOL);
 	for(var test=0;test<tests.length;test++)
 	{
 		SingleTest(tests[test]);
