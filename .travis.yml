@@ -4,7 +4,7 @@ node_js:
 script: ./test-suite
 install: 
  - ./setup
- - sudo npm install -g jpm
+ - npm install -g jpm
 addons:
  firefox: "31.0"
 env:
