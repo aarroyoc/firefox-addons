@@ -4,7 +4,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:type>2</em:type> <!-- 2 : Extension -->
         <em:id>aemet@divel</em:id>
-        <em:version>2.1</em:version>
+        <em:version>2.2</em:version>
         <em:name>El Tiempo de España</em:name>
         <em:description>Infórmese del tiempo en su ciudad o pueblo con esta extensión y con la calidad del AEMET (Agencia Estatal de Meteorología)</em:description>
         <em:creator>Adrián Arroyo Calle</em:creator>
@@ -17,7 +17,7 @@
                 <!-- Firefox -->
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
                 <em:minVersion>4.0</em:minVersion>
-                <em:maxVersion>23.*</em:maxVersion>
+                <em:maxVersion>34.*</em:maxVersion>
             </Description>
         </em:targetApplication>
         <!-- <em:targetApplication>

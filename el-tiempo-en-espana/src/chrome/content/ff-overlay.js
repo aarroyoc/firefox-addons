@@ -1,10 +1,21 @@
 var el_tiempo_de_espa_a = {
+  /**
+   * Description
+   * @method onLoad
+   * @return 
+   */
   onLoad: function() {
     // initialization code
     this.initialized = true;
     this.strings = document.getElementById("el_tiempo_de_espa_a-strings");
   },
 
+  /**
+   * Description
+   * @method onMenuItemCommand
+   * @param {} e
+   * @return 
+   */
   onMenuItemCommand: function(e) {
     var promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                                   .getService(Components.interfaces.nsIPromptService);
@@ -16,7 +27,7 @@ var el_tiempo_de_espa_a = {
      //                           this.strings.getString("helloMessage"));
 	var iframeview = prefManager.getBoolPref("extensions.el_tiempo_de_espa_a.iframeview");
 	if(iframeview==false){
-	var cp = prefManager.getIntPref("extensions.el_tiempo_de_espa_a.numbercode");
+	var cp = prefManager.getCharPref("extensions.el_tiempo_de_espa_a.numbercode");
 	//if(autorun == true ){promptService.alert(window, "Autorun", "TRUE");}else{promptService.alert(window, "Autorun", "FALSE");}
 	//Obteniendo datos del tiempo
 	//promptService.alert(window, "XML AEMET", "Debug 0");
@@ -59,7 +70,7 @@ var el_tiempo_de_espa_a = {
 
 	}else{
 	//New IFRAME View
-	var numbercode=prefManager.getIntPref("extensions.el_tiempo_de_espa_a.numbercode");
+	var numbercode=prefManager.getCharPref("extensions.el_tiempo_de_espa_a.numbercode");
 	var citytext=prefManager.getCharPref("extensions.el_tiempo_de_espa_a.city");
 	window.openDialog("chrome://el_tiempo_de_espa_a/content/iframeview.xul","El Tiempo de España -- AEMET","chrome",numbercode,citytext);
 
@@ -69,6 +80,12 @@ var el_tiempo_de_espa_a = {
 	
   },
 
+  /**
+   * Description
+   * @method onToolbarButtonCommand
+   * @param {} e
+   * @return 
+   */
   onToolbarButtonCommand: function(e) {
     // just reuse the function above.  you can change this, obviously!
     el_tiempo_de_espa_a.onMenuItemCommand(e);
@@ -78,6 +95,12 @@ var el_tiempo_de_espa_a = {
 window.addEventListener("load", function () { el_tiempo_de_espa_a.onLoad(); }, false);
 
 
+/**
+ * Description
+ * @method onFirefoxLoad
+ * @param {} event
+ * @return 
+ */
 el_tiempo_de_espa_a.onFirefoxLoad = function(event) {
   document.getElementById("contentAreaContextMenu")
           .addEventListener("popupshowing", function (e) {
@@ -85,6 +108,12 @@ el_tiempo_de_espa_a.onFirefoxLoad = function(event) {
   }, false);
 };
 
+/**
+ * Description
+ * @method showFirefoxContextMenu
+ * @param {} event
+ * @return 
+ */
 el_tiempo_de_espa_a.showFirefoxContextMenu = function(event) {
   // show or hide the menuitem based on what the context menu is on
   document.getElementById("context-el_tiempo_de_espa_a").hidden = gContextMenu.onImage;
