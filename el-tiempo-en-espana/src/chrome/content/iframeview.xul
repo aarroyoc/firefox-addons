@@ -37,7 +37,7 @@
 
 <groupbox flex="1" id="box">
   <caption label="El Tiempo en España"/>
-  <html:iframe id="navigframe"></html:iframe>
+  <html:iframe type="content" id="navigframe"></html:iframe>
 </groupbox>
 
 </window>
