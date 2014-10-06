@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Chocolatey</ShortName>
+  <Description>Chocolatey packages search plugin</Description>
+  <Url type="text/html" method="get" template="http://chocolatey.org/packages?q={searchTerms}"/>
+  <Image width="16" height="16">https://github.com/chocolatey/chocolatey/raw/master/docs/logo/chocolateyicon.gif</Image>
+  <Developer>Adrián Arroyo Calle</Developer>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>http://chocolatey.org/packages?q={searchTerms}</moz:SearchForm>
+</OpenSearchDescription>
