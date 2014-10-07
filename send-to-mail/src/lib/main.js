@@ -10,8 +10,7 @@ var nightingale=false;
 var bluegriffon=false;
 function SendToMailURL(url)
 {
-	if(fennec || firefox)
-	{
+	if(firefox){
 		require("sdk/tabs").activeTab.url="mailto:?to=&subject="+encodeURIComponent("Send to Mail")+"&body="+encodeURIComponent(url);
 		require("sdk/notifications").notify({
 			title: "Send to Mail",
@@ -19,7 +18,6 @@ function SendToMailURL(url)
 			iconURL: data.url("haiku/servermaildaemon.png")
 		});
 	}
-
 }
 function firefoxSetup()
 {
@@ -41,7 +39,24 @@ function fennecSetup()
 	const recent = utils.getMostRecentBrowserWindow();
 	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("Send to Mail",selector,function (target){
-		SendToMailURL(target.location.href);
+		//var url=target.location.href;
+		Cu.import("resource://gre/modules/Services.jsm");
+		Cu.import("resource://gre/modules/HelperApps.jsm");
+		let window = Services.wm.getMostRecentWindow("navigator:browser");
+		var url=window.BrowserApp.selectedTab.browser.currentURI.spec;
+		var uri="mailto:?to=&subject="+encodeURIComponent("Send to Mail")+"&body="+encodeURIComponent(url);
+		
+		//HelperApps.launchURI(uri);
+		let apps = HelperApps.getAppsForUri(Services.io.newURI(uri,null,null));
+
+		// Assuming apps.length > 0
+		HelperApps.prompt(apps, {
+		  title:"Send to Mail",
+		  buttons: ["OK", "Cancel"]
+		}, function(result) {
+		  var index = result.button == 0 ? result.icongrid0 : undefined;
+		  if (index != undefined) apps[index].launch();
+		});
 	});
 }
 exports.main=function(options)
