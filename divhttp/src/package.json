@@ -5,8 +5,9 @@
   "description": "A basic HTTP server that runs inside Firefox. Designed for web developres who are tired of do 'pyhton -m SimpleHTTPServer'",
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
-  "version": "1.0",
-  "homepage" : "http://www.github.com/AdrianArroyoCalle/firefox-addons",
+  "version": "2.0.0",
+  "main" : "lib/main.js",
+  "homepage" : "http://adrianarroyocalle.github.io",
   "icon64" : "data/divhttp64.png",
   "icon" : "data/divhttp32.png",
   "preferences" : [

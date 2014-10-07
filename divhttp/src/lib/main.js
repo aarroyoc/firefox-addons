@@ -1,33 +1,38 @@
-const data=require("self").data;
-const tabs=require("tabs");
-const prefs=require("simple-prefs").prefs;
+const data=require("sdk/self").data;
+const tabs=require("sdk/tabs");
+const prefs=require("sdk/simple-prefs").prefs;
 var srv;
 exports.main=function(options)
 {
 	if(options.loadReason=="install"){
-		tabs.open(data.url("welcome.html")); //Welcome HTML file
-		tabs.open("http://sites.google.com/site/divelmedia");
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons");
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/welcome.html");
 		//Configurar con pagina XUL o HTML o Javascript
 	
 	}
 	if(options.loadReason=="upgrade"){
-		tabs.open(data.url("changelog.html")); //Changelog HTML file
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/changelog.html"); //Changelog HTML file
 	}
-	require("simple-prefs").on("review",function (){
+	require("sdk/simple-prefs").on("review",function (){
 		tabs.open("http://addons.mozilla.org/en/firefox/addon/divhttp");
 	});
-	var panel=require("panel").Panel({
+	var panel=require("sdk/panel").Panel({
 		height: 200,
 		width: 500,
 		contentURL: data.url("divhttp.html"),
 		contentScriptFile: data.url("divhttp.js")
 	});
-	var widget=require("widget").Widget({
+	var ActionButton=require("sdk/ui/button/action").ActionButton;
+	var widget=ActionButton({
 		id: "divhttp-widget",
 		label: "DivHTTP",
-		contentURL: data.url("divhttp64.png"),
-		panel: panel,
-		onClick: function(){
+		icon: {
+			"32" : data.url("divhttp32.png"),
+			"64" : data.url("divhttp64.png"),
+			"128" : data.url("divhttp128.png")
+		},
+		onClick: function(state){
+			panel.show({position: widget});
 			panel.port.emit("startUI",prefs.defdir,prefs.defport);
 		}
 
@@ -37,7 +42,7 @@ exports.main=function(options)
 		srv = startServerAsync(port, dir);
 		if(prefs.notify)
 		{
-			require("notifications").notify({
+			require("sdk/notifications").notify({
 				title: "DivHTTP",
 				text: "Server started and listening",
 				iconURL: data.url("divhttp64.png")
@@ -57,7 +62,7 @@ exports.main=function(options)
 			//User power-off
 			if(prefs.notify)
 			{
-				require("notifications").notify({
+				require("sdk/notifications").notify({
 					title: "DivHTTP",
 					text: "Server stoped",
 					iconURL: data.url("divhttp64.png")
