@@ -1,0 +1,20 @@
+{
+  "title": "No más 900",
+  "name": "no-mas-900",
+  "id" : "no-mas-900@divel",
+  "version": "1.0.0",
+  "description": "Encuentra los números equivalentes a los 900 directamente desde Firefox",
+  "homepage" : "http://adrianarroyocalle.github.io",
+  "icon" : "resource://no-mas-900-at-divel/data/no-mas-900-48.png",
+  "icon64" : "resource://no-mas-900-at-divel/data/no-mas-900-64.png",
+  "main": "index.js",
+  "author": "Adrián Arroyo Calle",
+  "engines": {
+    "firefox": ">=33.0a1",
+    "fennec": ">=33.0a1"
+  },
+  "permissions" : {
+   "private-browsing" : true
+  },
+  "license": "GPL"
+}
