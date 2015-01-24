@@ -1,20 +1,23 @@
 {
+    "title" : "Google+ Share for Android",
     "name": "google-share", 
     "license": "GPL 2.0", 
     "author": "Adrián Arroyo Calle", 
-    "version": "1.5", 
-    "fullName": "Google+ Share for Android", 
+    "version": "1.6.0",
+    "main" : "lib/main.js",
     "id": "google-android@divel", 
     "description": "With Google+ Share you can share your actual webpage with a simple click",
-    "homepage": "http://sites.google.com/site/divelmedia",
+    "homepage": "http://adrianarroyocalle.github.io",
     "icon64" : "data/icon64.png",
     "icon" : "data/icon32.png",
+    "engines" : {
+		"fennec" : ">=31.0"
+    },
     "preferences" : [
 	{
-	"name" : "review",
-	"type" : "control",
-	"title" : "Review the addon",
-	"label" : "Review me!"
-	}
-]
+		"name" : "review",
+		"type" : "control",
+		"title" : "Review the addon",
+		"label" : "Review me!"
+	}]
 }

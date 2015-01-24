@@ -1,44 +1,35 @@
-const data=require("self").data;
+var data=require("sdk/self").data;
+var tabs=require("sdk/tabs");
+
 exports.main=function(options){
-	if(options.loadReason=="install"){
-		require("tabs").open(data.url("welcome.html")); //Welcome HTML file
-		//Configurar con pagina XUL o HTML o Javascript
 	
+	if(options.loadReason=="install"){
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/google-share-android/welcome.html");
 	}
 	if(options.loadReason=="upgrade"){
-		require("tabs").open(data.url("changelog.html")); //Changelog HTML file
-		require("tabs").open("http://sites.google.com/site/divelmedia");
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/google-share-android/changelog.html"); //Changelog HTML file
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons");
 	}
-	require("simple-prefs").on("review",function (){
-		require("tabs").open("http://addons.mozilla.org/en/mobile/addon/google-share-android");
+	require("sdk/simple-prefs").on("review",function (){
+		tabs.open("http://addons.mozilla.org/en/mobile/addon/google-share-android");
 	});
-	/* Not supported by Firefox for Android */
-	/*var pluswidget=require("widget").Widget({
-		id: "google-share-widget",
-		label: "Google+ Share",
-		contentURL: data.url("icon64.png"), 	
-		onClick: function() {
-			require("tabs").open("http://plus.google.com/share?url="+require("tabs").activeTab.url);		
+	var utils = require('sdk/window/utils');
+	var win = utils.getMostRecentBrowserWindow();
+	win.SelectionHandler.addAction({
+		label: "Share on Google+",
+		id: "google-share-android",
+		icon: data.url("icon64.png"),
+		action: function(){
+			tabs.open("http://plus.google.com/share?url="+encodeURIComponent(win.BrowserApp.selectedTab.window.location.href));
+		},
+		selector: {
+			matches: function(){
+				return true;
+			}
 		}
-	});*/
-	/*var pagemod=require("page-mod");
-	pagemod.PageMod({
-		include: ['*'],
-		contentScriptFile: data.url("share.js"),
-		onAttach: function(worker){
-			worker.port.emit("init",data.url("icon64.png"));
-			worker.port.on("sharing",function(url){
-				require("tabs").open("http://plus.google.com/share?url="+encodeURIComponent(url));
-			});
-		}
-
-	});*/
-	const utils = require('api-utils/window/utils');
-	const recent = utils.getMostRecentBrowserWindow();
-	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
+	});
+	/*let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("Google+ Share",selector,function (target){
 		require("tabs").open("http://plus.google.com/share?url="+encodeURIComponent(recent.BrowserApp.selectedTab.window.location.href));
-	});
-
-
+	});*/
 }
