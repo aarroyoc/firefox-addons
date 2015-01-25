@@ -57,3 +57,7 @@ section > p{
 #donate{
 	text-align: center;
 }
+#disqus_thread{
+	margin-left: 25px;
+	margin-right: 25px;
+}
