@@ -1,0 +1,51 @@
+<!-- Analytics code -->
+<div id="analytics">
+	<script src="/js/cookiechoices.js"></script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function(event) {
+		cookieChoices.showCookieConsentDialog('This site uses cookies from Google Analytics, Google AdSense, Disqus and i18n','OK', 'Know more', 'http://adrianarroyocalle.github.io/cookies.txt');
+	});
+	</script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script class="cookie" type="text/plain">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-20035972-22', 'auto');
+	ga('send', 'pageview');
+	</script>
+	<script class="cookie" type="text/plain">
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<script type="text/javascript">
+	function execCookies(){
+		var scripts=document.getElementsByClassName("cookie");
+		for(var i=0;i<scripts.length;i++)
+		{
+		insertScript(scripts[i].textContent);
+		}
+	}
+	function insertScript(content){
+		var script=document.createElement("script");
+		script.type="text/javascript";
+		script.innerHTML=content;
+		document.getElementsByTagName("head")[0].appendChild(script);
+	}
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1);
+			if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+	if(getCookie("displayCookieConsent")=="y")
+	{
+		console.log("Consent already accepted");
+		execCookies();
+	}
+	</script>
+</div>

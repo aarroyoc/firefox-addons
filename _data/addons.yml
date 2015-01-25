@@ -1,0 +1,333 @@
+addons:
+ -
+  name: Google+ Share
+  id: google-share
+  description: 
+   en: Share on Google+ the current URL. Click right and click 'Share on Google+'
+   en: Comparte en Google+ la página actual. Haz click derecho y presiona 'Compartir en Google+'
+  status:
+  logo: page/google-share/icon64.png
+  compatible:
+   - firefox
+  download: http://cur.lv/4eo39
+  changelog:
+   -
+    release: Google+ Share 1.7
+    changes:
+     - Modified internal URLs
+     - Updated modules to sdk/modules
+     - Using ActionButtons instead of Widgets on Australis
+     - Removed AddonPage obsolate module
+   -
+    release: Google+ Share 1.6.1
+    changes:
+     - Fixed bugs
+   -
+    release: Google+ Share 1.6
+    changes:
+     - Added a Hotkey for share on Google+ with the keyboard
+   -
+    release: Google+ Share 1.4
+    changes:
+     - Removed all logging functions
+     - Support for Mozilla Firefox 20
+     - Google+ 32px icon added
+   -
+    release: Google+ Share 1.2.3 & Google+ Share 1.2.4
+    changes:
+     - Fixed bugs
+   -
+    release: Google+ Share 1.2.2
+    changes:
+     - Fixed bugs
+   -
+    release: Google+ Share 1.2.1
+    changes:
+     - Support for strange URIs
+   -
+    release: Google+ Share 1.2
+    changes:
+     - Now uses jetpack
+     - Widget icon in addon-bar
+     - Open Google+ in new-tab
+     - Open Google+ in a panel
+     - Added localization (but not used)
+     - Notifications
+ -
+  name: The Super Clock
+  id: the-super-clock
+  description:
+   en: The Super Clock is beautiful clock using the new Australis interface
+  logo: page/the-super-clock/the-super-clock.png
+  compatible:
+   - firefox
+  download: http://cur.lv/8nd6r
+  changelog:
+   -
+    release: The Super Clock 1.0
+    changes:
+     - First release
+ -
+  name: Google+ Share for Thunderbird
+  id: google-share-thunderbird
+  description:
+   en: Share a URL in Google+ directly from Thunderbird. This addon is the Thunderbird XUL version of Google+ Share for Firefox Desktop.
+  logo: page/google-share-android/icon64.png
+  compatible:
+   - thunderbird
+  download: http://cur.lv/4f5j1
+ -
+  name: Divel Notepad
+  id: divel-notepad
+  description:
+   en: Save your notes quickly and read it later. Divel Notepad is the best addon for taking notes. It's uses IndexedDB API for quick and safe storage operations.
+  logo: page/divel-notepad/icon64.png
+  compatible:
+   - firefox
+  download: http://cur.lv/4eolj
+  changelog:
+   -
+    release: Divel Notepad 1.5.1
+    changes:
+     - Fixed a bug on the images for new Australis interface
+   -
+    release: Divel Notepad 1.5
+    changes:
+     - Fixed bug on View Notes button with Firefox 29
+     - Now it uses ActionButtons instead of Widgets when you run it on Firefox Australis (29 an so on)
+     - Updated to use "sdk/module" syntax instead "module" syntax
+   -
+    release: Divel Notepad 1.4
+    changes:
+     - CSS improvements
+     - Syntax Highlight options with Prettyfy
+     - Export as TXT option
+     - Fixed bugs
+     - Clean of code
+     - New icons from Haiku Project
+     - Changed internal URLs
+     - New options to review the addon
+   -
+    release: Divel Notepad 1.2
+    changes:
+     - Added notifications
+     - Fixed some CSS bugs
+   -
+    release: Divel Notepad 1.1
+    changes:
+     - Bug fixes
+   -
+    release: Divel Notepad 1.0
+    changes:
+     - First release
+     - Storage in IndexedDB
+     - Icons from Haiku project
+     - Implemented in Mozilla Firefox
+     
+ -
+  name: El Tiempo en España
+  description:
+   en: How much temperature does today? I will have to take a look on Google? No, use El Tiempo en España
+  logo: page/el-tiempo-en-espana/icon64.png
+  compatible:
+   - firefox
+  download: http://cur.lv/4f4ij
+ -
+  name: DivHTTP
+  id: divhttp
+  description:
+   en: A basic HTTP server that runs inside Firefox. Designed for web developres who are tired of do 'pyhton -m SimpleHTTPServer'
+  logo: page/divhttp/divhttp64.png
+  compatible:
+   - firefox
+  download: http://cur.lv/4eons
+  changelog:
+   -
+    release: DivHTTP 1.0
+    changes:
+     - First release
+     - Support for Firefox Desktop
+     - Configurable folder and port
+     - Notifications
+ - 
+  name: mozCleaner
+  id: mozcleaner
+  description:
+   en: Get more free space and more speed with mozCleaner. mozCleaner is a powerful tool that searchs in Mozilla Applications for files that can be securely deleted.
+  logo: page/mozcleaner/mozCleaner-64.png
+  compatible:
+   - firefox
+   - thunderbird
+   - seamonkey
+  download: http://cur.lv/4eora
+  changelog:
+   -
+    release: mozCleaner 2.0
+    changes:
+     - Better user interface
+     - Cookies
+     - Browser history
+     - Optimize downloads database
+     - IndexedDB fixed
+     - Icon on home page for Fennec
+     - Start URL
+     - AdBlockPlus remove patterns
+   -
+    release: mozCleaner 1.1
+    changes:
+     - Support for Instantbird and BlueGriffon
+     - Extesions clean now via AddonManager API
+     - Search Engines clean now via Native API
+     - Improved modularity for XUL interface
+   -
+    release: mozCleaner 1.0
+    changes:
+     - First release
+ -
+  name: Google+ Share for Android
+  id: google-share-android
+  description:
+   en: With Google+ Share for Android you can use your favourite addon on the hand. Use Google+ Share for Android in Android devices with Mozilla Firefox.
+  logo: page/google-share-android/icon64.png
+  compatible:
+   - fennec
+  download: http://cur.lv/1x4rv
+  changelog:
+   -
+    release: Google+ Share for Android 1.6
+    changes:
+     - Using SelectionHandler instead of NativeWindow.contextmenu
+     - Updated to JPM
+   -
+    release: Google+ Share for Android 1.5
+    changes:
+     - Removed icon at the end of webpages
+     - Added entry on long press menu
+   -
+    release: Google+ Share for Android 1.4
+    changes:
+     - Support for Mozilla Firefox 20
+     - Google+ 32px icon added
+   -
+    release: Google+ Share for Android 1.3.1
+    changes:
+     - Fixing bugs
+   -
+    release: Google+ Share for Android 1.3
+    changes:
+     - Remove widget
+     - Add Google+ logo at the end of the webpages
+   -
+    release: Google+ Share for Android 1.2.4
+    changes:
+     - First release on Android
+ -
+  name: DivFind
+  id: divfind
+  description:
+   en: Search in all your search engines at the same time
+  logo: page/divfind/divfing_large_468_60.png
+  compatible:
+   - firefox
+   - thunderbird
+   - seamonkey
+   - fennec
+  download: http://cur.lv/4f49p
+  changelog:
+   -
+    release: DivFind 1.1
+    changes:
+     - Pass a NULL JSON to provide more compatibility with Thunderbird and SeaMonkey
+     - Adding instructions for first usage
+   -
+    release: DivFind 1.0
+    changes:
+     - First release
+ -
+  name: Send to Mail
+  id: send-to-mail
+  description:
+   en: Share a URL directly from your browser via email
+  logo: page/send-to-mail/send-to-mail.png
+  compatible:
+   - firefox
+   - fennec
+  download: http://cur.lv/6el1t
+  changelog:
+   -
+    release: Send to Mail 1.0
+    changes:
+     - First release
+ -
+  name: NextTuenti
+  id: next-tuenti
+  description:
+   en: With NextTuenti you can personalize Tuenti colors, add HTML gadgets, notifications, share URLs, download photos and much more.
+   es: Con NextTuenti podrás personalizar los colores de Tuenti, añadir gadgets HTML, notificaciones, compartir URLs, descargar fotos y mucho más
+  logo: page/next-tuenti/tuenti64.png
+  compatible:
+   - firefox
+  download: http://cur.lv/4f5ff
+  changelog:
+   -
+    release: NextTuenti 1.0
+    changes:
+     - First release
+ -
+  name: DivTranslate
+  id: divtranslate
+  description:
+   en: Translate the selected keywords and statements with the Apertium translate engine
+  logo: page/divtranslate/icon64.png
+  compatible:
+   - firefox
+   - fennec
+  download: http://cur.lv/5nftr
+  changelog:
+   -
+    release: DivTranslate 1.0
+    changes:
+     - First release
+ -
+  name: No más 900
+  id: no-mas-900
+  description:
+   en: Gives you the low cost number from national numbers like 901 or 902
+  logo: page/no-mas-900/no-mas-900.png
+  compatible:
+   - firefox
+   - fennec
+  download: http://cur.lv/i6z5w
+  changelog:
+   -
+    release: No más 900 1.0
+    changes:
+     - First release
+ -
+  name: Google+ Share for SeaMonkey
+  id: google-share-seamonkey
+  description:
+   en: Share your current page in SeaMonkey
+  logo: page/google-share-android/icon64.png
+  compatible:
+   - seamonkey
+  download: http://cur.lv/4f5i0
+  changelog:
+   -
+    release: Google+ Share for SeaMonkey 1.2
+    changes:
+     - First release
+ -
+  name: Quick BananaBread
+  id: quick-bananabread
+  description:
+   en: Instant access to the WebGL reference game BananaBread
+  logo: page/quick-bananabread/QBB64.png
+  compatible:
+   - firefox
+  download: http://cur.lv/4f51k
+  changelog:
+   -
+    release: Quick Bananabread 1.0
+    changes:
+     - First release

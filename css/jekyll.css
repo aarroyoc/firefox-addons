@@ -1,0 +1,59 @@
+body{
+	background-image: url("../background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Exo', sans-serif;
+}
+#copyright{
+	font-size: 12px;
+	clear: both;
+	text-align: center;
+	color: white;
+	margin-bottom: 120px;
+}
+#description{
+	float: left;
+	width: 50%;
+}
+#addon-list{
+	margin-left: 50%;
+}
+/* Light font */
+h3{
+	color: white;
+}
+
+.compat-icons{
+	width: 32px;
+	height: 32px;
+	margin-left: 10px;
+}
+.logo{
+	float: left;
+}
+section > p{
+	margin-left: 74px;
+}
+.changelog{
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: opacity 5s ease-out;
+}
+.changelog-show{
+	opacity: 1;
+	height: auto;
+	background-color: rgba(255,255,255,0.3);
+}
+.show-changelog{
+	color: green;
+	text-decoration: underline;
+}
+#screenshoots > img{
+	margin-left: 25px;
+	margin-right: 50px;
+	width: 70%;
+}
+#donate{
+	text-align: center;
+}

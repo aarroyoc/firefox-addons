@@ -1,0 +1,25 @@
+markdown: kramdown
+kramdown:
+ input: GFM
+highlighter: pygments
+
+permalink: pretty
+
+title: Adrian Arroyo's Firefox Addons
+tagline: My collection of home-made addons for Firefox, Thunderbird, Fennec and SeaMonkey
+description: My collection of home-made addons for Firefox, Thunderbird, Fennec and SeaMonkey
+url: .
+author:
+ name: Adrián Arroyo Calle
+ url: http://adrianarroyocalle.github.io
+timezone: Europe/Madrid
+encoding: utf-8
+version: 1.0.0
+keywords:
+ - firefox
+ - addons
+ - extensions
+ - mozcleaner
+ - google-share
+ - divel-notepad
+
