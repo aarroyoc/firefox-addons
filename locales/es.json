@@ -2,5 +2,6 @@
 	"download" : "Descargar",
 	"title" : "Complementos de Firefox de Adrián Arroyo",
 	"show-changelog" : "Mostrar cambios",
-	"addon-list" : "Lista de complementos"
+	"addon-list" : "Lista de complementos",
+	"description" : "Hola, mi nombre es Adrián Arroyo Calle y aquí guardo los complementos que he creado para Firefox, Thunderbird, SeaMonkey y Firefox para Android. Todos ellos son open source y están publicados en http://github.com/AdrianArroyoCalle/firefox-addons. Si te gustan deja una buena valoración e invítame a algo"
 }

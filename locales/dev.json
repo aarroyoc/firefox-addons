@@ -1,7 +1,7 @@
 {
 	"download" : "Download",
 	"title" : "Adrian Arroyo's Firefox Addons",
-	"description" : "Hi, my name is Adrián Arroyo and I create addons for Firefox, Thunderbird, SeaMonkey and Fennec",
+	"description" : "Hi, my name is Adrián Arroyo and I create addons for Firefox, Thunderbird, SeaMonkey and Firefox for Android. They are all open source published on http://github.com/AdrianArroyoCalle/firefox-addons",
 	"show-changelog" : "Show changelog",
 	"addon-list" : "Addon list"
 }
