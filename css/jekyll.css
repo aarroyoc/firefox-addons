@@ -11,12 +11,14 @@ body{
 	color: white;
 	margin-bottom: 120px;
 }
-#description{
-	float: left;
-	width: 50%;
-}
-#addon-list{
-	margin-left: 50%;
+@media(min-width: 800px){
+	#description{
+		float: left;
+		width: 50%;
+	}
+	#addon-list{
+		margin-left: 50%;
+	}
 }
 /* Light font */
 h3{

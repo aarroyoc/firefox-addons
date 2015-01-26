@@ -227,7 +227,7 @@ addons:
   id: divfind
   description:
    en: Search in all your search engines at the same time
-  logo: page/divfind/divfing_large_468_60.png
+  logo: page/divfind/divfind-64.png
   compatible:
    - firefox
    - thunderbird
