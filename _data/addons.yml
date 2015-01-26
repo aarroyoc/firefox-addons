@@ -126,6 +126,7 @@ addons:
      
  -
   name: El Tiempo en España
+  id: el-tiempo-en-espana
   description:
    en: How much temperature does today? I will have to take a look on Google? No, use El Tiempo en España
   logo: page/el-tiempo-en-espana/icon64.png
