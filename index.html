@@ -9,6 +9,18 @@ layout: page
 		<div id="description">
 			<h3 data-i18n="title">Adrian Arroyo's Firefox Addons</h3>
 			<p data-i18n="description">Hi, my name is Adrián Arroyo and I create addons for Firefox, Thunderbird, SeaMonkey and Fennec</p>
+			<div id="newsletter">
+				<h3>Subscribe to Divel Newsletter</h3>
+				<p>Get information and updates about Divel products</p>
+				<form target="_blank" action="http://groups.google.com/group/divel-newsletter/boxsubscribe">
+					<label for="email">Email:</label>
+					<input type="email" name="email" id="email"/>
+					<input type="submit" name="sub" value="Subscribe"/>
+				</form>
+			</div>
+			<div class="g-plusone"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+			<a href="http://www.tuenti.com/share" id="tuenti_share" class="tuenti-share-button"></a>
 			<div id="screenshoots">
 				<img src="images/mozcleaner-1.1.png" alt="mozCleaner 1.1 under Thunderbird 24">
 				<img src="images/divtranslate-1.0.png" alt="DivTranslate 1.0">
@@ -140,4 +152,5 @@ layout: page
 		}
 	});
 	</script>
+	{% include share.html %}
 </div>
