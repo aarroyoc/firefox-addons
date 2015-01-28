@@ -1,0 +1,15 @@
+{
+  "title": "Google AdSense Earnings",
+  "name": "google-adsense-earnings",
+  "version": "1.0.0",
+  "description": "Display your Google AdSense earnings in the toolbar",
+  "main": "index.js",
+  "author": "Adrián Arroyo Calle",
+  "homepage" : "http://adrianarroyocalle.github.io",
+  "icon" : "resource://google-adsense-earnings/data/adsense-48.png",
+  "icon64" : "resource://google-adsense-earnings/data/adsense-64.png",
+  "engines": {
+    "firefox": ">=32.0"
+  },
+  "license": "GPL"
+}
