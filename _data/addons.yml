@@ -260,6 +260,21 @@ addons:
     changes:
      - First release
  -
+  name: Google AdSense Earnings
+  id: google-adsense-earnings
+  description:
+   en: Display your Google AdSense earnings in the toolbar
+   es: Muestra tus ingresos de Google AdSense en la barra
+  logo: logos/adsense-64.png
+  compatible:
+   - firefox
+  download: http://cur.lv/ic3zr
+  changelog:
+   -
+    release: Google AdSense Earnings 1.0
+    changes:
+     - First release
+ -
   name: NextTuenti
   id: next-tuenti
   description:
