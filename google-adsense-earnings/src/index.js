@@ -7,6 +7,13 @@ var request = require("sdk/request");
 var timers = require("sdk/timers");
 var frame = require("sdk/frame/hidden-frame");
 var widget;
+var oauth=require("addon-google-oauth2");
+var oauth_options={
+	client_id: "561939088422-0rebgvffes76ccapb8svfub5fsnfdihu.apps.googleusercontent.com",
+	client_secret: "0KMmav-8bQEFibcg8VxErvim",
+	scopes: "https://www.googleapis.com/auth/adsense.readonly",
+	callback: updateWidget
+};
 
 function drawWidget(earnings)
 {
@@ -47,49 +54,17 @@ function updateWidget(token)
 		onComplete: function(response){
 			if(response.json.error)
 			{
-				login();
+				oauth.refreshToken(oauth_options, updateWidget);
 			}else{
 				var earnings=0;
 				for(var i=0;i<response.json.totals.length;i++)
+				{
 					earnings+=parseFloat(response.json.totals[i]);
+				}
 				drawWidget(earnings);
 			}
 		}
 	}).get();
-	
-	//reports.generate
-}
-
-function getToken(code)
-{
-	request.Request({
-		url: "https://www.googleapis.com/oauth2/v3/token",
-		content: {
-			code: code,
-			client_id: "561939088422-0rebgvffes76ccapb8svfub5fsnfdihu.apps.googleusercontent.com",
-			client_secret: "0KMmav-8bQEFibcg8VxErvim",
-			grant_type: "authorization_code",
-			redirect_uri: "urn:ietf:wg:oauth:2.0:oob"
-		},
-		onComplete: function(response){
-			ss.storage.access_token=response.json.access_token;
-			ss.storage.refresh_token=response.json.refresh_token;
-			updateWidget(ss.storage.access_token);
-		}
-	}).post();
-}
-
-function login(){
-	var url="https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/adsense.readonly&response_type=code&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=561939088422-0rebgvffes76ccapb8svfub5fsnfdihu.apps.googleusercontent.com";
-	tabs.open(url);
-	pageMod.PageMod({
-		include: self.data.url("login.html"),
-		contentScriptFile: self.data.url("login.js"),
-		onMessage: function(code){
-			getToken(code);
-		}
-	});
-	tabs.open(self.data.url("login.html"));
 }
 
 exports.main=function(options){
@@ -106,8 +81,9 @@ exports.main=function(options){
 			
 		}
 	});
-	updateWidget(ss.storage.access_token);
+	oauth.refreshToken(oauth_options, updateWidget);
+	
 	timers.setInterval(function(){
-		updateWidget(ss.storage.access_token);
+		updateWidget(oauth.getToken());
 	},1000*60 /* Every minute */);
 }
