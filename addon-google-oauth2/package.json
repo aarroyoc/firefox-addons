@@ -1,6 +1,6 @@
 {
   "name": "addon-google-oauth2",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Authenticate with Google in the Addon SDK for Firefox",
   "main": "addon-google-oauth2.js",
   "scripts": {
