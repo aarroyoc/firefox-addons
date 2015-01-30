@@ -1,0 +1,26 @@
+{
+  "name": "addon-google-oauth2",
+  "version": "0.1.0",
+  "description": "Authenticate with Google in the Addon SDK for Firefox",
+  "main": "addon-google-oauth2.js",
+  "scripts": {
+    "test": "echo \"No test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/AdrianArroyoCalle/firefox-addons"
+  },
+  "keywords": [
+    "addon-sdk",
+    "jetpack",
+    "jpm",
+    "oauth2",
+    "google",
+    "login"
+  ],
+  "author": "Adrián Arroyo Calle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdrianArroyoCalle/firefox-addons/issues"
+  }
+}
