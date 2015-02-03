@@ -1,9 +1,19 @@
 var firefox=false;
 var fennec=false;
-const data=require("self").data;
+const data=require("sdk/self").data;
+const tabs=require("sdk/tabs");
+const pageMod=require("sdk/page-mod");
+const request=require("sdk/request");
+const notifications=require("sdk/notifications");
+const cm=require("sdk/context-menu");
+const prefs=require("sdk/simple-prefs").prefs;
+
+//var endpoint="http://api.apertium.org/json"; //Java ScaleMT API - Down
+var endpoint="http://apy.projectjj.com"; //APY in Python 3
+
 function TranslateUI()
 {
-	var pageMod=require("page-mod").PageMod({
+	var pMod=pageMod.PageMod({
 		include: data.url("divtranslate.html"),
 		contentScriptFile: data.url("divtranslate.js"),
 		onAttach: function(worker)
@@ -17,34 +27,27 @@ function TranslateUI()
 	});
 	if(firefox)
 	{
-		//Do a panel
-		/*var panel=require("panel").Panel({
-			width: 500,
-			height: 500,
-			contentURL: data.url("divtranslate.html")
-		});
-		panel.show();*/
-		require("tabs").open(data.url("divtranslate.html"));
+		tabs.open(data.url("divtranslate.html"));
 	}
 	if(fennec)
 	{
 		//Do a tab
-		require("tabs").open(data.url("divtranslate.html"));
+		tabs.open(data.url("divtranslate.html"));
 	}
 }
 function Translate(page,user,text)
 {
-	var request=require("request").Request({
-		url: "http://api.apertium.org/json/translate?q="+encodeURIComponent(text)+"&langpair="+encodeURIComponent(page+"|"+user),
+	var req=request.Request({
+		url: endpoint+"/translate?q="+encodeURIComponent(text)+"&langpair="+encodeURIComponent(page+"|"+user),
 		onComplete: function(response)
 		{
 			if(response.json.responseStatus==200)
 			{
 				var text=response.json.responseData.translatedText;
-				require("notifications").notify({
-				title: "DivTranslate",
-				text: text,
-				iconURL: data.url("divtranslate64.png")
+				notifications.notify({
+					title: "DivTranslate",
+					text: text,
+					iconURL: data.url("divtranslate64.png")
 				});
 			}		
 		}
@@ -54,18 +57,18 @@ function Translate(page,user,text)
 function firefoxSetup()
 {
 
-	var qt=require("context-menu").Item({
+	var qt=cm.Item({
 	label: "QuickTrans",
-	context: require("context-menu").SelectionContext(),
+	context: cm.SelectionContext(),
 	contentScript: "self.on('click',function(){self.postMessage(window.getSelection().toString())});",
 	onMessage: function(text){
-		var userlang=require("simple-prefs").prefs.userlang;
-		var pagelang=require("simple-prefs").prefs.pagelang;
+		var userlang=prefs.userlang;
+		var pagelang=prefs.pagelang;
 		Translate(pagelang,userlang,text);
 
 	}
 	});
-	var st=require("context-menu").Item({
+	var st=cm.Item({
 		label: "Simple Translation",
 		contentScript: "self.on('click',function(){self.postMessage();});",
 		onMessage: function()
@@ -77,11 +80,20 @@ function firefoxSetup()
 }
 function fennecSetup()
 {
-	const utils = require('api-utils/window/utils');
-	const recent = utils.getMostRecentBrowserWindow();
-	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
-	recent.NativeWindow.contextmenus.add("Simple Translation",selector,function (target){
-		TranslateUI();
+	const utils = require('sdk/window/utils');
+	var win = utils.getMostRecentBrowserWindow();
+	win.SelectionHandler.addAction({
+		label: "DivTranslate",
+		id: "divtranslate-button",
+		icon: data.url("divtranslate.svg"),
+		action: function(){
+			TranslateUI();
+		},
+		selector: {
+			matches: function(){
+				return true;
+			}
+		}
 	});
 }
 exports.main=function(options)
@@ -91,32 +103,17 @@ exports.main=function(options)
 		firefox=true;
 	if(system.name=="Fennec")
 		fennec==true;
-	require("simple-prefs").on("review",function (){
-			require("tabs").open("http://addons.mozilla.org/en/firefox/addon/divtranslate");
+	require("sdk/simple-prefs").on("review",function (){
+		tabs.open("http://addons.mozilla.org/en/firefox/addon/divtranslate");
 	});
-	var date=new Date();
-	if(date.getMonth()+1==9 && date.getDay()==25)
-	{
-		//Easter egg for birthday
-		require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons/birthday.html");
-	}
-	if(date.getMonth()+1==12 && date.getDay()==28)
-	{
-		//Easter egg for 28th December
-		require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons/joke.html");
-	}
-	if(date.getMonth()+1==4 && date.getDay()==1)
-	{
-		//Easter egg for April Fool's day
-		require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons/joke.html");
-	}
 	if(options.loadReason=="install")
 	{
-		require("tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons");
 	}
 	if(options.loadReason=="upgrade")
 	{
 		//Do something with the changelog
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons");
 	}
 	if(firefox)
 		firefoxSetup();
