@@ -106,35 +106,20 @@ var pluspanel=panel.Panel({
 	contentURL: "about:blank"
 
 });
-var xulapp=require("sdk/system/xul-app");
-if(xulapp.version >= 29.0)
-{
-	var { ActionButton }=require("sdk/ui/button/action");
-	var pluswidget=ActionButton({
-		id: "google-share-widget",
-		label: "Google+ Share",
-		icon: {
-			"32" : data.url("icon32.png"),
-			"64" : data.url("icon64.png")
-		},
-		onClick: function(){
-			pluspanel.contentURL="http://plus.google.com/share?url="+encodeURIComponent(tab.activeTab.url);
-			pluspanel.show({
-					position: pluswidget
-			});
-		}
-	});
-}else{
-	var widget=require("sdk/widget");
-	var pluswidget=widget.Widget({
-		id: "google-share-widget",
-		label: "Google+ Share",
-		contentURL: data.url("icon64.png"), 	
-		panel: pluspanel,
-		onClick: function() {
-			pluspanel.contentURL="http://plus.google.com/share?url="+tab.activeTab.url;		
-		}
-	});
-}
+var { ActionButton }=require("sdk/ui/button/action");
+var pluswidget=ActionButton({
+	id: "google-share-widget",
+	label: "Google+ Share",
+	icon: {
+		"32" : data.url("icon32.png"),
+		"64" : data.url("icon64.png")
+	},
+	onClick: function(){
+		pluspanel.contentURL="http://plus.google.com/share?url="+encodeURIComponent(tab.activeTab.url);
+		pluspanel.show({
+				position: pluswidget
+		});
+	}
+});
 
 }
