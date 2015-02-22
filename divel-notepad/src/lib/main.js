@@ -6,6 +6,7 @@ var fennec=false;
 var instantbird=false;
 var self=require("sdk/self");
 const notifications=require("sdk/notifications");
+var _=require("sdk/l10n").get;
 
 function s4() {
   return Math.floor((1 + Math.random()) * 0x10000)
@@ -45,8 +46,8 @@ function SaveData(title, body, code)
 		});
 		put.onsuccess=function(){
 		notifications.notify({
-          title: "Divel Notepad",
-		  text: "Note added successfully",
+          title: _("Divel Notepad"),
+		  text: _("Note added successfully"),
 		  iconURL: self.data.url("save64.png")
 		});
 		}
@@ -105,8 +106,8 @@ putData = function () {
 		var del=transaction.objectStore("NOTE").delete(id);
 		del.onsuccess=function(){
 		notifications.notify({
-			title: "Divel Notepad",
-			text: "Note deleted successfully",
+			title: _("Divel Notepad"),
+			text: _("Note deleted successfully"),
 			iconURL: self.data.url("open64.png")
 		});
 		}
@@ -262,7 +263,7 @@ exports.main=function(options)
 	{
 		var mm = require("sdk/context-menu");
  		var quicknote = mm.Item({
- 		 label: "Quick Note",
+ 		 label: _("Quick note"),
  		 contentScript: 'self.on("click", function () {' +
                  '  self.postMessage(document.URL);' +
                  '});',
@@ -271,7 +272,7 @@ exports.main=function(options)
  		 }
 		});
 		var managenotes = mm.Item({
- 		 label: "View notes",
+ 		 label: _("View notes"),
  		 contentScript: 'self.on("click", function () {' +
                  '  self.postMessage(document.URL);' +
                  '});',
@@ -285,7 +286,7 @@ exports.main=function(options)
 		var {ActionButton} = require("sdk/ui/button/action");
 		var quickWidget=ActionButton({
 			id: "divel-notepad-write",
-			label: "Quick Note",
+			label: _("Quick note"),
 			icon: {
 				"32" : self.data.url("save32.png"),
 				"64" : self.data.url("save64.png")
@@ -296,7 +297,7 @@ exports.main=function(options)
 		});
 		var notesWidget=ActionButton({
 			id: "divel-notepad-view",
-			label: "View notes",
+			label: _("View notes"),
 			icon: {
 				"32" : self.data.url("open32.png"),
 				"64" : self.data.url("open64.png")
