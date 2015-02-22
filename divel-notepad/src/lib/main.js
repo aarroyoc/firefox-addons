@@ -282,49 +282,28 @@ exports.main=function(options)
 	}
 	if(firefox==true)
 	{
-		if(xulapp.version >= 29.0)
-		{
-			var {ActionButton} = require("sdk/ui/button/action");
-			var quickWidget=ActionButton({
-				id: "divel-notepad-write",
-				label: "Quick Note",
-				icon: {
-					"32" : self.data.url("save32.png"),
-					"64" : self.data.url("save64.png")
-				},
-				onClick: function(){
-					QuickNote();
-				}
-			});
-			var notesWidget=ActionButton({
-				id: "divel-notepad-view",
-				label: "View notes",
-				icon: {
-					"32" : self.data.url("open32.png"),
-					"64" : self.data.url("open64.png")
-				},
-				onClick: function(){
-					ViewNote();
-				}
-			});
-		}else{
-			var widget=require("sdk/widget");
-			var pluswidget=widget.Widget({
-				id: "divel-notepad-write",
-				label: "Quick Note",
-				contentURL: self.data.url("save32.png"),
-				onClick: function() {
-					QuickNote();	
-				}
-			});
-			var managewidget=widget.Widget({
-				id: "divel-notepad-view",
-				label: "View notes",
-				contentURL: self.data.url("open32.png"), 	
-				onClick: function() {
-					ViewNote();
-				}
-			});
-		}
+		var {ActionButton} = require("sdk/ui/button/action");
+		var quickWidget=ActionButton({
+			id: "divel-notepad-write",
+			label: "Quick Note",
+			icon: {
+				"32" : self.data.url("save32.png"),
+				"64" : self.data.url("save64.png")
+			},
+			onClick: function(){
+				QuickNote();
+			}
+		});
+		var notesWidget=ActionButton({
+			id: "divel-notepad-view",
+			label: "View notes",
+			icon: {
+				"32" : self.data.url("open32.png"),
+				"64" : self.data.url("open64.png")
+			},
+			onClick: function(){
+				ViewNote();
+			}
+		});
 	}
 }
