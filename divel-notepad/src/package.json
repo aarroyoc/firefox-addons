@@ -6,7 +6,7 @@
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
   "icon" : "data/open32.png",
-  "iocn64" : "data/open64.png",
+  "icon64" : "data/open64.png",
   "version": "1.7",
   "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
   "preferences" : [
