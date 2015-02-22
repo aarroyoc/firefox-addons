@@ -1,6 +1,8 @@
 const data=require("sdk/self").data;
 const { open } = require('sdk/window/utils');
-const {Cc, Ci, Cu, Cr} = require("chrome");
+const {Cc, Ci, Cu, Cr, Cm} = require("chrome");
+var { ActionButton } = require("sdk/ui/button/action");
+var tabs = require("sdk/tabs");
 var firefox=false;
 var thunderbird=false;
 var seamonkey=false;
@@ -8,28 +10,23 @@ var fennec=false;
 var instantbird=false;
 var nightingale=false;
 var bluegriffon=false;
+
+
 function readContent()
 {
 	return data.load("mozCleaner.html");
 }
 function firefoxSetup()
 {
-	var foxwidget=require("sdk/widget").Widget({
+	var button = ActionButton({
 		id: "mozcleaner-widget",
 		label: "mozCleaner",
-		contentURL: data.url("mozCleaner-64.png"), 	
-		onClick: function() {
-			//Open UI for do a cleaning
-			open("data:text/html,"+readContent(),{
-			name: "mozCleaner",
-			features: {
-				width: 800,
-				height: 600,
-				chrome: true,
-				popup: false
-			}
-		});
-			
+		icon: {
+		  "32": data.url("mozCleaner-32.png"),
+		  "64" : data.url("mozCleaner-64.png")
+		},
+		onClick: function(state) {
+			tabs.open("chrome://mozcleaner/content/mozCleaner.html");
 		}
 	});
 
