@@ -143,6 +143,23 @@ layout: page
 			{% if addon.description.es %}
 				i18n.addResource("es","translation","description-{{ addon.id }}","{{ addon.description.es }}");
 			{% endif %}
+			
+			{% if addon.description.fr %}
+				i18n.addResource("fr","translation","description-{{ addon.id }}","{{ addon.description.fr }}");
+			{% endif %}
+			
+			{% if addon.description.de %}
+				i18n.addResource("de","translation","description-{{ addon.id }}","{{ addon.description.de }}");
+			{% endif %}
+			{% if addon.description.zh %}
+				i18n.addResource("zh","translation","description-{{ addon.id }}","{{ addon.description.zh }}");
+			{% endif %}
+			{% if addon.description.ja %}
+				i18n.addResource("ja","translation","description-{{ addon.id }}","{{ addon.description.ja }}");
+			{% endif %}
+			{% if addon.description.ru %}
+				i18n.addResource("ru","translation","description-{{ addon.id }}","{{ addon.description.ru }}");
+			{% endif %}
 		{% endfor %}
 		
 		var documents=document.querySelectorAll("[data-i18n]");
