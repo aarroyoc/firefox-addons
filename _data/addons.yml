@@ -5,6 +5,11 @@ addons:
   description: 
    en: Share on Google+ the current URL. Click right and click 'Share on Google+'
    en: Comparte en Google+ la página actual. Haz click derecho y presiona 'Compartir en Google+'
+   fr: Partager sur Google+ l'URL actuelle. Cliquez à droite et cliquez sur 'Share on Google+'
+   de: Share on Google+ aktuellen Seite. Rechte Maustaste und klicken Sie auf "Share on Google+"
+   zh: 谷歌 + 当前页的股份。右键单击，单击共享在谷歌 +'
+   ja: Google+で現在のページを共有。右クリックして、「Google+で共有」をクリックし
+   ru: Поделиться на Google+ текущей странице. Щелкните правой кнопкой мыши и выберите «Покажи в Google+ '
   status:
   logo: page/google-share/icon64.png
   compatible:
