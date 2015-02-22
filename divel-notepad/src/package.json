@@ -7,7 +7,7 @@
   "license": "GPL 2.0",
   "icon" : "data/open32.png",
   "iocn64" : "data/open64.png",
-  "version": "1.6",
+  "version": "1.7",
   "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
   "preferences" : [
    {
