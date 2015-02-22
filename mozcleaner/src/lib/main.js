@@ -38,30 +38,14 @@ function fennecSetup()
 	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("mozCleaner",selector,function (target){
 		//Open UI for do a cleaning
-		open("data:text/html,"+readContent(),{
-			name: "mozCleaner",
-			features: {
-				width: 800,
-				height: 600,
-				chrome: true,
-				popup: false
-			}
-		});
+		tabs.open("chrome://mozcleaner/content/mozCleaner.html");
 	});
 	Cu.import("resource://gre/modules/Home.jsm");
 	Home.banner.add({
 		text: "mozCleaner",
 		icon: data.url("mozCleaner-64.png"),
 		onclick: function(){
-			open("data:text/html,"+readContent(),{
-				name: "mozCleaner",
-				features: {
-						width: 400,
-						height: 200,
-						chrome: true,
-						popup: false
-				}
-			});
+			tabs.open("chrome://mozcleaner/content/mozCleaner.html");
 		}
 	});
 }
@@ -141,7 +125,7 @@ exports.main=function(options)
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
 			require("sdk/notifications").notify({
 					title: "mozCleaner",
-					text: "Successfully updated to 2.0",
+					text: "Successfully updated to 2.1",
 					iconURL: data.url("mozCleaner-64.png")
 			});
 		}
