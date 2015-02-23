@@ -10,22 +10,22 @@
     "icon64" : "data/icon64.png",
     "icon" : "data/icon32.png",
     "preferences" : [{
-	"name" : "openwith",
+	"name" : "opener",
 	"title" : "Open Google+ with",
 	"description" : "Select the type of page when Google+ Share share a URL",
 	"type" : "menulist",
-	"value" : "3",
+	"value" : 2,
 	"options" : [
 		{
-			"value" : "3",
+			"value" : "2",
 			"label" : "Open in a Panel (default)"
 		},
 		{
-			"value" : "2",
+			"value" : "1",
 			"label" : "Open in a new Tab"
 		},
 		{
-			"value" : "1",
+			"value" : "0",
 			"label" : "Open in a new Window"
 		}
 

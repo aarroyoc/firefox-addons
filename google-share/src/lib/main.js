@@ -49,10 +49,10 @@ function OpenPanel(url){
 }
 function ShareURL(url){
 	var PlusURL="http://plus.google.com/share?url="+encodeURIComponent(url);
-	switch(prefs.openwith){
-		case "1":OpenWindow(PlusURL);break;		
-		case "2":OpenTab(PlusURL);break;
-		case "3":
+	switch(prefs.opener){
+		case 0:OpenWindow(PlusURL);break;		
+		case 1:OpenTab(PlusURL);break;
+		case 2:
 		default:
 		OpenPanel(PlusURL);break;
 	}
@@ -109,10 +109,17 @@ exports.main=function(options){
 			"64" : data.url("icon64.png")
 		},
 		onClick: function(){
-			pluspanel.contentURL="http://plus.google.com/share?url="+encodeURIComponent(tab.activeTab.url);
-			pluspanel.show({
-					position: pluswidget
-			});
+			var PlusURL="http://plus.google.com/share?url="+encodeURIComponent(tab.activeTab.url);
+			switch(prefs.opener){
+				case 0:OpenWindow(PlusURL);break;
+				case 1:OpenTab(PlusURL);break;
+				case 2:
+				default:
+					pluspanel.contentURL=PlusURL;
+					pluspanel.show({
+						position: pluswidget
+					});
+			}
 		}
 	});
 
