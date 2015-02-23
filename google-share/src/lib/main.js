@@ -1,3 +1,9 @@
+/* For 1.8, 
+ * Clean up the addon
+ * Translate
+ * Fix bugs
+ **/
+
 const contextMenu=require("sdk/context-menu");
 const data=require("sdk/self").data;
 const panel=require("sdk/panel");
