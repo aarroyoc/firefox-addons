@@ -1,5 +1,5 @@
 /* For 1.8, 
- * Clean up the addon
+ * Clean up the addon - DONE
  * Translate
  * Fix bugs
  **/
@@ -20,8 +20,8 @@ function Notify(url){
     var myIconURL = data.url("icon64.png");
     var notifications = require("sdk/notifications");
     notifications.notify({
-        title: "Google+ Share",
-        text: "Sharing "+url,
+        title: _("Google+ Share"),
+        text: _("Sharing")+" "+url,
         iconURL: myIconURL,
         onClick: function (data) {
 			
@@ -74,7 +74,7 @@ exports.main=function(options){
 
 	var mm = require("sdk/context-menu");
 	var menuItem = mm.Item({
-	 label: "Share on Google+",
+	 label: _("Share on Google+"),
 	 contentScript: 'self.on("click", function () {' +
 					'  self.postMessage(document.URL);' +
 					'});',
@@ -103,7 +103,7 @@ exports.main=function(options){
 	var { ActionButton }=require("sdk/ui/button/action");
 	var pluswidget=ActionButton({
 		id: "google-share-widget",
-		label: "Google+ Share",
+		label: _("Share on Google+"),
 		icon: {
 			"32" : data.url("icon32.png"),
 			"64" : data.url("icon64.png")
