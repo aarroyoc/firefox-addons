@@ -1,9 +1,3 @@
-/* For 1.8, 
- * Clean up the addon - DONE
- * Translate
- * Fix bugs
- **/
-
 const contextMenu=require("sdk/context-menu");
 const data=require("sdk/self").data;
 const panel=require("sdk/panel");
@@ -27,8 +21,6 @@ function Notify(url){
 			
         }
     });
-
-
 }
 function OpenWindow(url){
 	win.open(url);
@@ -41,11 +33,8 @@ function OpenPanel(url){
 		height: prefs.height,
 		width: prefs.width,
 		contentURL: url
-
 	});
 	pluspanel.show();
-
-
 }
 function ShareURL(url){
 	var PlusURL="http://plus.google.com/share?url="+encodeURIComponent(url);
@@ -82,6 +71,7 @@ exports.main=function(options){
 	   ShareURL(url);
 	 }
 	});
+	
 	var shareHotKey = Hotkey({
 	  combo: prefs.hotkey,
 	  onPress: function() {
