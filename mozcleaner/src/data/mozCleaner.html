@@ -301,23 +301,6 @@
 				}
 			}
 		}catch(e){}
-		/* Cookies */
-		try{
-			var cookie=Components.classes["@mozilla.org/cookiemanager;1"].getService(Components.interfaces.nsICookieManager);
-			addItem(true,"Cookies","All cookies",function(){
-				cookie.removeAll();
-				addLogger("[OK] Cookies removed");
-			});
-			
-		}catch(e){}
-		/* History */
-		try{
-			var history=Components.classes["@mozilla.org/browser/nav-history-service;1"].getService(Components.interfaces.nsIBrowserHistory);
-			addItem(true, "History","Browser history",function(){
-					history.removeAllPages();
-					addLogger("[OK] History removed");
-			});
-		}catch(e){}
 		/* AdBlock */
 		try{
 			var adblockplus=FileUtils.getDir("ProfD",["adblockplus"],false);
@@ -350,6 +333,23 @@
 					addLogger("[OK] Downloads database optimized");
 				});
 			}
+		}catch(e){}
+		/* Cookies */
+		try{
+			var cookie=Components.classes["@mozilla.org/cookiemanager;1"].getService(Components.interfaces.nsICookieManager);
+			addItem(false,"Cookies","All cookies",function(){
+				cookie.removeAll();
+				addLogger("[OK] Cookies removed");
+			});
+			
+		}catch(e){}
+		/* History */
+		try{
+			var history=Components.classes["@mozilla.org/browser/nav-history-service;1"].getService(Components.interfaces.nsIBrowserHistory);
+			addItem(false, "History","Browser history",function(){
+					history.removeAllPages();
+					addLogger("[OK] History removed");
+			});
 		}catch(e){}
 		
 		/* OfflineCache */
@@ -420,14 +420,14 @@
 	</style>
 </head>
 <body>
-	<h1>Welcome to mozCleaner</h1>
+	<h1 data-l10n-id="Welcome to mozCleaner">Welcome to mozCleaner</h1>
 	<div style="overflow: auto;" id="analize">
 
 	</div>
-	<button id="doAnalize">Analyse</button>
-	<button id="doClean" disabled>Clean</button>
+	<button id="doAnalize" data-l10n-id="Analyse">Analyse</button>
+	<button id="doClean" disabled data-l10n-id="Clean">Clean</button>
 	<ul id="logger">
-		<li>Starting mozCleaner</li>
+		<li data-l10n-id="Starting mozCleaner">Starting mozCleaner</li>
 	</ul>
 </body>
 </html>

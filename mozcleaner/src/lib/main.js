@@ -3,6 +3,7 @@ const { open } = require('sdk/window/utils');
 const {Cc, Ci, Cu, Cr, Cm} = require("chrome");
 var { ActionButton } = require("sdk/ui/button/action");
 var tabs = require("sdk/tabs");
+var _=require("sdk/l10n").get;
 var firefox=false;
 var thunderbird=false;
 var seamonkey=false;
@@ -20,7 +21,7 @@ function firefoxSetup()
 {
 	var button = ActionButton({
 		id: "mozcleaner-widget",
-		label: "mozCleaner",
+		label: _("mozCleaner"),
 		icon: {
 		  "32": data.url("mozCleaner-32.png"),
 		  "64" : data.url("mozCleaner-64.png")
@@ -42,7 +43,7 @@ function fennecSetup()
 	});
 	Cu.import("resource://gre/modules/Home.jsm");
 	Home.banner.add({
-		text: "mozCleaner",
+		text: _("mozCleaner"),
 		icon: data.url("mozCleaner-64.png"),
 		onclick: function(){
 			tabs.open("chrome://mozcleaner/content/mozCleaner.html");
@@ -124,8 +125,8 @@ exports.main=function(options)
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
 			require("sdk/notifications").notify({
-					title: "mozCleaner",
-					text: "Successfully updated to 2.1",
+					title: _("mozCleaner"),
+					text: _("Successfully updated to 2.1"),
 					iconURL: data.url("mozCleaner-64.png")
 			});
 		}
