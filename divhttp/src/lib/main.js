@@ -1,6 +1,7 @@
 const data=require("sdk/self").data;
 const tabs=require("sdk/tabs");
 const prefs=require("sdk/simple-prefs").prefs;
+var _=require("sdk/l10n").get;
 var srv;
 exports.main=function(options)
 {
@@ -11,6 +12,7 @@ exports.main=function(options)
 	
 	}
 	if(options.loadReason=="upgrade"){
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/");
 		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/changelog.html"); //Changelog HTML file
 	}
 	require("sdk/simple-prefs").on("review",function (){
@@ -25,7 +27,7 @@ exports.main=function(options)
 	var ActionButton=require("sdk/ui/button/action").ActionButton;
 	var widget=ActionButton({
 		id: "divhttp-widget",
-		label: "DivHTTP",
+		label: _("DivHTTP"),
 		icon: {
 			"32" : data.url("divhttp32.png"),
 			"64" : data.url("divhttp64.png"),
@@ -38,13 +40,13 @@ exports.main=function(options)
 
 	});
 	panel.port.on("startServer",function(dir,port){
-		var { startServerAsync } = require("sdk/test/httpd");
+		var { startServerAsync } = require("./httpd.js");
 		srv = startServerAsync(port, dir);
 		if(prefs.notify)
 		{
 			require("sdk/notifications").notify({
-				title: "DivHTTP",
-				text: "Server started and listening",
+				title: _("DivHTTP"),
+				text: _("Server started and listening"),
 				iconURL: data.url("divhttp64.png")
 
 			});
@@ -63,8 +65,8 @@ exports.main=function(options)
 			if(prefs.notify)
 			{
 				require("sdk/notifications").notify({
-					title: "DivHTTP",
-					text: "Server stoped",
+					title: _("DivHTTP"),
+					text: _("Server stoped"),
 					iconURL: data.url("divhttp64.png")
 				});
 			}
