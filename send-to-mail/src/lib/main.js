@@ -127,7 +127,7 @@ exports.main=function(options)
 	{
 		if(options.loadReason=="install" || options.loadReason=="upgrade")
 		{
-			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstallOrUpgrade&utm_campaign=SendToMail&utm_medium=Addon");
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/send-to-mail/welcome.html");
 		}
 		require("sdk/simple-prefs").on("review",function (){
