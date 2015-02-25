@@ -54,11 +54,11 @@ exports.main=function(options){
 
 	if(options.loadReason=="install"){
 		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/google-share/welcome.html");
-		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstall&utm_campaign=GoogleShare&utm_medium=Addon");
 	}
 	if(options.loadReason=="upgrade"){
 		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/google-share/changelog.html");
-		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonUpgrade&utm_campaign=GoogleShare&utm_medium=Addon");
 	}
 
 	var mm = require("sdk/context-menu");
