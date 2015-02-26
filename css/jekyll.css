@@ -1,5 +1,6 @@
 body{
-	background-image: url("../background.jpg");
+	/* background-image: url("../background.jpg"); */
+	background: linear-gradient(to bottom,blue,cyan);
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: 'Exo', sans-serif;
