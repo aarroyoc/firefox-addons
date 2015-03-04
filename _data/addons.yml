@@ -17,7 +17,7 @@ addons:
   download: http://cur.lv/4eo39
   changelog:
    -
-    release: Google+ Share 1.7.1
+    release: Google+ Share 1.8.0
     changes:
      - Using Australis UI only to fix bugs
      - Added translations
