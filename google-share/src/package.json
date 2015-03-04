@@ -2,7 +2,7 @@
     "name": "google-share", 
     "license": "GPL 2.0", 
     "author": "Adrián Arroyo Calle", 
-    "version": "1.7.0", 
+    "version": "1.8.0", 
     "fullName": "Google+ Share", 
     "id": "google@divel", 
     "description": "With Google+ Share you can share your actual webpage with a simple click",
@@ -10,22 +10,22 @@
     "icon64" : "data/icon64.png",
     "icon" : "data/icon32.png",
     "preferences" : [{
-	"name" : "openwith",
+	"name" : "opener",
 	"title" : "Open Google+ with",
 	"description" : "Select the type of page when Google+ Share share a URL",
 	"type" : "menulist",
-	"value" : "3",
+	"value" : 2,
 	"options" : [
 		{
-			"value" : "3",
+			"value" : "2",
 			"label" : "Open in a Panel (default)"
 		},
 		{
-			"value" : "2",
+			"value" : "1",
 			"label" : "Open in a new Tab"
 		},
 		{
-			"value" : "1",
+			"value" : "0",
 			"label" : "Open in a new Window"
 		}
 
