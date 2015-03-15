@@ -26,7 +26,7 @@ layout: page
 				<img src="images/mozcleaner-1.1.png" alt="mozCleaner 1.1 under Thunderbird 24">
 				<img src="images/divtranslate-1.0.png" alt="DivTranslate 1.0">
 				<img src="images/divhttp-1.0.png" alt="DivHTTP 1.0">
-				<img src="images/the-super-clock-1.0.png" alt="The Super Clock 1.0">
+				<img src="pagespeed/the-super-clock-1.0.png" alt="The Super Clock 1.0">
 			</div>
 			<div id="donate">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -76,16 +76,16 @@ layout: page
 					<p itemprop="description" data-i18n="description-{{ addon.id }}">{{ addon.description.en }}</p>
 					{% for compat in addon.compatible %}
 						{% if compat == "firefox" %}
-							<img src="images/MozillaFirefox.png" class="compat-icons" alt="Mozilla Firefox" title="Mozilla Firefox"/>
+							<img src="pagespeed/MozillaFirefox.png" class="compat-icons" alt="Mozilla Firefox" title="Mozilla Firefox"/>
 						{% endif %}
 						{% if compat == "thunderbird" %}
-							<img src="images/MozillaThunderbird.png" class="compat-icons" alt="Mozilla Thunderbird" title="Mozilla Thunderbird"/>
+							<img src="pagespeed/MozillaThunderbird.png" class="compat-icons" alt="Mozilla Thunderbird" title="Mozilla Thunderbird"/>
 						{% endif %}
 						{% if compat == "fennec" %}
-							<img src="images/MozillaFennec.png" class="compat-icons" alt="Firefox for Android" title="Firefox Android"/>
+							<img src="pagespeed/MozillaFennec.png" class="compat-icons" alt="Firefox for Android" title="Firefox Android"/>
 						{% endif %}
 						{% if compat == "seamonkey" %}
-							<img src="images/MozillaSeaMonkey.png" class="compat-icons" alt="SeaMonkey" title="SeaMonkey"/>
+							<img src="pagespeed/MozillaSeaMonkey.png" class="compat-icons" alt="SeaMonkey" title="SeaMonkey"/>
 						{% endif %}
 					{% endfor %}
 						<!-- Track Google Analytics -->
