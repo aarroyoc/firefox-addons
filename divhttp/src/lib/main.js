@@ -7,7 +7,6 @@ exports.main=function(options)
 {
 	if(options.loadReason=="install"){
 		tabs.open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstall&utm_campaign=DivHTTP&utm_medium=Addon");
-		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/welcome.html");
 	}
 	if(options.loadReason=="upgrade"){
 		tabs.open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonUpgrade&utm_campaign=DivHTTP&utm_medium=Addon");
