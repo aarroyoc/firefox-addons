@@ -6,14 +6,11 @@ var srv;
 exports.main=function(options)
 {
 	if(options.loadReason=="install"){
-		tabs.open("http://adrianarroyocalle.github.io/firefox-addons");
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstall&utm_campaign=DivHTTP&utm_medium=Addon");
 		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/welcome.html");
-		//Configurar con pagina XUL o HTML o Javascript
-	
 	}
 	if(options.loadReason=="upgrade"){
-		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/");
-		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/changelog.html"); //Changelog HTML file
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonUpgrade&utm_campaign=DivHTTP&utm_medium=Addon");
 	}
 	require("sdk/simple-prefs").on("review",function (){
 		tabs.open("http://addons.mozilla.org/en/firefox/addon/divhttp");
