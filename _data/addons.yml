@@ -97,6 +97,19 @@ addons:
   download: http://cur.lv/4eolj
   changelog:
    -
+    release: Divel Notepad 1.7
+    changes:
+     - Analytics tracking code
+     - Japanese translation
+     - Russian translation
+     - Chinese translation
+     - German translation
+     - Italian translation
+     - French translation
+     - Spanish translation
+     - Fix icon64
+     - Using only Australis UI
+   -
     release: Divel Notepad 1.5.1
     changes:
      - Fixed a bug on the images for new Australis interface
