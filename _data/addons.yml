@@ -91,6 +91,7 @@ addons:
   id: divel-notepad
   description:
    en: Save your notes quickly and read it later. Divel Notepad is the best addon for taking notes. It's uses IndexedDB API for quick and safe storage operations.
+   es: Guarda tus notas rápidamente y léelas más tarde. Divel Notepad es el mejor complemento para tomar notas. Usa IndexedDB para realizar las operaciones de manera rápida y segura.
   logo: page/divel-notepad/icon64.png
   compatible:
    - firefox
