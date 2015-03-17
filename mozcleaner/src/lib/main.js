@@ -117,12 +117,12 @@ exports.main=function(options)
 	{
 		if(options.loadReason=="install")
 		{
-			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstall&utm_campaign=mozCleaner&utm_medium=Addon");
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
 		}
 		if(options.loadReason=="upgrade")
 		{
-			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonUpgrade&utm_campaign=mozCleaner&utm_medium=Addon");
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
 			require("sdk/notifications").notify({
 					title: _("mozCleaner"),
