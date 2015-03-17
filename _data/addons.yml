@@ -166,6 +166,13 @@ addons:
    - firefox
   download: http://cur.lv/4eons
   changelog:
+   - 
+    release: DivHTTP 2.1.0
+    changes:
+     - Custom copy of httpd.js
+     - Spanish translation
+     - French translation
+     - Analytics tracking code
    -
     release: DivHTTP 1.0
     changes:
