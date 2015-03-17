@@ -227,8 +227,7 @@ function ViewNote()
 exports.main=function(options)
 {
 	if(options.loadReason=="install"){
-		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/divel-notepad/welcome.html");
-		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/");
+		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstall&utm_campaign=DivelNotepad&utm_medium=Addon");
 	}
 	if(options.loadReason=="upgrade"){
 		notifications.notify({
@@ -236,8 +235,7 @@ exports.main=function(options)
 			text: "Succesfully upgraded to Divel Notepad 1.7",
 			iconURL: self.data.url("open64.png")
 		});
-		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/divel-notepad/changelog.html");
-		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/");
+		require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonUpgrade&utm_campaign=DivelNotepad&utm_medium=Addon");
 	}
 	require("sdk/simple-prefs").on("review",function (){
 		require("sdk/tabs").open("http://addons.mozilla.org/en/firefox/addon/divel-notepad");
