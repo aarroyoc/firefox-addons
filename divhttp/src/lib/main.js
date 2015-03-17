@@ -1,17 +1,15 @@
 const data=require("sdk/self").data;
 const tabs=require("sdk/tabs");
 const prefs=require("sdk/simple-prefs").prefs;
+var _=require("sdk/l10n").get;
 var srv;
 exports.main=function(options)
 {
 	if(options.loadReason=="install"){
-		tabs.open("http://adrianarroyocalle.github.io/firefox-addons");
-		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/welcome.html");
-		//Configurar con pagina XUL o HTML o Javascript
-	
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstall&utm_campaign=DivHTTP&utm_medium=Addon");
 	}
 	if(options.loadReason=="upgrade"){
-		tabs.open("http://adrianarroyocalle.github.io/firefox-addons/page/divhttp/changelog.html"); //Changelog HTML file
+		tabs.open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonUpgrade&utm_campaign=DivHTTP&utm_medium=Addon");
 	}
 	require("sdk/simple-prefs").on("review",function (){
 		tabs.open("http://addons.mozilla.org/en/firefox/addon/divhttp");
@@ -25,7 +23,7 @@ exports.main=function(options)
 	var ActionButton=require("sdk/ui/button/action").ActionButton;
 	var widget=ActionButton({
 		id: "divhttp-widget",
-		label: "DivHTTP",
+		label: _("DivHTTP"),
 		icon: {
 			"32" : data.url("divhttp32.png"),
 			"64" : data.url("divhttp64.png"),
@@ -38,13 +36,13 @@ exports.main=function(options)
 
 	});
 	panel.port.on("startServer",function(dir,port){
-		var { startServerAsync } = require("sdk/test/httpd");
+		var { startServerAsync } = require("./httpd.js");
 		srv = startServerAsync(port, dir);
 		if(prefs.notify)
 		{
 			require("sdk/notifications").notify({
-				title: "DivHTTP",
-				text: "Server started and listening",
+				title: _("DivHTTP"),
+				text: _("Server started and listening"),
 				iconURL: data.url("divhttp64.png")
 
 			});
@@ -63,8 +61,8 @@ exports.main=function(options)
 			if(prefs.notify)
 			{
 				require("sdk/notifications").notify({
-					title: "DivHTTP",
-					text: "Server stoped",
+					title: _("DivHTTP"),
+					text: _("Server stoped"),
 					iconURL: data.url("divhttp64.png")
 				});
 			}
