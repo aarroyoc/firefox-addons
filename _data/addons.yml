@@ -14,7 +14,8 @@ addons:
   logo: page/google-share/icon64.png
   compatible:
    - firefox
-  download: http://cur.lv/4eo39
+  download: http://bc.vc/nKm2Ky
+  # CoinURL: http://cur.lv/4eo39
   changelog:
    -
     release: Google+ Share 1.8.0
@@ -71,7 +72,8 @@ addons:
   logo: page/the-super-clock/the-super-clock.png
   compatible:
    - firefox
-  download: http://cur.lv/8nd6r
+  download: http://bc.vc/GwmCl4 
+  # CoinURL http://cur.lv/8nd6r
   changelog:
    -
     release: The Super Clock 1.0
@@ -95,7 +97,8 @@ addons:
   logo: page/divel-notepad/icon64.png
   compatible:
    - firefox
-  download: http://cur.lv/4eolj
+  download: http://bc.vc/NalKjQ
+  # CoinURL http://cur.lv/4eolj
   changelog:
    -
     release: Divel Notepad 1.7
@@ -192,7 +195,8 @@ addons:
    - firefox
    - thunderbird
    - seamonkey
-  download: http://cur.lv/4eora
+  download: http://bc.vc/CO6SkM
+  # CoinURL http://cur.lv/4eora
   changelog:
    -
     release: mozCleaner 2.0
@@ -285,7 +289,8 @@ addons:
   compatible:
    - firefox
    - fennec
-  download: http://cur.lv/6el1t
+  download: http://bc.vc/MSuDcL
+  # CoinURL http://cur.lv/6el1t
   changelog:
    -
     release: Send to Mail 1.0
