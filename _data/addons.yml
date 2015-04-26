@@ -150,7 +150,20 @@ addons:
      - Storage in IndexedDB
      - Icons from Haiku project
      - Implemented in Mozilla Firefox
-     
+ -
+  name: Bc.vc shortener
+  id: bc-vc-shortener
+  description:
+   en: Shorten your links with bc.vc and earn money from that. Just do right click on the page that you want to shorten the link and click "Shorten tab's URL and copy to clipboard". The shortened link will be on the clipboard. You can set your API keys in the addon manager.
+  logo: images/bc-vc.png
+  compatible:
+   - firefox
+  download: https://addons.mozilla.org/es/firefox/addon/bcvc-shortener/
+  changelog:
+   -
+    release: Bc.vc shortener 1.0.0
+    changes:
+     - First release
  -
   name: El Tiempo en España
   id: el-tiempo-en-espana
