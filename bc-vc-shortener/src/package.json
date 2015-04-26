@@ -1,0 +1,32 @@
+{
+  "title": "Bc.vc shorthener",
+  "name": "bc-vc",
+  "version": "1.0.0",
+  "description": "Shorthener for Bc.vc",
+  "main": "index.js",
+  "homepage" : "http://adrianarroyocalle.github.io",
+  "author": "Adrián Arroyo Calle",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "preferences" : [{
+	 "name" : "apiKey",
+	 "title" : "API key",
+	 "type" : "string",
+	 "description" : "Your API key for Bc.vc shorthener. See it here: http://bc.vc/tools.php?api",
+	 "value" : "6256ed64ce9c6cae6b3ca09034ae3eaa"
+	 },
+	 {
+	"name" : "uid",
+	"title" : "UID",
+	"type" : "string",
+	"description" : "Your UID key for Bc.vc shorthener. See it here: http://bc.vc/tools.php?api",
+	"value" : "96749"
+	}
+	 ],
+  "license": "GPL",
+  "permissions" : {
+	"multiprocess" : true,
+	"private-browsing" : true
+	}
+}
