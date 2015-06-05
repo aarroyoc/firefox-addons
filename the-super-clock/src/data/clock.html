@@ -58,7 +58,7 @@
 			var day=document.getElementById("day");
 			var digitalTime=document.getElementById("digital-time");
 			day.textContent=date.getDate() + "/" + (date.getMonth()+1) + "/"+ date.getFullYear();
-			digitalTime.textContent=date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+			digitalTime.textContent=date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/,"$1");
 			requestAnimationFrame(setDate);
 		}
 		requestAnimationFrame(setDate);

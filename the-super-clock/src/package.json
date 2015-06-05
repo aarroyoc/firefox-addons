@@ -5,7 +5,7 @@
   "description": "The Super Clock is a beautiful clock",
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
-  "version": "1.0",
+  "version": "1.1",
   "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
   "icon" : "data/clock.png",
   "icon64" : "data/clock.png"
