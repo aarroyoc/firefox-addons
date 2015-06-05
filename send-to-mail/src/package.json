@@ -5,7 +5,7 @@
   "description": "Share the current webpage via email",
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "main" : "lib/main.js",
   "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
   "icon" : "data/haiku/mail.png",
