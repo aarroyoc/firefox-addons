@@ -1,6 +1,9 @@
 const data=require("sdk/self").data;
 const { open } = require('sdk/window/utils');
-const {Cc, Ci, Cu, Cr} = require("chrome");
+const {Cc, Ci, Cu, Cr, Cm} = require("chrome");
+var { ActionButton } = require("sdk/ui/button/action");
+var tabs = require("sdk/tabs");
+var _=require("sdk/l10n").get;
 var firefox=false;
 var thunderbird=false;
 var seamonkey=false;
@@ -8,28 +11,23 @@ var fennec=false;
 var instantbird=false;
 var nightingale=false;
 var bluegriffon=false;
+
+
 function readContent()
 {
 	return data.load("mozCleaner.html");
 }
 function firefoxSetup()
 {
-	var foxwidget=require("sdk/widget").Widget({
+	var button = ActionButton({
 		id: "mozcleaner-widget",
-		label: "mozCleaner",
-		contentURL: data.url("mozCleaner-64.png"), 	
-		onClick: function() {
-			//Open UI for do a cleaning
-			open("data:text/html,"+readContent(),{
-			name: "mozCleaner",
-			features: {
-				width: 800,
-				height: 600,
-				chrome: true,
-				popup: false
-			}
-		});
-			
+		label: _("mozCleaner"),
+		icon: {
+		  "32": data.url("mozCleaner-32.png"),
+		  "64" : data.url("mozCleaner-64.png")
+		},
+		onClick: function(state) {
+			tabs.open("chrome://mozcleaner/content/mozCleaner.html");
 		}
 	});
 
@@ -41,30 +39,14 @@ function fennecSetup()
 	let selector =  recent.NativeWindow.contextmenus.SelectorContext("*");
 	recent.NativeWindow.contextmenus.add("mozCleaner",selector,function (target){
 		//Open UI for do a cleaning
-		open("data:text/html,"+readContent(),{
-			name: "mozCleaner",
-			features: {
-				width: 800,
-				height: 600,
-				chrome: true,
-				popup: false
-			}
-		});
+		tabs.open("chrome://mozcleaner/content/mozCleaner.html");
 	});
 	Cu.import("resource://gre/modules/Home.jsm");
 	Home.banner.add({
-		text: "mozCleaner",
+		text: _("mozCleaner"),
 		icon: data.url("mozCleaner-64.png"),
 		onclick: function(){
-			open("data:text/html,"+readContent(),{
-				name: "mozCleaner",
-				features: {
-						width: 400,
-						height: 200,
-						chrome: true,
-						popup: false
-				}
-			});
+			tabs.open("chrome://mozcleaner/content/mozCleaner.html");
 		}
 	});
 }
@@ -135,16 +117,16 @@ exports.main=function(options)
 	{
 		if(options.loadReason=="install")
 		{
-			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonInstall&utm_campaign=mozCleaner&utm_medium=Addon");
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
 		}
 		if(options.loadReason=="upgrade")
 		{
-			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons");
+			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons?utm_source=AddonUpgrade&utm_campaign=mozCleaner&utm_medium=Addon");
 			require("sdk/tabs").open("http://adrianarroyocalle.github.io/firefox-addons/page/mozcleaner/welcome.html");
 			require("sdk/notifications").notify({
-					title: "mozCleaner",
-					text: "Successfully updated to 2.0",
+					title: _("mozCleaner"),
+					text: _("Successfully updated to 2.1"),
 					iconURL: data.url("mozCleaner-64.png")
 			});
 		}

@@ -5,7 +5,7 @@
   "description": "Cleans your Firefox, Fennec, Instantbird, Thunderbird, SeaMonkey, Nightingale and BlueGriffon",
   "author": "Adrián Arroyo Calle",
   "license": "GPL 2.0",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "homepage" : "http://adrianarroyocalle.github.io/firefox-addons",
   "icon" : "data/mozCleaner-32.png",
   "icon64" : "data/mozCleaner-64.png",

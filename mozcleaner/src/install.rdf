@@ -3,7 +3,7 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. --><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>mozcleaner@divel</em:id>
-    <em:version>1.0</em:version>
+    <em:version>2.1</em:version>
     <em:type>2</em:type>
     <em:bootstrap>true</em:bootstrap>
     <em:unpack>false</em:unpack>
@@ -13,7 +13,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>19.0</em:minVersion>
-        <em:maxVersion>27.0</em:maxVersion>
+        <em:maxVersion>39.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!-- Thunderbird -->
@@ -21,7 +21,7 @@
       <Description>
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
         <em:minVersion>17.0</em:minVersion>
-        <em:maxVersion>27.0</em:maxVersion>
+        <em:maxVersion>39.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!-- Fennec -->
@@ -29,7 +29,7 @@
       <Description>
         <em:id>{aa3c5121-dab2-40e2-81ca-7ea25febc110}</em:id>
         <em:minVersion>19.0</em:minVersion>
-        <em:maxVersion>27.0</em:maxVersion>
+        <em:maxVersion>39.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!-- SeaMonkey -->
@@ -37,7 +37,7 @@
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
         <em:minVersion>2.17</em:minVersion>
-        <em:maxVersion>2.24</em:maxVersion>
+        <em:maxVersion>2.33</em:maxVersion>
       </Description>
     </em:targetApplication>
 	<!-- Instantbird //-->
@@ -45,7 +45,7 @@
 		<Description>
 			<em:id>{33cb9019-c295-46dd-be21-8c4936574bee}</em:id>
 			<em:minVersion>1.2</em:minVersion>
-			<em:maxVersion>1.4</em:maxVersion>
+			<em:maxVersion>1.5</em:maxVersion>
 		</Description>
 	</em:targetApplication>
 	<!-- Nightingale -->
@@ -70,7 +70,7 @@
     <em:name>mozCleaner</em:name>
     <em:description>Cleans your Firefox, Thunderbird and SeaMonkey</em:description>
     <em:creator>Adrián Arroyo Calle</em:creator>
-    <em:homepageURL>http://github.com/AdrianArroyoCalle/firefox-addons</em:homepageURL>
+    <em:homepageURL>http://adrianarroyocalle.github.io/firefox-addons</em:homepageURL>
     
     
   </Description>
