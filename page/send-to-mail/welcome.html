@@ -6,13 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	</head>
 	<body style="text-align: center; background-color: #239927;">
-		<script src="/js/cookiechoices.js"></script>
-		<script>
-		document.addEventListener('DOMContentLoaded', function(event) {
-			cookieChoices.showCookieConsentDialog('This site uses cookies from 3rd parties. Please, accept the cookies to continue visiting the site',
-				'Accept the cookies', 'Learn more', 'http://adrianarroyocalle.github.io/cookies.txt');
-		});
-		</script>
 		<h1>Send to Mail</h1>
 		<img src="send-to-mail.png" alt="Send to Mail logo">
 		<h2>Description</h2>
@@ -45,7 +38,8 @@
 		<script class="cookie" type="text/plain">
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
-		<script src="js/cookiecommon.js"></script>
+		<script src="/js/cookie.js"></script>
+		<script>euroCookie("http://adrianarroyocalle.github.io/cookies.txt");</script>
 		<!-- End cookie parts -->
 	</body>
 </html>

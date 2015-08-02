@@ -5,13 +5,6 @@
 		<meta charset="utf-8"/>
 	</head>
 	<body style="text-align: center; background-color: cyan;">
-		<script src="js/cookiechoices.js"></script>
-		<script>
-		  document.addEventListener('DOMContentLoaded', function(event) {
-			cookieChoices.showCookieConsentDialog('This site uses cookies from 3rd parties. Please, accept the cookies to continue visiting the site',
-				'Accept the cookies', 'Learn more', 'http://adrianarroyocalle.github.io/cookies.txt');
-		  });
-		</script>
 		<h1>The Super Clock</h1>
 		<img src="the-super-clock.png" alt="The Super Clock logo">
 		<h2>Description</h2>
@@ -44,7 +37,8 @@
 		<script class="cookie" type="text/plain">
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
-		<script src="js/cookiecommon.js"></script>
+		<script src="/js/cookie.js"></script>
+		<script>euroCookie("http://adrianarroyocalle.github.io/cookies.txt");</script>
 		<!-- End cookie parts -->
 	</body>
 </html>
