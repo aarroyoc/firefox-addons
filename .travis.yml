@@ -1,16 +1,11 @@
 language: node_js
 node_js:
- - "0.10"
-script: ./test-suite
+ - "4.2"
+script: 
+ - ./test.sh
 install: 
- - ./setup
+ - npm install -g addons-validator
  - npm install -g jpm
 addons:
- firefox: "31.0"
-env:
- - USE_CFX=TRUE
- - USE_JPM=TRUE
-matrix:
- allow_failures:
-  - env: USE_JPM=TRUE
+ firefox: "42.0"
 
