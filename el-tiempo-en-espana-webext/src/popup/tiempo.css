@@ -1,0 +1,29 @@
+/* MIT LICENSE. https://erikflowers.github.io/weather-icons/ */
+@font-face {
+  font-family: "WeatherIcons";
+  src: url("../font/weathericons-regular-webfont.woff") format("woff");
+}
+body{
+	background-color: #1E90FF;
+	width: 600px;
+	height: 500px;
+	font-family: "WeatherIcons";
+}
+#otro{
+	display: none;
+}
+table{
+	border: 5px solid #254F77;
+	border-collapse: collapse;
+	
+}
+td{
+	border: 3px solid #98CCFF;
+}
+#icono{
+	color: yellow;
+	font-size: 20px;
+}
+small{
+	font-size: 10px;
+}

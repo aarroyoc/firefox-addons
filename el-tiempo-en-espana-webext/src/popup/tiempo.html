@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link href="tiempo.css" rel="stylesheet"/>
+</head>
+<body>
+	<select id="municipio">
+		<option value="28079">Madrid</option>
+		<option value="08019">Barcelona</option>
+		<option value="41091">Sevilla</option>
+		<option value="46250">Valencia</option>
+		<option value="48020">Bilbao</option>
+		<option value="47186">Valladolid</option>
+		<option value="0">Otro municipio...</option>
+	</select>
+	<div id="otro">
+		<label for="otro-municipio">Copie la dirección URL que le ofrece AEMET: </label>
+		<input type="url" id="otro-municipio" placeholder="http://www.aemet.es/es/eltiempo/prediccion/municipios/madrid-id28079">
+		<button id="nuevo-municipio">Añadir</button>
+	</div>
+	<button id="prev">◄</button>
+	<button id="next">►</button>
+	<h5 id="municipio-title"></h5>
+	<div>
+		<h4 id="dia"></h4>
+		<table id="prediccion">
+			<tr id="intervalo">
+			
+			</tr>
+			<tr id="icono">
+				
+			</tr>
+			<tr id="precipitacion">
+				
+			</tr>
+			<tr id="nieve">
+			
+			</tr>
+			<tr id="temp">
+			
+			</tr>
+			<tr id="sensacionTermica">
+			
+			</tr>
+		</table>
+		<h5 id="minmax"></h5>
+	</div>
+	<script src="tiempo.js"></script>
+</body>
+</html>
