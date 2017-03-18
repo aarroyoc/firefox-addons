@@ -1,0 +1,25 @@
+{
+	"manifest_version" : 2,
+	"name": "Google+ Share",
+	"version" : "2.0.1",
+	"description" : "With Google+ Share you can share your actual webpage with a simple click",
+	"homepage_url" : "http://adrianistan.eu/norax/",
+	"icons" : {
+		"64" : "data/icon64.png",
+		"32" : "data/icon32.png"
+	},
+	"applications" : {
+		"gecko" : {
+			"id" : "google@divel",
+			"strict_min_version" : "50.0"
+		}
+	},
+	"permissions" : ["notifications","contextMenus","activeTab","tabs"],
+	"browser_action" : {
+		"default_title" : "Share on Google+",
+		"default_icon" : "data/icon64.png"
+	},
+	"background" : {
+		"scripts" : ["background/main.js"]
+	}
+}
