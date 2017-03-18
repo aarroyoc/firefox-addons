@@ -1,7 +1,7 @@
 {
 	"manifest_version" : 2,
 	"name" : "Send to Mail",
-	"version" : "2.0.0",
+	"version" : "2.0.1",
 	"description" : "Share a URL directly from your browser via email",
 	"homepage_url" : "http://adrianarroyocalle.github.io/norax/",
 	"icons" : {
@@ -12,7 +12,7 @@
 	"applications" : {
 		"gecko" : {
 			"id" : "send-to-mail@divel",
-			"strict_min_version" : "45.*"
+			"strict_min_version" : "45.0"
 		}
 	},
 	"permissions" : ["contextMenus","activeTab","tabs","notifications"],
