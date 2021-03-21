@@ -1,9 +1,9 @@
 {
 	"manifest_version" : 2,
 	"name" : "Send to Mail",
-	"version" : "2.0.2",
+	"version" : "2.0.3",
 	"description" : "Share a URL directly from your browser via email",
-	"homepage_url" : "http://adrianistan.eu",
+	"homepage_url" : "https://adrianistan.eu",
 	"icons" : {
 		"16" : "icons/16.png",
 		"48" : "icons/48.png",
